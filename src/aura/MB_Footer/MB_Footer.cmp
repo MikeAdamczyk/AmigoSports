@@ -1,0 +1,6 @@
+<aura:component description="MB_Footer"
+                implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+
+    <footer>Movies Browser | Michał Adamczyk 2021 © All Rights Reserved. </footer>
+
+</aura:component>

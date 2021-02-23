@@ -1,0 +1,21 @@
+<aura:component description="MB_Main_Container" implements="force:appHostable,flexipage:availableForAllPageTypes">
+<!--    <ltng:require styles="{!$Resource.DeleteHeader}"/>-->
+<!--    <ltng:require styles="{!$Resource.NoHeader}"/>-->
+
+    <div class="main">
+        <br/>
+
+        <header class="header">
+            <c:MB_Search_Form/>
+        </header>
+
+        <c:MB_Movies_Popular/>
+        <br/>
+        <br/>
+        <c:MB_Footer/>
+        <br/>
+        <br/>
+    </div>
+
+
+</aura:component>

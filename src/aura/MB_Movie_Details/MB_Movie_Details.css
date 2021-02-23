@@ -1,0 +1,95 @@
+.THIS{
+    margin: 0 auto;
+}
+
+.THIS .movieInfo{
+   margin: 20px auto;
+   width: 1280px;
+   height: 100%;
+   display:flex;
+
+}
+
+.THIS .textInfo{
+    padding: 10px 40px 0 0;
+}
+
+.THIS .overview{
+    overflow-wrap: break-word;
+    font-size: 1.4 rem;
+    padding-right: 20px;
+}
+
+.THIS .title{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0F3C80;
+    background-color: white;
+}
+
+.THIS .image{
+    width: 230px;
+    flex-shrink: 0;
+}
+
+.THIS .bigPhoto {
+    border-radius: 0.5%;
+    margin-bottom: 20px;
+}
+
+.THIS .blacklist svg {
+    fill: red;
+}
+
+.THIS .favorite svg {
+    fill: #FFAE42;
+}
+
+.THIS .rate svg {
+    fill: #0F3C80;
+    margin-bottom: 3px;
+    margin-right: 5px;
+}
+
+.THIS .vote {
+     color: grey;
+     font-size: 1.4 rem;
+}
+
+
+.THIS .yellow svg {
+    fill: #FFAE42;
+    filter: brightness(100%);
+}
+
+.THIS .scrollerSize{
+     height:400px;
+     width:300px;
+     padding: 0 20px;
+}
+
+.THIS .add{
+    height:440px;
+    width:900px;
+    margin-left: 20px;
+}
+
+.THIS .reviews{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.THIS .slds-card{
+    margin-top: 0;
+}
+
+.THIS .star {
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 10px;
+}
+
+.THIS .range {
+    font-size: 0.6rem;
+}

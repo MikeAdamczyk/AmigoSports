@@ -1,0 +1,34 @@
+.THIS {
+        background-color: black;
+           justify-content: center;
+           max-width: 1368px;
+           margin: 0 auto;
+}
+
+.THIS .slds-page-header {
+    display: none;
+}
+
+.THIS .main{
+      justify-content: center;
+      max-width: 1368px;
+      margin: 0 auto;
+      text-align: center;
+}
+
+.THIS .header{
+       color: black;
+       height: 80px;
+       text-align: center;
+       margin: 0 auto;
+       display: flex;
+       justify-content: flex-start;
+}
+
+.THIS .movieDetails {
+    max-width: 900px;
+}
+
+.THIS .slds-grid_align-space .slds-grid--align-space {
+             justify-content: center;
+}

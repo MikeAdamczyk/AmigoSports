@@ -1,0 +1,44 @@
+.THIS {
+    text-align: center;
+    width: 220px;
+    height: 420px;
+    box-shadow: 0 4px 7px rgb(62 62 62);
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #212121;
+    border: none;
+}
+
+.THIS:hover{
+    background-color: #303030;
+}
+
+.THIS .personName{
+    font-weight: bold;
+    padding-top: 5px;
+    background-color: whitesmoke;
+}
+
+.THIS .character{
+    background-color: whitesmoke;
+}
+
+.THIS .slds_card{
+    border: none;
+    outline: none;
+}
+
+.THIS .slds-.slds-button {
+    border-color: none;
+}
+
+.THIS .slds-card__header{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.THIS .slds-card__body {
+    margin-bottom: 0;
+    margin-top: 0;
+}

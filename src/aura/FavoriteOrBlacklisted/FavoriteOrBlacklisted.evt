@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="FavoriteOrBlacklisted">
+    <aura:attribute name="display" type="String"/>
+</aura:event>

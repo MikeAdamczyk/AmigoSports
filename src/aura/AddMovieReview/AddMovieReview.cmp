@@ -1,0 +1,54 @@
+<aura:component description="AddMovieReview"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global">
+
+    <aura:attribute name="context" type="String" default="movies"/>
+    <aura:attribute name="id" type="String"/>
+    <aura:attribute name="boatReview" type="Review__c" default="{}"/>
+    <aura:attribute name="rating" type="Boolean" default="true"/>
+    <aura:attribute access="private" name="recordError" type="String"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <aura:attribute name="movieId" type="String"/>
+    <aura:handler event="c:MB_Movie_Selected_Event" action="{!c.MB_Movie_Selected_Event}"/>
+
+    <aura:registerEvent name="MB_ReviewAdded" type="c:MB_ReviewAdded"/>
+
+    <aura:registerEvent name="showReview" type="c:MB_ShowReviews"/>
+
+    <!--<aura:dependency resource="markup://force:showToast" type="EVENT"/>-->
+    <force:recordData aura:id="service"
+                      fields="Name, Title__c, Comment__c, Rating__c, Id__c, Type__c"
+                      targetError="{!v.recordError}"
+                      targetFields="{!v.boatReview}"
+                      recordUpdated="{!c.onRecordUpdated}"
+    />
+
+    <lightning:layout multipleRows="true">
+
+        <lightning:layoutItem size="12" padding="around-small">
+            <lightning:input name="title" label="Title" value="{!v.boatReview.Title__c}"/>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem size="12" padding="around-small">
+            <label class="slds-form-element__label" for="input-id-01">Description</label>
+            <lightning:inputRichText value="{!v.boatReview.Comment__c}" disabledCategories="FORMAT_FONT"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12" padding="around-small">
+            <label class="slds-form-element__label" for="input-id-01">Rating</label>
+            <ul class="slds-post__footer-actions-list slds-list_horizontal">
+                <li class="slds-col slds-item slds-m-right_medium">
+                    <aura:if isTrue="{!v.rating}">
+                        <c:FiveStarRating value="{!v.boatReview.Rating__c}"/>
+                    </aura:if>
+                </li>
+            </ul>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12" class="slds-align--absolute-center">
+            <lightning:button iconName="utility:save" label="Submit" onclick="{!c.onSave}" class="customButton"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+
+
+</aura:component>

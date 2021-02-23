@@ -1,0 +1,143 @@
+<aura:component description="MB_Movies_Popular" controller="MB_App_Controller"
+                implements="force:appHostable,flexipage:availableForAllPageTypes"
+                access="global">
+
+    <aura:attribute name="popularMovies" type="Object[]"/>
+    <aura:attribute name="popularPeople" type="Object[]"/>
+    <aura:attribute name="favoriteMovies" type="Object[]"/>
+    <aura:attribute name="blacklistedMovies" type="Object[]"/>
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+    <aura:attribute name="boatReview" type="Review__c" default="{}"/>
+    <aura:attribute name="displayedSection" type="String" default="movies"/>
+    <aura:attribute name="query" type="String"/>
+    <aura:handler name="change" action="{!c.refreshPage}" value="{!v.displayedSection}"/>
+    <aura:handler name="change" action="{!c.refreshPage}" value="{!v.query}"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler event="c:MB_Query" action="{!c.MB_Query}"/>
+    <aura:handler event="c:MB_Movie_Selected_Event" action="{!c.MB_Movie_Selected_Event}"/>
+    <aura:handler event="c:MB_Person_Selected_Event" action="{!c.MB_Person_Selected_Event}"/>
+
+    <aura:if isTrue="{!v.Spinner}">
+        <lightning:spinner variant="brand" alternativeText="Loading" size="large"/>
+    </aura:if>
+    <br/>
+
+    <!-- FAVORITE MOVIES LIST -->
+    <div aura:id="section" class="{!if(v.displayedSection == 'favorite','slds-show','slds-hide')}">
+
+        <p class="subheader">My favorite movies</p>
+
+        <div class="mainContainer">
+            <lightning:layout multipleRows="true" horizontalAlign="center">
+
+                <aura:iteration items="{!v.favoriteMovies}" var="popular">
+                    <lightning:layoutItem>
+                        <c:MB_Movie_Tile movie="{!popular}"/>
+                    </lightning:layoutItem>
+                </aura:iteration>
+
+            </lightning:layout>
+        </div>
+    </div>
+
+
+    <aura:attribute name="movie_title_add" type="String"/>
+    <aura:attribute name="movie_overview_add" type="String"/>
+    <aura:attribute name="movie_release_date_add" type="Date"/>
+
+    <!-- MOVIE NOT FOUND - ADD MOVIE -->
+    <div aura:id="section" class="{!if(v.displayedSection == 'addMovie','slds-show','slds-hide')}">
+
+        <p class="subheader">Movie not found</p>
+        <br/>
+
+        <lightning:card iconName="action:new_note" title="Add new movie note">
+            <div style="margin:auto; width:70%; color:grey">
+                <span style="font-size:20px; ">You can add movie note in the form below:</span>
+                <lightning:input class="input_movie" name="input_title" label="Movie title"
+                                 value="{!v.movie_title_add}"/>
+                <lightning:input class="input_movie" name="input_overview" label="Overview"
+                                 value="{!v.movie_overview_add}"/>
+                <lightning:input class="input_movie" type="date" name="input_release_date" label="Release date"
+                                 value="{!v.movie_release_date_add}"/>
+<!--                <lightning:input class="input_movie" name="input_file" type="file" label="Poster" multiple="false"-->
+<!--                                 accept="image/png" onchange="{!c.handlePosterUpload}"/>-->
+                <lightning:button label="Add movie" iconName="utility:check" variant="success"
+                                  onclick="{!c.handleMovieAdd}"/>
+                <br/>
+                <br/>
+            </div>
+        </lightning:card>
+
+
+    </div>
+
+
+    <!-- BLACKLISTED MOVIES LIST -->
+    <div aura:id="section" class="{!if(v.displayedSection == 'blacklisted','slds-show','slds-hide')}">
+
+        <p class="subheader">Blacklisted movies</p>
+
+        <div class="mainContainer">
+            <lightning:layout multipleRows="true" horizontalAlign="center">
+
+                <aura:iteration items="{!v.blacklistedMovies}" var="popular">
+                    <lightning:layoutItem>
+                        <c:MB_Movie_Tile movie="{!popular}"/>
+                    </lightning:layoutItem>
+                </aura:iteration>
+
+            </lightning:layout>
+        </div>
+    </div>
+
+
+    <!-- PEOPLE LIST -->
+    <div aura:id="section" class="{!if(v.displayedSection == 'people','slds-show','slds-hide')}">
+
+        <p class="subheader">Popular people</p>
+
+        <div class="mainContainer">
+            <lightning:layout multipleRows="true" horizontalAlign="center">
+
+                <aura:iteration items="{!v.popularPeople}" var="popular">
+                    <lightning:layoutItem>
+                        <c:MB_People_Tile person="{!popular}"/>
+                    </lightning:layoutItem>
+                </aura:iteration>
+
+            </lightning:layout>
+        </div>
+    </div>
+
+    <!-- MOVIES LIST -->
+    <div aura:id="section" class="{!if(v.displayedSection == 'movies','slds-show','slds-hide')}">
+
+        <p class="subheader">Popular movies</p>
+
+        <div class="mainContainer">
+            <lightning:layout multipleRows="true" horizontalAlign="center">
+
+                <aura:iteration items="{!v.popularMovies}" var="popular">
+                    <lightning:layoutItem>
+                        <c:MB_Movie_Tile movie="{!popular}"/>
+                    </lightning:layoutItem>
+                </aura:iteration>
+
+            </lightning:layout>
+        </div>
+    </div>
+
+    <!-- MOVIE DETAILS-->
+    <div aura:id="section" class="{!if(v.displayedSection == 'moviesDetails','slds-show','slds-hide')}">
+        <c:MB_Movie_Details/>
+    </div>
+
+    <!-- PEOPLE DETAILS-->
+    <div aura:id="section" class="{!if(v.displayedSection == 'personDetails','slds-show','slds-hide')}">
+        <c:MB_Person_Details/>
+    </div>
+    <br/>
+
+</aura:component>

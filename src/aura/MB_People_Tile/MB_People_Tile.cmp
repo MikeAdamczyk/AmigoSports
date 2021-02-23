@@ -1,0 +1,19 @@
+<aura:component description="MB_People_Tile" implements="force:appHostable,flexipage:availableForAllPageTypes"
+                    access="global">
+
+        <aura:attribute name="person" type="Object"/>
+        <aura:registerEvent name="personSelect" type="c:MB_Person_Selected_Event"/>
+
+        <lightning:button class="image" onclick="{!c.onSelect}">
+            <lightning:card class="slds_card">
+
+                <img src="{!if(not(empty(v.person.profile_path)),'https://image.tmdb.org/t/p/w342/' + v.person.profile_path,
+                        'https://britenet-b-dev-ed--c.documentforce.com/servlet/servlet.FileDownload?file=015090000009mrl')}"
+                     width="200"/>
+
+                <p class="personName">{!v.person.name}</p>
+                <p class="character">{!v.person.character}</p>
+            </lightning:card>
+        </lightning:button>
+
+</aura:component>

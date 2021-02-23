@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="MB_Movie_Selected_Event">
+    <aura:attribute name="movieId" type="String"/>
+    <aura:attribute name="display" type="String"/>
+</aura:event>

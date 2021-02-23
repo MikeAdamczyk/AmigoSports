@@ -1,0 +1,107 @@
+/**
+ * Created by BRITENET on 11.02.2021.
+ */
+.THIS .searchForm{
+    background-color: black;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.THIS .headerMenu{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 143px;
+}
+
+
+.THIS .input {
+    width: 400px;
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+}
+
+.THIS {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.THIS .slds-form-element__label:empty {
+    margin: 0;
+    display: none;
+}
+
+.THIS .buttonActive:hover{
+    color: red;
+}
+
+.THIS .fav{
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+
+.THIS .fav:hover{
+    background-color: #009600;
+    border-color: #009600;
+    color: white;
+}
+
+.THIS .black{
+    background-color: #303030;
+    border-color: #303030;
+    color: white;
+}
+
+.THIS .black:hover{
+    background-color: #404040;
+    border-color: #404040;
+    color: white;
+}
+
+
+.THIS .buttonMovies {
+ background-color: rgb(26 99 165);
+    border-color: rgb(26 99 165);
+    color: white;
+}
+
+.THIS .buttonMovies:hover {
+ background-color: rgb(36 124 204);
+    border-color: rgb(36 124 204);
+    color: white;
+}
+
+.THIS .buttonMovies:focus {
+ background-color: rgb(36 124 204);
+    border-color: rgb(36 124 204);
+    color: white;
+}
+
+.THIS .buttonPeople {
+ background-color: rgb(26 99 165);
+    border-color: rgb(26 99 165);
+    color: white;
+}
+
+.THIS .buttonPeople:hover {
+ background-color: rgb(36 124 204);
+    border-color: rgb(36 124 204);
+    color: white;
+}
+
+.THIS .buttonPeople:focus {
+ background-color: rgb(36 124 204);
+    border-color: rgb(36 124 204);
+    color: white;
+}
+
+.THIS .logo{
+
+    margin-left: 60px;
+
+}

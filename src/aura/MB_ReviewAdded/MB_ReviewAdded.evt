@@ -1,0 +1,2 @@
+<aura:event type="APPLICATION" description="MB_ReviewAdded">
+</aura:event>

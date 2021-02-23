@@ -1,0 +1,180 @@
+<aura:component description="MB_Movie_Details"
+                controller="MB_App_Controller"
+                implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="movie" type="Object"/>
+    <aura:attribute name="movieId" type="Object"/>
+    <aura:attribute name="cast" type="Object[]"/>
+    <aura:attribute name="reviews" type="Object[]"/>
+    <aura:attribute name="vote_average" type="String"/>
+    <aura:attribute name="votesNumber" type="String"/>
+
+    <aura:handler event="c:MB_Movie_Selected_Event" action="{!c.MB_Movie_Selected_Event}"/>
+    <aura:handler event="c:MB_ShowReviews" action="{!c.MB_ShowReviews}"/>
+
+    <lightning:layout verticalAlign="center" horizontalAlign="space" multipleRows="true">
+
+        <img class="bigPhoto" src="{!'https://image.tmdb.org/t/p/w1280/' + v.movie.backdrop_path}" alt=""/>
+
+        <lightning:layout>
+            <lightning:card class="movieInfo">
+                <div class="movieInfo">
+
+                    <div class="image">
+                        <img src="{!if(not(empty(v.movie.poster_path)),'https://image.tmdb.org/t/p/w342/' + v.movie.poster_path,
+                    'https://britenet-b-dev-ed--c.documentforce.com/servlet/servlet.FileDownload?file=015090000009mrg')}"
+                             width="200"/>
+                    </div>
+
+                    <div class="textInfo">
+                        <p class="title">{!v.movie.title}</p>
+                        <p class="overview">Release date: <strong>{!v.movie.release_date}</strong></p>
+                        <p class="overview">Countries:
+                            <aura:iteration items="{!v.movie.production_countries}" var="country">
+                                <strong>{!country.name},&nbsp;</strong>
+                            </aura:iteration>
+                        </p>
+
+                        <br/>
+                        <lightning:icon class="rate" iconName="utility:favorite" size="x-small"/>
+                        <span class="vote"><strong>{!v.vote_average}</strong> ({!v.votesNumber}) ; TMDb: {!v.movie.vote_average}/<span class="range">10</span></span>
+
+                        <br/>
+                        <br/>
+                        <p class="overview">{!v.movie.overview}</p>
+                        <br/>
+                        <p><a href="{!v.movie.homepage}" target="_blank">Movie Website</a></p>
+                        <br/>
+
+                        <aura:iteration items="{!v.movie.genres}" var="genre">
+                            <lightning:badge label="{!genre.name}"/>
+                        </aura:iteration>
+
+                        <br/>
+                        <br/>
+                        <p class="overview">List: {!v.movie.fbtype}</p>
+
+
+                        <lightning:layout multipleRows="true">
+
+                            <lightning:layoutItem>
+
+                                <lightning:button variant="base" label="Base" title="Add to Favorite"
+                                                  onclick="{! c.addToFavorite }">
+                                    <lightning:icon class="{!if(equals(v.movie.fbtype, 'Favorite'),'favorite','')}"
+                                                    iconName="utility:favorite" size="small"/>
+                                </lightning:button>
+
+                                <lightning:button variant="base" label="Base" title="Add to Black List"
+                                                  onclick="{! c.addToBlacklist }">
+                                    <lightning:icon class="{!if(equals(v.movie.fbtype, 'Black List'),'blacklist','')}"
+                                                    iconName="utility:ban" size="small"/>
+                                </lightning:button>
+
+                            </lightning:layoutItem>
+
+                        </lightning:layout>
+
+                    </div>
+                </div>
+            </lightning:card>
+        </lightning:layout>
+        <br/>
+
+        <!-- REVIEW-->
+        <!--        <c:MB_Movie_Review movieId="{!v.movie.id}"/>-->
+
+        <!--        <c:MB_Review_List MovieReviews="{!reviews}"/>-->
+
+
+        <div class="reviews">
+
+            <lightning:card>
+
+                <ui:scrollerWrapper class="scrollerSize">
+                    <!--Scrollable content here -->
+                    <aura:if isTrue="{!v.reviews.length==0}">
+                        <lightning:layoutItem class="slds-align_absolute-center" flexibility="auto"
+                                              padding="around-small">
+                            <ui:outputText value="No Reviews Available"/>
+                        </lightning:layoutItem>
+                    </aura:if>
+
+                    <div class="slds-feed">
+                        <ul class="slds-feed__list">
+                            <aura:iteration items="{!v.reviews}" var="boatReview">
+                                <li class="slds-feed__item">
+                                    <header class="slds-post__header slds-media">
+
+                                        <div class="slds-media__body">
+                                            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                                <p><a href="javascript:void(0)" onclick=""
+                                                      data-userid="{!boatReview.CreatedBy.Id}">
+                                            {!boatReview.CreatedBy.Name}
+                                    </a>{!boatReview.CreatedBy.CompanyName}</p>
+                                            </div>
+                                            <p class="slds-text-body_small">
+                                                <lightning:formattedDateTime
+                                                        value="{!boatReview.CreatedDate}"
+                                                        year="numeric" month="short" day="numeric"
+                                                        hour="2-digit" minute="2-digit" hour12="true"/>
+                                            </p>
+                                        </div>
+                                    </header>
+                                    <div class="slds-post__content slds-text-longform">
+                                        <div>
+                                            <ui:outputText value="{!boatReview.Title__c}"/>
+                                        </div>
+                                        <div>
+                                            <ui:outputRichText class="slds-text-longform"
+                                                               value="{!boatReview.Comment__c}"/>
+
+                                        </div>
+                                    </div>
+                                    <footer class="slds-post__footer star">
+                                        <ul class="slds-post__footer-actions-list slds-list_horizontal">
+                                            <li class="slds-col slds-item slds-m-right_medium">
+                                                <c:FiveStarRating aura:id="FiveStarRating"
+                                                                  value="{!boatReview.Rating__c}" readonly="true"/>
+
+                                            </li>
+                                        </ul>
+
+                                    </footer>
+                                </li>
+                            </aura:iteration>
+                        </ul>
+                    </div>
+                </ui:scrollerWrapper>
+
+            </lightning:card>
+
+
+            <lightning:card class="add">
+                <c:AddMovieReview movieId="{!v.movieId}" context="{!v.context}"/>
+            </lightning:card>
+
+
+        </div>
+
+
+        <!-- CAST -->
+        <lightning:layout>
+            <!-- PEOPLE LIST -->
+            <div class="mainContainer">
+                <lightning:layout multipleRows="true" horizontalAlign="center">
+
+                    <aura:iteration items="{!v.cast}" var="person">
+                        <lightning:layoutItem>
+                            <c:MB_People_Tile person="{!person}"/>
+                        </lightning:layoutItem>
+                    </aura:iteration>
+
+                </lightning:layout>
+            </div>
+        </lightning:layout>
+
+    </lightning:layout>
+
+
+</aura:component>

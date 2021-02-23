@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="MB_PassAverageReviews">
+    <aura:attribute name="count" type="Integer"/>
+    <aura:attribute name="sum" type="Integer"/>
+</aura:event>

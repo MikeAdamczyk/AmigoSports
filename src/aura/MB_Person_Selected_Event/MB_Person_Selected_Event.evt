@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="MB_Person_Selected_Event">
+    <aura:attribute name="actorId" type="String"/>
+    <aura:attribute name="display" type="String"/>
+</aura:event>
