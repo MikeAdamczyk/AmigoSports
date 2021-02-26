@@ -1,7 +1,12 @@
 <apex:page id="WebToLead" sideBar="false" showHeader="false" standardStylesheets="false">
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
-    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/>
-    <style>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+        <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/>
+
+
+        <style>
 
         iframe-div {
             width: 100%;
@@ -237,62 +242,44 @@
         }
 
 
-    </style>
+
+        </style>
+
+    </head>
 
     <body>
 
     <div class="container" id="main-survey-form">
 
-<!--        <div id="snackbar">Survey send successfully. Thank you.</div>-->
-<!--        <header class="header">-->
-<!--            <h1 id="title" class="text-center, main-title">Athletic Stufff</h1>-->
-<!--            <p id="description" class="description text-center">-->
-<!--                Thank you for taking the time to help us know you better-->
-<!--            </p>-->
-<!--        </header>-->
-<!--        <div id="merci-div">-->
-<!--            <h1>Thank You</h1>-->
-<!--        </div>-->
-<!--        <div id="survey" class="iframe-div">-->
-<!--            <iframe id="iframe"-->
-<!--                    frameborder="0"-->
-<!--                    border="0"-->
-<!--                    cellspacing="0"-->
-<!--                    style="-->
-<!--                    border-style: none;-->
-<!--                    width: 100%;-->
-<!--                     height: 15rem;-->
-<!--                     padding: 0;-->
-<!--"-->
-<!--            />-->
-<!--        </div>-->
-
         <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
             <input type="hidden" name="oid" value="00D09000004V64M"/>
-            <input type="hidden" name="retURL" value="http://www.google.pl"/>
+            <input type="hidden" name="retURL"
+                   value="https://football-app-developer-edition.eu40.force.com/AS_ThankYouNote"/>
 
 
             <header>Contact form:</header>
             <br/>
 
             <label for="first_name">First Name*</label><input class="form-control" id="first_name" maxlength="40"
-                                                             name="first_name" size="20"
-                                                             type="text" required="true"/><br/>
+                                                              name="first_name" size="20"
+                                                              type="text" required="true"/><br/>
 
             <label for="last_name">Last Name*</label><input class="form-control" id="last_name" maxlength="80"
-                                                           name="last_name" size="20"
-                                                           type="text" required="true"/><br/>
+                                                            name="last_name" size="20"
+                                                            type="text" required="true"/><br/>
 
-            <label for="email">Email*</label><input class="form-control" id="email" maxlength="80" name="email" size="20"
-                                                   type="text" required="true"/><br/>
+            <label for="email">Email*</label><input class="form-control" id="email" maxlength="80" name="email"
+                                                    size="20"
+                                                    type="text" required="true"/><br/>
 
-            <label for="phone">Phone*</label><input class="form-control" id="phone" maxlength="40" name="phone" size="20"
-                                                   type="text" required="true"/><br/>
+            <label for="phone">Phone*</label><input class="form-control" id="phone" maxlength="40" name="phone"
+                                                    size="20"
+                                                    type="text" required="true"/><br/>
 
             <label for="company">Company*</label><input class="form-control" id="company" maxlength="40" name="company"
-                                                       size="20"
-                                                       type="text" required="true"/><br/>
+                                                        size="20"
+                                                        type="text" required="true"/><br/>
 
 
             <label for="street">Street</label><input class="form-control" id="street" name="street"/><br/>
@@ -306,57 +293,33 @@
 
             <p style="font-size: 0.7rem;">* required fields</p>
 
-            <input type="submit" class="submit-button" name="submit"/>
+            <input type="submit" class="submit-button" name="submit"
+                   retURL="https://football-app-developer-edition.eu40.force.com/AS_ThankYouNote"/>
+
 
         </form>
 
     </div>
+
     </body>
-    <script>
 
-        let lid = '{!$CurrentPage.parameters.lid}';
-        const x = document.getElementById("form");
-        const y = document.getElementById("survey");
-        const merciDiv = document.getElementById("merci-div")
-        let url = window.location.href;
-        merciDiv.style.display = "none";
-
-        if (url.indexOf("?merci") !== -1) {
-            x.style.display = "none";
-            y.style.display = "none";
-            merciDiv.style.display = "block";
-        } else if (lid && lid !== '' && lid.length > 0) {
-
-            let iframe = document.getElementById('iframe');
-            iframe.src = 'https://5-random-doctors-developer-edition.eu45.force.com/TakeSurvey?id=a0H7R00000xGBXhUAO&lid=' + lid;
-            x.style.display = "none";
-            y.style.display = "block";
-        } else {
-            x.style.display = "block";
-            y.style.display = "none";
-        }
-
-
-    </script>
     </html>
+
     <style type='text/css'>
-        #fileUploadForm{
+
+     #fileUploadForm{
             display: none;
         }
-        .embeddedServiceHelpButton .helpButton .uiButton {
-            background-color: rgba(58, 58, 158, 0.8);
-            font-family: "Arial", sans-serif;
-        }
 
-        .embeddedServiceHelpButton .helpButton .uiButton:focus {
-            background-color: rgba(58, 58, 158, 0.8);
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
 
-        }
-        .embeddedServiceHelpButton .helpButton .helpButtonLabel .message {
-
-        }
-
-        .message{
+    .message{
             /*background-color: rgba(0, 146, 218, 0.8);*/
             text-decoration: none !important;
         }
@@ -370,56 +333,57 @@
 
     </style>
 
-    <!--    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>-->
-    <!--    <script type='text/javascript'>-->
-    <!--        var initESW = function(gslbBaseURL) {-->
-    <!--            embedded_svc.settings.displayHelpButton = true; //Or false-->
-    <!--            embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'-->
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
-    <!--            //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)-->
-    <!--            //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)-->
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
-    <!--            //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)-->
-    <!--            //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)-->
+		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
-    <!--            // Settings for Chat-->
-    <!--            //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {-->
-    <!--            // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.-->
-    <!--            // Returns a valid button ID.-->
-    <!--            //};-->
-    <!--            //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields-->
-    <!--            //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId-->
-    <!--            //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)-->
+		// Settings for Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 
-    <!--            embedded_svc.settings.enabledFeatures = ['LiveAgent'];-->
-    <!--            embedded_svc.settings.entryFeature = 'LiveAgent';-->
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
 
-    <!--            embedded_svc.init(-->
-    <!--                    'https://athletic-stuff-dev-ed.my.salesforce.com',-->
-    <!--                    'https://5-random-doctors-developer-edition.eu45.force.com',-->
-    <!--                    gslbBaseURL,-->
-    <!--                    '00D2X000003Gu1M',-->
-    <!--                    'chat_group',-->
-    <!--                    {-->
-    <!--                        baseLiveAgentContentURL: 'https://c.la3-c1-fra.salesforceliveagent.com/content',-->
-    <!--                        deploymentId: '5727R000000g2BF',-->
-    <!--                        buttonId: '5737R000000g2UE',-->
-    <!--                        baseLiveAgentURL: 'https://d.la3-c1-fra.salesforceliveagent.com/chat',-->
-    <!--                        eswLiveAgentDevName: 'chat_group',-->
-    <!--                        isOfflineSupportEnabled: true-->
-    <!--                    }-->
-    <!--            );-->
-    <!--        };-->
+		embedded_svc.init(
+			'https://britenet-b-dev-ed.my.salesforce.com',
+			'https://football-app-developer-edition.eu40.force.com',
+			gslbBaseURL,
+			'00D09000004V64M',
+			'Chat_Agents',
+			{
+				baseLiveAgentContentURL: 'https://c.la3-c2-fra.salesforceliveagent.com/content',
+				deploymentId: '57209000000D8I1',
+				buttonId: '57309000000D8r9',
+				baseLiveAgentURL: 'https://d.la3-c2-fra.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'Chat_Agents',
+				isOfflineSupportEnabled: true
+			}
+		);
+	};
 
-    <!--        if (!window.embedded_svc) {-->
-    <!--            var s = document.createElement('script');-->
-    <!--            s.setAttribute('src', 'https://athletic-stuff-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');-->
-    <!--            s.onload = function() {-->
-    <!--                initESW(null);-->
-    <!--            };-->
-    <!--            document.body.appendChild(s);-->
-    <!--        } else {-->
-    <!--            initESW('https://service.force.com');-->
-    <!--        }-->
-    <!--    </script>-->
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://britenet-b-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
+
 </apex:page>

@@ -1,3 +1,0 @@
-<aura:event type="APPLICATION" description="MB_HideReview">
-    <aura:attribute name="display" type="String"/>
-</aura:event>

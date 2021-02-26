@@ -606,6 +606,10 @@
                           <MetadataEntry>
                             <option name="name" value="fa_player_search_exportResultsToXLS" />
                           </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_ThankYouNote" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
                         </list>
                       </option>
                       <option name="name" value="ApexPage" />
@@ -709,10 +713,6 @@
                     <MetadataType>
                       <option name="entries">
                         <list>
-                          <MetadataEntry>
-                            <option name="name" value="AS_Lead_Form" />
-                            <option name="selected" value="true" />
-                          </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="AddMovieReview" />
                             <option name="selected" value="true" />

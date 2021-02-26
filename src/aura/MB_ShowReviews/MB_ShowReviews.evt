@@ -1,6 +1,0 @@
-<aura:event type="APPLICATION" description="MB_ShowReviews">
-    <aura:attribute name="display" type="String" default="movies"/>
-    <aura:attribute name="context" type="String" default="movies"/>
-    <aura:attribute name="id" type="String"/>
-    <aura:attribute name="movieId" type="String"/>
-</aura:event>

@@ -1,3 +1,0 @@
-<aura:event type="APPLICATION" description="MovieId">
-    <aura:attribute name="movieId" type="String"/>
-</aura:event>
