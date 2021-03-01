@@ -1,0 +1,6 @@
+<aura:component description="AS_Footer"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+
+    <footer>Amigo Sports 2021 © All Rights Reserved.</footer>
+
+</aura:component>
