@@ -1,0 +1,9 @@
+<aura:component description="AS_BigBanner"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <lightning:button class="banner" onclick="{!c.onClick}">
+            <img class="bigBanner" src="{!$Resource.BigBanner}"/>
+    </lightning:button>
+
+</aura:component>
