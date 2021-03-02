@@ -1,4 +1,5 @@
-<aura:component implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" description="AS_MainTiles" access="global">
+<aura:component implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                description="AS_MainTiles" access="global">
 
 
     <aura:attribute name="column1" type="Aura.Component[]" required="false"></aura:attribute>
@@ -6,13 +7,18 @@
 
     <div class="container">
         <div class="contentPanel">
-            <div class="left">
+            <div class="mainTile">
                     {!v.column1}
 
                     SIEMA LEFT
             </div>
-            <div class="right">
+            <div class="mainTile">
                     {!v.column2}
+
+                SIEMA RIGHT
+            </div>
+            <div class="mainTile">
+            {!v.column2}
 
                 SIEMA RIGHT
             </div>

@@ -1,6 +1,27 @@
 <aura:component description="AS_Footer"
-                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
 
-    <footer>Amigo Sports 2021 © All Rights Reserved.</footer>
+    <div class="footer">
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="6">
+                <p>We accept:</p>
+                <br/>
+                <div>
+                    <img class="creditCards" src="{!$Resource.CreditCards}"/>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="6">
+                <p>You can return all items within 30 days from receiving parcel</p>
+                <br/>
+                <img class="moneyBack" src="{!$Resource.MoneyBack}"/>
+            </lightning:layoutItem>
+
+        </lightning:layout>
+
+        <footer>Amigo Sports 2021 © All Rights Reserved.</footer>
+        <br/>
+        <br/>
+    </div>
 
 </aura:component>
