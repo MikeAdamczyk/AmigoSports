@@ -1,0 +1,24 @@
+<aura:component description="AS_Community_Tabs"
+                implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:appHostable,force:hasRecordId"
+>
+    <aura:attribute name="cartItemsValue" type="Integer"/>
+    <aura:attribute name="totalPrice" type="Integer"/>
+    <aura:attribute name="cartItems" type="List"/>
+
+    <div class="main-menu-container">
+        <div class="nav-logo"><img class="logo" src="{!$Resource.AmigoLogo}"/></div>
+        <nav class="main-nav" role="navigation">
+            <div class="nav-tabs">
+                <ul>
+                    <li><a href="/as"><span>Home</span></a></li>
+                    <li><a href="/as/s/men"><span>Men</span></a></li>
+                    <li><a href="/as/s/women"><span>Women</span></a></li>
+                    <li><a href="/as/s/kids"><span>Kids</span></a></li>
+                    <li><a href="/as/s/sports"><span>Sports</span></a></li>
+                    <li><a href="/s/product/01t09000000GDWaAAO"><span>SALE</span></a></li>
+                </ul>
+<!--                <c:AS_Community_SearchEngine/>-->
+            </div>
+        </nav>
+    </div>
+</aura:component>
