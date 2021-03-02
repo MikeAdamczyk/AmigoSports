@@ -1,0 +1,54 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Sample Custom Theme Layout">
+
+    <aura:attribute name="menu" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="search" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="basket" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="headline" type="Aura.Component[]" required="false"/>
+
+    <div class="container">
+        <lightning:layout multipleRows="true" class="containerrr">
+
+            <div class="main-menu-container">
+
+                <div class="main-menu sticky">
+
+                    <lightning:layoutItem size="9">
+                        <div class="navigation">
+
+                                {!v.menu}
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="1">
+                        <div class="profileMenuRegion">
+
+                                {!v.basket}
+
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="2">
+                        <div class="profileMenuRegion profileIcon">
+
+                                {!v.profileMenu}
+
+                        </div>
+                    </lightning:layoutItem>
+                </div>
+                <div class="mainMenu-margin"></div>
+            </div>
+
+            <lightning:layoutItem size="12">
+                <div class="navigation">
+                        {!v.headline}
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12">
+                <div class="mainContentArea">
+                        {!v.body}
+                </div>
+            </lightning:layoutItem>
+
+        </lightning:layout>
+    </div>
+
+</aura:component>
