@@ -1,0 +1,41 @@
+<aura:component description="AS_ProposalSection"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <c:AS_PopularProducts/>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <div class="header">
+        <p class="proposals">Our proposals for Spring 2021:</p>
+    </div>
+
+    <lightning:layout class="main-container">
+
+
+        <div class="container">
+
+            <div class="run">
+                <!--                <img class="run" src="{!$Resource.run}"/>-->
+                <button class="btn">Running Apparel</button>
+            </div>
+
+            <div class="crossfit">
+                <!--                <img class="crossfit" src="{!$Resource.crossfit}"/>-->
+                <button class="btn">Crossfit Equipment</button>
+            </div>
+
+            <div class="bike">
+                <!--                <img class="bike" src="{!$Resource.bike}"/>-->
+                <button class="btn">Bikes and Accessories</button>
+            </div>
+
+        </div>
+
+    </lightning:layout>
+
+
+</aura:component>

@@ -1,0 +1,41 @@
+<aura:component description="AS_PopularProducts"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <div class="header">
+        <p class="popular">Popular products:</p>
+    </div>
+
+    <lightning:layout class="main-container">
+
+
+        <div class="container">
+
+            <div class="product">
+                <img class="product" src="{!$Resource.samplePulloverPhoto}"/>
+                <br/>
+                <p class="text">Nike Sportswear Club Fleece</p>
+                <p class="price">Price: $99.00</p>
+            </div>
+
+            <div class="product">
+                <img class="product" src="{!$Resource.samplePulloverPhoto2}"/>
+                <br/>
+                <p class="text">Nike Therma Sport Clash</p>
+                <p class="price">Price: $199.00</p>
+            </div>
+
+            <div class="product">
+                <img class="product" src="{!$Resource.samplePulloverPhoto3}"/>
+                <br/>
+                <p class="text">Nike Down-Fill Windrunner</p>
+                <p class="price">Price: $399.00</p>
+            </div>
+
+        </div>
+
+    </lightning:layout>
+
+
+
+</aura:component>

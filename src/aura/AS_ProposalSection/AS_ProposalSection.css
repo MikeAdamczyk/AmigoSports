@@ -1,0 +1,73 @@
+.THIS {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.THIS .main-container{
+      width: 100%;
+      height: 100%;
+}
+
+
+.THIS .container {
+     display: flex;
+     justify-content: space-evenly;
+     width: 100%;
+}
+
+.THIS .run {
+      background-image: url('https://britenet-b-dev-ed.livepreview.salesforce-communities.com/sfsites/c/resource/1614630283000/run');
+      background-size: cover;
+      height: 320px;
+      width: 400px;
+      text-align: center;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+}
+
+.THIS .crossfit {
+     background-image: url('https://britenet-b-dev-ed.livepreview.salesforce-communities.com/sfsites/c/resource/1614630352000/crossfit');
+     background-size: cover;
+     height: 320px;
+     width: 400px;
+     text-align: center;
+         display: flex;
+         align-items: flex-end;
+         justify-content: center;
+}
+
+.THIS .bike {
+      background-image: url('https://britenet-b-dev-ed.livepreview.salesforce-communities.com/sfsites/c/resource/1614630334000/bike');
+      background-size: cover;
+      height: 320px;
+      width: 400px;
+      text-align: center;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+}
+
+.THIS .btn {
+      background-color: #fff;
+      color: black;
+      font-weight: bold;
+      font-size: 1.5rem;
+      opacity: 0.75;
+      padding: 20px;
+      border: none;
+      width:100%;
+}
+
+.THIS .proposals{
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
