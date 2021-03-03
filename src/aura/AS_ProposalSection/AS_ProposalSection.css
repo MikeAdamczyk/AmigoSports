@@ -25,10 +25,19 @@
       height: 320px;
       width: 400px;
       text-align: center;
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      		opacity: 1;
+        	-webkit-transition: .3s ease-in-out;
+        	transition: .3s ease-in-out;
 }
+
+.THIS .run:hover {
+	opacity: .75;
+}
+
+
 
 .THIS .crossfit {
      background-image: url('https://britenet-b-dev-ed.livepreview.salesforce-communities.com/sfsites/c/resource/1614630352000/crossfit');
@@ -36,10 +45,19 @@
      height: 320px;
      width: 400px;
      text-align: center;
-         display: flex;
-         align-items: flex-end;
-         justify-content: center;
+     display: flex;
+     align-items: flex-end;
+     justify-content: center;
+     opacity: 1;
+     -webkit-transition: .3s ease-in-out;
+     transition: .3s ease-in-out;
 }
+
+.THIS .crossfit:hover {
+	opacity: .75;
+}
+
+
 
 .THIS .bike {
       background-image: url('https://britenet-b-dev-ed.livepreview.salesforce-communities.com/sfsites/c/resource/1614630334000/bike');
@@ -47,10 +65,18 @@
       height: 320px;
       width: 400px;
       text-align: center;
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      opacity: 1;
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
 }
+
+.THIS .bike:hover {
+	opacity: .75;
+}
+
 
 .THIS .btn {
       background-color: #fff;
