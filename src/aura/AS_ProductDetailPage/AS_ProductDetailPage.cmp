@@ -1,0 +1,58 @@
+<aura:component description="AS_ProductDetailPage"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <lightning:layout multipleRows="true">
+
+        <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="4">
+            <div>
+                <img class="product" src="{!$Resource.samplePulloverPhoto}"/>
+            </div>
+        </lightning:layoutItem>
+
+
+        <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="8">
+            <p class="best">- B E S T S E L L E R -</p>
+            <br/>
+            <header class="text">Nike Sportswear Club Fleece</header>
+            <br/>
+            <p class="descrption">Details: 100% Cotton</p>
+            <br/>
+            <p class="descrption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi aperiam consectetur
+                debitis
+                dolor earum est ipsum libero nemo neque nobis officia quaerat quas quia quod reprehenderit, sed,
+                similique sunt.</p>
+
+            <div class="cta">
+                <lightning:layoutItem>
+                    <p class="price">Price: $99.00</p>
+                    <br/>
+                    <c:AS_SizeRadioButton/>
+                    <br/>
+                    <button class="addToCart">Add to cart</button>
+                </lightning:layoutItem>
+
+                <div class="gallery">
+                    <span>
+                    <img class="smallPhoto" src="{!$Resource.samplePulloverPhoto}"/>
+                </span>
+
+                    <span>
+                    <img class="smallPhoto" src="{!$Resource.samplePulloverPhoto}"/>
+                </span>
+
+                    <span>
+                    <img class="smallPhoto" src="{!$Resource.samplePulloverPhoto}"/>
+                </span>
+
+                </div>
+
+
+            </div>
+
+        </lightning:layoutItem>
+
+
+    </lightning:layout>
+
+</aura:component>

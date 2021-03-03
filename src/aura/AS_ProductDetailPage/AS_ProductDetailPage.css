@@ -1,0 +1,58 @@
+/**
+ * Created by BRITENET on 02.03.2021.
+ */
+.THIS .product{
+         height: auto;
+          width: 600px;
+          padding-left: 60px;
+}
+
+.THIS .text{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.THIS .best{
+    font-size: 1.4rem;
+    color: crimson;
+}
+
+.THIS .price{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.THIS .addToCart{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #ffd83b;
+    border: none;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.THIS .addToCart:hover{
+    background-color: #ffc83b;
+
+}
+
+.THIS .descrption{
+    font-size: 1rem;
+    color: grey;
+    padding-right: 60px;
+}
+
+.THIS .cta{
+    padding-top: 40px;
+}
+
+.THIS .gallery{
+    padding-top: 40px;
+}
+
+.THIS .smallPhoto{
+    height: auto;
+    width: 180px;
+    padding-right: 40px;
+}
