@@ -2,8 +2,19 @@
                 implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
                 access="global">
 
-    <lightning:button class="banner" onclick="{!c.onClick}">
-            <img class="bigBanner" src="{!$Resource.BigBanner}"/>
-    </lightning:button>
+    <lightning:carousel disableAutoRefresh="false" disableAutoScroll="false">
+        <lightning:carouselImage src="{!$Resource.BigBanner}"
+                alternativeText = "First card accessible description."
+                href = "https://www.salesforce.com">
+        </lightning:carouselImage>
+        <lightning:carouselImage src="{!$Resource.MondayDeal}"
+                alternativeText = "Second card accessible description."
+                href = "https://www.salesforce.com">
+        </lightning:carouselImage>
+        <lightning:carouselImage src="{!$Resource.NewCollection}"
+                alternativeText = "Third card accessible description."
+                href = "https://www.salesforce.com">
+        </lightning:carouselImage>
+    </lightning:carousel>
 
 </aura:component>

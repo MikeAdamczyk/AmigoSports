@@ -1,7 +1,10 @@
 /**
  * Created by BRITENET on 02.03.2021.
  */
-.THIS .banner{
-    width: 100%;
-    height: auto;
+.THIS .slds-carousel__autoplay{
+    display: none;
+}
+
+.THIS .slds-carousel__content{
+    display: none;
 }
