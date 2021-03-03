@@ -17,7 +17,7 @@
                     <li><a href="/as/s/sports"><span>Sports</span></a></li>
                     <li><a href="/s/product/01t09000000GDWaAAO"><span>SALE</span></a></li>
                 </ul>
-<!--                <c:AS_Community_SearchEngine/>-->
+                <c:AS_SearchField/>
             </div>
         </nav>
     </div>

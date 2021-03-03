@@ -26,7 +26,7 @@
 
                         </div>
                     </lightning:layoutItem>
-                    <lightning:layoutItem size="2">
+                    <lightning:layoutItem size="1">
                         <div class="profileMenuRegion profileIcon">
 
                                 {!v.profileMenu}

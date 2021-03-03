@@ -33,6 +33,7 @@
     display: flex;
     width: 100%;
     justify-content: space-around;
+    align-items: center;
 }
 
 .THIS .nav-tabs ul li {
@@ -55,7 +56,7 @@
 .THIS .nav-logo{
     text-align: center;
     margin-left: 3rem;
-    width: 30%;
+    width: 25%;
 }
 
 .THIS .logo{
