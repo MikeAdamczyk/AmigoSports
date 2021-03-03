@@ -1,0 +1,7 @@
+<aura:component description="AS_Basket"
+                implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:appHostable,force:hasRecordId"
+>
+    <div class="basket" style="text-align: center;">
+        <img class="basketIcon" src="{!$Resource.ShopBasket}"/>
+    </div>
+</aura:component>
