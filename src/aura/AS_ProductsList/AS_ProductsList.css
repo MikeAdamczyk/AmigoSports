@@ -1,0 +1,17 @@
+.THIS{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.THIS .subheader {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.THIS .mainContainer{
+   justify-content: center;
+   max-width: 1368px;
+   margin: 0 auto;
+}

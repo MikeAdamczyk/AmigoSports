@@ -1,12 +1,26 @@
 /**
  * Created by BRITENET on 03.03.2021.
  */
-.THIS .text{
+.THIS {
+    font-size: 0.8rem;
     color: lightgrey;
+    display:block;
+    margin: 20px;
+}
+
+.THIS .tile{
+
+    padding: 10px;
+    margin: 20px;
 }
 
 .THIS .price{
-    color: lightgrey;
     font-weight: bold;
 }
+
+
+
+
+
+
 

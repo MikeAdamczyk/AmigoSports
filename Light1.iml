@@ -429,6 +429,10 @@
                             <option name="name" value="GoogleSSO" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_App_Controller" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
                         </list>
                       </option>
                       <option name="name" value="ApexClass" />
@@ -671,6 +675,10 @@
                             <option name="name" value="Zenek_zlyTrigger" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ContentDocumentLinkTrigger" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
                         </list>
                       </option>
                       <option name="name" value="ApexTrigger" />
@@ -850,6 +858,18 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="AS_ProductTile" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_ProductsList" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_MenPageBanner" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_WomenPageBanner" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>

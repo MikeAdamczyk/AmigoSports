@@ -1,5 +1,6 @@
-/**
- * Created by BRITENET on 03.03.2021.
- */
 ({
+        doInit: function (component, event, helper) {
+            component.set('v.productId', '068090000010xzwAAA');
+        }
+
 })

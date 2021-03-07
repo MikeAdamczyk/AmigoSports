@@ -1,0 +1,27 @@
+<aura:component description="AS_ProductsList" controller="AS_App_Controller"
+                implements="forceCommunity:layout,
+                flexipage:availableForAllPageTypes,
+                forceCommunity:availableForAllPageTypes,
+                force:appHostable"
+                access="global">
+
+
+    <aura:attribute name="apparel" type="Object[]"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <!-- PRODUCTS LIST -->
+    <p class="subheader">M E N</p>
+
+    <div class="mainContainer">
+        <lightning:layout multipleRows="true" horizontalAlign="center">
+
+            <aura:iteration items="{!v.apparel}" var="men">
+                <lightning:layoutItem>
+                    <c:AS_ProductTile product="{!men}"/>
+                </lightning:layoutItem>
+            </aura:iteration>
+
+        </lightning:layout>
+    </div>
+
+</aura:component>

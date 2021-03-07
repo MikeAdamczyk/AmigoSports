@@ -1,13 +1,30 @@
-<aura:component description="AS_ProductTile">
+<aura:component description="AS_ProductTile"
+                implements="forceCommunity:layout,
+                flexipage:availableForAllPageTypes,
+                forceCommunity:availableForAllPageTypes,
+                force:appHostable"
+                access="global">
 
     <aura:attribute name="product" type="Object"/>
+    <aura:attribute name="productId" type="String" default="068090000010x9PAAQ"/>
+    <!--    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>-->
 
-    <lightning:button class="image" onclick="{!c.onSelect}">
 
-        <img class="product" src="{!v.product.Picture_Path__c}" width="320"/>
-        <br/>
+    <!--    <div class="product-mini-background" style="{! v.productId != null ?-->
+    <!--                'background-image:url(\'http://amigosports-developer-edition.eu40.force.com/sfc/servlet.shepherd/version/download/'+v.productId+'\')'-->
+    <!--                : 'background-image:url(\'http://amigosports-developer-edition.eu40.force.com/sfc/servlet.shepherd/version/download/'+v.productId+'\')'}">-->
+    <!--    </div>-->
+
+
+    <lightning:button class="tile" onclick="{!c.onSelect}">
+
+        <div>
+            <img src="{!'http://amigosports-developer-edition.eu40.force.com/sfc/servlet.shepherd/version/download/' + v.productId}"
+                 width="320"/>
+        </div>
+
         <p class="text">{!v.product.Name}</p>
-        <p class="price">{!v.movie.price}</p>
+        <p class="price">Price: ${!v.product.Price__c}</p>
 
     </lightning:button>
 

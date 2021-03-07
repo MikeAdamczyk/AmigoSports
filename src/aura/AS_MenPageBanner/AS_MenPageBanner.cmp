@@ -1,0 +1,9 @@
+<aura:component description="AS_MenPageBanner"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <div class="banner">
+        <img class="banner" src="{!$Resource.MenBanner}"/>
+    </div>
+
+</aura:component>
