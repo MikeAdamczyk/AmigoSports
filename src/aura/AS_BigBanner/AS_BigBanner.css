@@ -1,10 +1,15 @@
 /**
  * Created by BRITENET on 02.03.2021.
- */
+*/
+
 .THIS .slds-carousel__autoplay{
-    display: none;
+    left: 5px;
 }
 
 .THIS .slds-carousel__content{
     display: none;
+}
+
+.THIS .slds-carousel__indicator-action{
+    border: 1px solid lightgrey;
 }

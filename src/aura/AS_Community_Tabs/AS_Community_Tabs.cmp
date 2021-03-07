@@ -10,12 +10,12 @@
         <nav class="main-nav" role="navigation">
             <div class="nav-tabs">
                 <ul>
-                    <li><a href="/as"><span>Home</span></a></li>
-                    <li><a href="/as/s/men"><span>Men</span></a></li>
-                    <li><a href="/as/s/women"><span>Women</span></a></li>
-                    <li><a href="/as/s/kids"><span>Kids</span></a></li>
-                    <li><a href="/as/s/sports"><span>Sports</span></a></li>
-                    <li><a href="/s/product/01t09000000GDWaAAO"><span>SALE</span></a></li>
+                    <li><a href="/s"><span>Home</span></a></li>
+                    <li><a href="/s/men"><span>Men</span></a></li>
+                    <li><a href="/s/women"><span>Women</span></a></li>
+                    <li><a href="/s/kids"><span>Kids</span></a></li>
+                    <li><a href="/s/sports"><span>Sports</span></a></li>
+                    <li><a href="/product/01t09000000GDWaAAO"><span>SALE</span></a></li>
                 </ul>
                 <c:AS_SearchField/>
             </div>
