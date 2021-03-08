@@ -19,12 +19,12 @@
     <lightning:button class="tile slds-button_neutral slds-button--neutral" onclick="{!c.onSelect}">
 
         <div>
-            <img src="{!'http://amigosports-developer-edition.eu40.force.com/sfc/servlet.shepherd/version/download/' + v.productId}"
+            <img src="{!'http://amigosports-developer-edition.eu40.force.com/sfc/servlet.shepherd/version/download/' + v.product.photoId}"
                  width="400"/>
         </div>
 
-        <p class="text">{!v.product.Name}</p>
-        <p class="price">Price: ${!v.product.Price__c}</p>
+        <p class="text">{!v.product.name}</p>
+        <p class="price">Price: €{!v.product.price}</p>
 
     </lightning:button>
 

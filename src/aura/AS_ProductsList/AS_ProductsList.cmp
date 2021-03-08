@@ -10,7 +10,7 @@
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
 
     <!-- PRODUCTS LIST -->
-    <p class="subheader">M E N</p>
+    <p class="subheader" style="font-weight: bold; margin-bottom: 40px; margin-top: 20px;">M E N</p>
 
     <div class="mainContainer">
         <lightning:layout multipleRows="true" horizontalAlign="center">

@@ -15,7 +15,7 @@
                     <li><a href="/s/women"><span>Women</span></a></li>
                     <li><a href="/s/kids"><span>Kids</span></a></li>
                     <li><a href="/s/sports"><span>Sports</span></a></li>
-                    <li><a href="/product/01t09000000GDWaAAO"><span>SALE</span></a></li>
+                    <li><a href="/s/sale"><span>SALE</span></a></li>
                 </ul>
                 <c:AS_SearchField/>
             </div>

@@ -3,12 +3,14 @@
 
         console.log('doInit STARTS...');
 
-        let gender = 'Men';
+        let query = '';
+        let division = 'Men';
 
 
-        let action = component.get("c.getApparel");
+        let action = component.get("c.searchProducts");
         action.setParams({
-          "gender" : gender
+          "query" : query,
+          "division" : division
         });
 
         action.setCallback(this, function (response) {
