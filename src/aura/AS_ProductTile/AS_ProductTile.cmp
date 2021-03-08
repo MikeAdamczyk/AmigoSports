@@ -16,11 +16,11 @@
     <!--    </div>-->
 
 
-    <lightning:button class="tile" onclick="{!c.onSelect}">
+    <lightning:button class="tile slds-button_neutral slds-button--neutral" onclick="{!c.onSelect}">
 
         <div>
             <img src="{!'http://amigosports-developer-edition.eu40.force.com/sfc/servlet.shepherd/version/download/' + v.productId}"
-                 width="320"/>
+                 width="400"/>
         </div>
 
         <p class="text">{!v.product.Name}</p>

@@ -36,8 +36,6 @@
 	opacity: .75;
 }
 
-
-
 .THIS .crossfit {
      background-size: cover;
      height: 320px;
@@ -54,8 +52,6 @@
 .THIS .crossfit:hover {
 	opacity: .75;
 }
-
-
 
 .THIS .bike {
       background-size: cover;
@@ -95,3 +91,10 @@
     margin-top: 60px;
 }
 
+.THIS .popular{
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 30px;
+    margin-bottom: 20px;
+}

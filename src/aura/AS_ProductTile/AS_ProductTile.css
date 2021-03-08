@@ -1,17 +1,25 @@
-/**
- * Created by BRITENET on 03.03.2021.
- */
 .THIS {
-    font-size: 0.8rem;
-    color: lightgrey;
-    display:block;
-    margin: 20px;
+     font-size: 1rem;
+     color: grey;
+     display:block;
+     margin: 20px;
+     border-color: transparent;
+ }
+
+.THIS:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.THIS:focus {
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .THIS .tile{
-
     padding: 10px;
     margin: 20px;
+
 }
 
 .THIS .price{
