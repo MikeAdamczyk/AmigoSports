@@ -20,7 +20,6 @@
 }
 
 .THIS .run {
-      background-image: url('https://britenet-b-dev-ed.livepreview.salesforce-communities.com/sfsites/c/resource/1614630283000/run');
       background-size: cover;
       height: 320px;
       width: 400px;
@@ -40,7 +39,6 @@
 
 
 .THIS .crossfit {
-     background-image: url('https://britenet-b-dev-ed.livepreview.salesforce-communities.com/sfsites/c/resource/1614630352000/crossfit');
      background-size: cover;
      height: 320px;
      width: 400px;
@@ -60,7 +58,6 @@
 
 
 .THIS .bike {
-      background-image: url('https://britenet-b-dev-ed.livepreview.salesforce-communities.com/sfsites/c/resource/1614630334000/bike');
       background-size: cover;
       height: 320px;
       width: 400px;
@@ -95,5 +92,6 @@
     text-transform: uppercase;
     padding: 30px;
     margin-bottom: 20px;
+    margin-top: 60px;
 }
 

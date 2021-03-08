@@ -2,40 +2,35 @@
                 implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
                 access="global">
 
+    <aura:attribute name="backgroundImageURLrun" type="String" default=""/>
+    <aura:attribute name="backgroundImageURLcrossfit" type="String" default=""/>
+    <aura:attribute name="backgroundImageURLbike" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
     <c:AS_PopularProducts/>
 
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-
     <div class="header">
-        <p class="proposals">Our proposals for Spring 2021:</p>
+        <p class="proposals">{!$Label.c.Proposals}</p>
     </div>
 
     <lightning:layout class="main-container">
 
-
         <div class="container">
 
-            <div class="run">
-                <!--                <img class="run" src="{!$Resource.run}"/>-->
-                <button class="btn">Running Apparel</button>
+            <div class="run" style="{!'background-image:url(' + v.backgroundImageURLrun + ')'}">
+                <button class="btn">{!$Label.c.Running_Apparel}</button>
             </div>
 
-            <div class="crossfit">
-                <!--                <img class="crossfit" src="{!$Resource.crossfit}"/>-->
-                <button class="btn">Crossfit Equipment</button>
+            <div class="crossfit" style="{!'background-image:url(' + v.backgroundImageURLcrossfit + ')'}">
+                <button class="btn">{!$Label.c.Crossfit_Equipment}</button>
             </div>
 
-            <div class="bike">
-                <!--                <img class="bike" src="{!$Resource.bike}"/>-->
-                <button class="btn">Bikes and Accessories</button>
+            <div class="bike" style="{!'background-image:url(' + v.backgroundImageURLbike + ')'}">
+                <button class="btn">{!$Label.c.Bikes_and_Accessories}</button>
             </div>
 
         </div>
 
     </lightning:layout>
-
 
 </aura:component>
