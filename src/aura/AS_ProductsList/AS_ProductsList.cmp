@@ -7,17 +7,18 @@
 
 
     <aura:attribute name="apparel" type="Object[]"/>
-    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="subheader" type="String"/>
+<!--    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>-->
 
     <!-- PRODUCTS LIST -->
-    <p class="subheader" style="font-weight: bold; margin-bottom: 40px; margin-top: 20px;">M E N</p>
+    <p class="subheader" style="font-weight: bold; margin-bottom: 40px; margin-top: 20px;">{!v.subheader}</p>
 
     <div class="mainContainer">
         <lightning:layout multipleRows="true" horizontalAlign="center">
 
-            <aura:iteration items="{!v.apparel}" var="men">
+            <aura:iteration items="{!v.apparel}" var="item">
                 <lightning:layoutItem>
-                    <c:AS_ProductTile product="{!men}"/>
+                    <c:AS_ProductTile product="{!item}"/>
                 </lightning:layoutItem>
             </aura:iteration>
 

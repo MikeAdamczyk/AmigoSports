@@ -1,6 +1,7 @@
 ({
-        doInit: function (component, event, helper) {
-            component.set('v.productId', '068090000010xzwAAA');
+        doInit : function(component, event, helper) {
+            var AmigoPhotoLink = $A.get('$Label.c.AmigoPhotoLink');
+            console.log('AmigoPhotoLink >>>>>> ' + AmigoPhotoLink);
+            component.set('v.AmigoPhotoLink', AmigoPhotoLink);
         }
-
 })

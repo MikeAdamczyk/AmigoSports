@@ -1,16 +1,14 @@
 <aura:component description="AS_SearchField">
 
     <aura:attribute name="query" type="String" default=""/>
+    <aura:registerEvent name="queryFromSearchForm" type="c:AS_Query"/>
 
-        <div onkeyup="{! c.handleKeyUp }">
-
-            <lightning:input class="input slds-form-element__label slds-no-flex slds-input"
-                             aura:id="enter-search"
-                             name="query"
-                             isLoading="{! v.issearching }"
-                             type="search"
-                             value="{!v.query}"
-            />
-        </div>
+    <div onkeyup="{! c.handleKeyUp }">
+        <lightning:input class="slds-form-element__label"
+                aura:id="enter-search"
+                name="enter-search"
+                type="search"
+        />
+    </div>
 
 </aura:component>

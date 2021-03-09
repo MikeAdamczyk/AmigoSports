@@ -42,6 +42,7 @@
                         {!v.headline}
                 </div>
             </lightning:layoutItem>
+
             <lightning:layoutItem size="12">
                 <div class="mainContentArea">
                         {!v.body}

@@ -6,21 +6,15 @@
                 access="global">
 
     <aura:attribute name="product" type="Object"/>
-    <aura:attribute name="productId" type="String" default="068090000010x9PAAQ"/>
-    <!--    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>-->
-
-
-    <!--    <div class="product-mini-background" style="{! v.productId != null ?-->
-    <!--                'background-image:url(\'http://amigosports-developer-edition.eu40.force.com/sfc/servlet.shepherd/version/download/'+v.productId+'\')'-->
-    <!--                : 'background-image:url(\'http://amigosports-developer-edition.eu40.force.com/sfc/servlet.shepherd/version/download/'+v.productId+'\')'}">-->
-    <!--    </div>-->
-
+    <aura:attribute name="AmigoPhotoLink" type="String"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
 
     <lightning:button class="tile slds-button_neutral slds-button--neutral" onclick="{!c.onSelect}">
 
         <div>
-            <img src="{!'http://amigosports-developer-edition.eu40.force.com/sfc/servlet.shepherd/version/download/' + v.product.photoId}"
-                 width="400"/>
+            <img src="{!v.product.photoId != null
+                    ? v.AmigoPhotoLink + v.product.photoId
+                    : $Resource.NoPhotoGrey}" width="400"/>
         </div>
 
         <p class="text">{!v.product.name}</p>

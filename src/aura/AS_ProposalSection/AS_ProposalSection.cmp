@@ -8,47 +8,63 @@
     <aura:attribute name="backgroundImageURLbike" type="String" default=""/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="apparel" type="Object[]"/>
+    <aura:attribute name="context" type="String" default="home"/>
+    <aura:handler event="c:AS_Query" action="{!c.AS_Query}"/>
 
-    <!-- POPULAR PRODUCTS -->
-    <div class="header">
-        <p class="popular">{!$Label.c.Popular}</p>
-    </div>
+    <div class="{!if(v.context == 'search','slds-show','slds-hide')}">
 
-    <div class="mainContainer">
-        <lightning:layout multipleRows="true" horizontalAlign="center">
-
-            <aura:iteration items="{!v.apparel}" var="popular">
-                <lightning:layoutItem>
-                    <c:AS_ProductTile product="{!popular}"/>
-                </lightning:layoutItem>
-            </aura:iteration>
-
-        </lightning:layout>
-    </div>
-
-    <!-- PROPOSALS BY SPORT -->
-    <div class="header">
-        <p class="proposals">{!$Label.c.Proposals}</p>
-    </div>
-
-    <lightning:layout class="main-container">
-
-        <div class="container">
-
-            <div class="run" style="{!'background-image:url(' + v.backgroundImageURLrun + ')'}">
-                <button class="btn">{!$Label.c.Running_Apparel}</button>
-            </div>
-
-            <div class="crossfit" style="{!'background-image:url(' + v.backgroundImageURLcrossfit + ')'}">
-                <button class="btn">{!$Label.c.Crossfit_Equipment}</button>
-            </div>
-
-            <div class="bike" style="{!'background-image:url(' + v.backgroundImageURLbike + ')'}">
-                <button class="btn">{!$Label.c.Bikes_and_Accessories}</button>
-            </div>
-
+        <div class="header">
+            <p class="popular">{!$Label.c.Search_Results}</p>
         </div>
 
-    </lightning:layout>
+        <c:AS_ProductsList apparel="{!v.apparel}"/>
+    </div>
+
+
+    <div class="{!if(v.context == 'home','slds-show','slds-hide')}">
+
+        <!-- POPULAR PRODUCTS -->
+        <div class="header">
+            <p class="popular">{!$Label.c.Popular}</p>
+        </div>
+
+        <div class="mainContainer">
+            <lightning:layout multipleRows="true" horizontalAlign="center">
+
+                <aura:iteration items="{!v.apparel}" var="popular">
+                    <lightning:layoutItem>
+                        <c:AS_ProductTile product="{!popular}"/>
+                    </lightning:layoutItem>
+                </aura:iteration>
+
+            </lightning:layout>
+        </div>
+
+        <!-- PROPOSALS BY SPORT -->
+        <div class="header">
+            <p class="proposals">{!$Label.c.Proposals}</p>
+        </div>
+
+        <lightning:layout class="main-container">
+
+            <div class="container">
+
+                <div class="run" style="{!'background-image:url(' + v.backgroundImageURLrun + ')'}">
+                    <button class="btn">{!$Label.c.Running_Apparel}</button>
+                </div>
+
+                <div class="crossfit" style="{!'background-image:url(' + v.backgroundImageURLcrossfit + ')'}">
+                    <button class="btn">{!$Label.c.Crossfit_Equipment}</button>
+                </div>
+
+                <div class="bike" style="{!'background-image:url(' + v.backgroundImageURLbike + ')'}">
+                    <button class="btn">{!$Label.c.Bikes_and_Accessories}</button>
+                </div>
+
+            </div>
+
+        </lightning:layout>
+
+    </div>
 
 </aura:component>
