@@ -45,7 +45,6 @@
              action.setCallback(this, function (response) {
                 if (component.isValid() && response.getState() === 'SUCCESS') {
                     component.set("v.apparel", response.getReturnValue());
-//                    component.set("v.context", 'search');
                     console.log('>>> RESPONSE >>> ' + response.getReturnValue())
                 } else {
                     console.log('ERROR >>>>> ' + response.error);

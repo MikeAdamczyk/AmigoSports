@@ -1,9 +1,9 @@
 <aura:component description="AS_Community_Tabs"
                 implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:appHostable,force:hasRecordId"
 >
-    <aura:attribute name="cartItemsValue" type="Integer"/>
-    <aura:attribute name="totalPrice" type="Integer"/>
-    <aura:attribute name="cartItems" type="List"/>
+<!--    <aura:attribute name="cartItemsValue" type="Integer"/>-->
+<!--    <aura:attribute name="totalPrice" type="Integer"/>-->
+<!--    <aura:attribute name="cartItems" type="List"/>-->
 
     <div class="main-menu-container">
         <div class="nav-logo"><img class="logo" src="{!$Resource.AmigoLogo}"/></div>
