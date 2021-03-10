@@ -8,7 +8,7 @@
     <aura:attribute name="apparel" type="Object[]"/>
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
 
-    <p class="subheader" style="font-weight: bold; margin-bottom: 40px; margin-top: 20px;">MEN</p>
+    <p class="subheader" style="font-weight: bold; margin-bottom: 40px; margin-top: 20px;">{!$Label.c.Tab_Men}</p>
 
     <c:AS_ProductsList apparel="{!v.apparel}"/>
 
