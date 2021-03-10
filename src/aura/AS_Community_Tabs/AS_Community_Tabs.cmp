@@ -15,7 +15,7 @@
                     <li><a href="/s/women"><span>{!$Label.c.Tab_Women}</span></a></li>
                     <li><a href="/s/kids"><span>{!$Label.c.Tab_Kids}</span></a></li>
                     <li><a href="/s/sports"><span>{!$Label.c.Tab_Sports}</span></a></li>
-                    <li><a href="/s/sale"><span>{!$Label.c.Tab_SALE}</span></a></li>
+                    <li><a class="sale" href="/s/sale"><span>{!$Label.c.Tab_SALE}</span></a></li>
                 </ul>
                 <c:AS_SearchField/>
             </div>
