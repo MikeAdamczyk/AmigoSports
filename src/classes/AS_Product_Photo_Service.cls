@@ -27,12 +27,10 @@ public with sharing class AS_Product_Photo_Service {
         return wrapperList;
     }
 
-//    public class AS_ProductPhotoWrapper {
-//        @AuraEnabled public Id photoId;
-//
-//        public AS_ProductPhotoWrapper(Id photoId){
-//            this.photoId = photoId;
-//        }
-//    }
+    @AuraEnabled
+    public static void setMainPhoto(String productId, String photoId){
+        Product2 productToUpdate = new Product2(Id=productId, MainPhotoId__c =photoId );
+        upsert productToUpdate;
+    }
 
 }

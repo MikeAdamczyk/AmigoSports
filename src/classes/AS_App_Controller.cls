@@ -23,7 +23,7 @@ public with sharing class AS_App_Controller {
         try {
 
             apparelProducts = [
-                    SELECT Id, Name, Price__c
+                    SELECT Id, Name, Price__c, MainPhotoId__c
                     FROM Product2
                     WHERE IsPromoted__c = true
                     LIMIT 3
@@ -43,7 +43,9 @@ public with sharing class AS_App_Controller {
                         LIMIT 1
                 ];
 
-                if (photoLinks.size() > 0) {
+                if (prod.MainPhotoId__c != null) {
+                    wrapper.photoId = (Id) prod.MainPhotoId__c;
+                } else if (photoLinks.size() > 0) {
                     wrapper.photoId = photoLinks[0].ContentDocument.LatestPublishedVersionId;
                 }
 
@@ -70,7 +72,7 @@ public with sharing class AS_App_Controller {
 
             if (division != null) {
 
-                searchQuery = 'SELECT ID, Name, Price__c FROM Product2 WHERE' +
+                searchQuery = 'SELECT ID, Name, Price__c, MainPhotoId__c FROM Product2 WHERE' +
                         ' Name LIKE \'%' + query + '%\' AND Division__c = ' + '\'' + division + '\'';
 
                 try {
@@ -91,7 +93,9 @@ public with sharing class AS_App_Controller {
                                 LIMIT 1
                         ];
 
-                        if (photoLinks.size() > 0) {
+                        if (prod.MainPhotoId__c != null) {
+                            wrapper.photoId = (Id) prod.MainPhotoId__c;
+                        } else if (photoLinks.size() > 0) {
                             wrapper.photoId = photoLinks[0].ContentDocument.LatestPublishedVersionId;
                         }
 
@@ -105,7 +109,7 @@ public with sharing class AS_App_Controller {
 
             } else {
 
-                searchQuery = 'SELECT ID, Name, Price__c FROM Product2 WHERE' +
+                searchQuery = 'SELECT ID, Name, Price__c, MainPhotoId__c FROM Product2 WHERE' +
                         ' Name LIKE \'%' + query + '%\'';
                 try {
 
@@ -125,7 +129,9 @@ public with sharing class AS_App_Controller {
                                 LIMIT 1
                         ];
 
-                        if (photoLinks.size() > 0) {
+                        if (prod.MainPhotoId__c != null) {
+                            wrapper.photoId = (Id) prod.MainPhotoId__c;
+                        } else if (photoLinks.size() > 0) {
                             wrapper.photoId = photoLinks[0].ContentDocument.LatestPublishedVersionId;
                         }
 
@@ -138,7 +144,7 @@ public with sharing class AS_App_Controller {
             }
         } else {
 
-            searchQuery = 'SELECT ID, Name, Price__c FROM Product2 WHERE' +
+            searchQuery = 'SELECT ID, Name, Price__c, MainPhotoId__c FROM Product2 WHERE' +
                     ' Division__c = ' + '\'' + division + '\'';
 
             try {
@@ -159,7 +165,9 @@ public with sharing class AS_App_Controller {
                             LIMIT 1
                     ];
 
-                    if (photoLinks.size() > 0) {
+                    if (prod.MainPhotoId__c != null) {
+                        wrapper.photoId = (Id) prod.MainPhotoId__c;
+                    } else if (photoLinks.size() > 0) {
                         wrapper.photoId = photoLinks[0].ContentDocument.LatestPublishedVersionId;
                     }
 
@@ -181,5 +189,10 @@ public with sharing class AS_App_Controller {
     @AuraEnabled
     public static List<AS_ProductPhotoWrapper> getProductPhotos(String productId) {
         return AS_Product_Photo_Service.getProductPhotos(productId);
+    }
+
+    @AuraEnabled
+    public static void setMainPhoto(String productId, String photoId) {
+        AS_Product_Photo_Service.setMainPhoto(productId, photoId);
     }
 }

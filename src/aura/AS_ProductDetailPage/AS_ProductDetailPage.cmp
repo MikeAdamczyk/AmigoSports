@@ -5,7 +5,6 @@
                 access="global">
 
     <aura:attribute name="product" type="Object"/>
-    <aura:attribute name="elo" type="String" default="SIEMAAAAAAA"/>
     <aura:attribute name="pictures" type="List"/>
     <aura:attribute name="mainPhoto" type="String"/>
     <aura:handler name="init" value="{!this}" action="{!c.init}"/>
@@ -20,7 +19,9 @@
 
         <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="4">
             <div>
-                <img class="product" src="{!$Label.c.AmigoPhotoLink + v.mainPhoto}"/>
+                <img class="product" src="{!v.mainPhoto != null
+                        ? $Label.c.AmigoPhotoLink + v.mainPhoto
+                        : $Resource.NoPhotoGrey}"/>
             </div>
         </lightning:layoutItem>
 
@@ -44,8 +45,8 @@
                 </lightning:layoutItem>
 
 
-               <div class="gallery">
-                   <aura:iteration items="{!v.pictures}" var="pic">
+                <div class="gallery">
+                    <aura:iteration items="{!v.pictures}" var="pic">
                        <span>
 
                            <button class="btn" data-myvalue="{!pic.photoId}" onclick="{!c.onSelect}">
@@ -53,30 +54,12 @@
                            </button>
 
                         </span>
-                   </aura:iteration>
-               </div>
-
-
-<!--                <div class="gallery">-->
-<!--                    <span>-->
-<!--                    <img class="smallPhoto" src="{!v.AmigoPhotoLink + v.pictures[1].photoId}"/>-->
-<!--                </span>-->
-
-<!--                    <span>-->
-<!--                    <img class="smallPhoto" src="{!v.AmigoPhotoLink + v.pictures[2].photoId}"/>-->
-<!--                </span>-->
-
-<!--                    <span>-->
-<!--                    <img class="smallPhoto" src="{!v.AmigoPhotoLink + v.pictures[3].photoId}"/>-->
-<!--                </span>-->
-
-<!--                </div>-->
-
+                    </aura:iteration>
+                </div>
 
             </div>
 
         </lightning:layoutItem>
-
 
     </lightning:layout>
 

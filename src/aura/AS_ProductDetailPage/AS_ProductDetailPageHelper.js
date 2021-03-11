@@ -1,12 +1,9 @@
 ({
     init: function (component, event, helper) {
 
-                            let elo = component.get("v.elo");
-                            console.log('ELOOOO >>>> ' + elo);
-
+        // PHOTO GALLERY LOAD
         let action = component.get("c.getProductPhotos");
         action.setParams({productId: component.get("v.recordId")});
-//        action.setParams({productId: '01t090000011vl7AAA'});
         action.setCallback(this, function (response) {
 
             let state = response.getState();
@@ -32,11 +29,24 @@
 
         $A.enqueueAction(action);
 
-            setTimeout(function(){
-                  let photoIds = component.get("v.pictures");
-                  console.log('THESE ARE PICS >>>> ' + photoIds[0].photoId);
+
+        setTimeout(function(){
+
+                // MAIN PHOTO
+              let photoIds = component.get("v.pictures");
+              let mainPhotoId = component.get("v.product").MainPhotoId__c;
+
+              if(mainPhotoId != null){
+                  component.set('v.mainPhoto', mainPhotoId);
+              } else if (photoIds.length > 0){
                   component.set('v.mainPhoto', photoIds[0].photoId);
-            }, 200);
+              } else {
+                  component.set('v.mainPhoto', null);
+              }
+
+              console.log('mainPhotoId >>>> ' + mainPhotoId);
+
+        }, 500);
 
 
     },
