@@ -1,0 +1,43 @@
+({
+    init: function (component, event, helper) {
+
+                            let elo = component.get("v.elo");
+                            console.log('ELOOOO >>>> ' + elo);
+
+        let action = component.get("c.getProductPhotos");
+        action.setParams({productId: component.get("v.recordId")});
+//        action.setParams({productId: '01t090000011vl7AAA'});
+        action.setCallback(this, function (response) {
+
+            let state = response.getState();
+
+            if (state === "SUCCESS") {
+                console.log('PICTURES >>> ' + response.getReturnValue());
+                component.set('v.pictures', response.getReturnValue());
+
+            } else if (state === "INCOMPLETE") {
+                //todo do something
+            } else if (state === "ERROR") {
+                let errors = response.getError();
+                if (errors) {
+                    if (errors[0] && errors[0].message) {
+                        console.log("Error message: " +
+                            errors[0].message);
+                    }
+                } else {
+                    console.log("Unknown error");
+                }
+            }
+        });
+
+        $A.enqueueAction(action);
+
+            setTimeout(function(){
+                  let photoIds = component.get("v.pictures");
+                  console.log('THESE ARE PICS >>>> ' + photoIds[0].photoId);
+                  component.set('v.mainPhoto', photoIds[0].photoId);
+            }, 200);
+
+
+    },
+})

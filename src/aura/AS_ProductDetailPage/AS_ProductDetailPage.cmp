@@ -1,12 +1,26 @@
 <aura:component description="AS_ProductDetailPage"
-                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                controller="AS_App_Controller"
+                implements="forceCommunity:layout,
+                flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId"
                 access="global">
+
+    <aura:attribute name="product" type="Object"/>
+    <aura:attribute name="elo" type="String" default="SIEMAAAAAAA"/>
+    <aura:attribute name="pictures" type="List"/>
+    <aura:attribute name="mainPhoto" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    <force:recordData recordId="{!v.recordId}"
+                      fields="Name, Description, Price__c, Fabric__c, MainPhotoId__c"
+                      targetFields="{!v.product}"
+                      targetError="{!v.recordLoadError}"
+    />
 
     <lightning:layout multipleRows="true">
 
         <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="4">
             <div>
-                <img class="product" src="{!$Resource.samplePulloverPhoto}"/>
+                <img class="product" src="{!$Label.c.AmigoPhotoLink + v.mainPhoto}"/>
             </div>
         </lightning:layoutItem>
 
@@ -14,38 +28,49 @@
         <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="8">
             <p class="best">- B E S T S E L L E R -</p>
             <br/>
-            <header class="text">Nike Sportswear Club Fleece</header>
+            <header class="text">{!v.product.Name}</header>
             <br/>
-            <p class="descrption">Details: 100% Cotton</p>
+            <p class="descrption">Details: {!v.product.Fabric__c}</p>
             <br/>
-            <p class="descrption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi aperiam consectetur
-                debitis
-                dolor earum est ipsum libero nemo neque nobis officia quaerat quas quia quod reprehenderit, sed,
-                similique sunt.</p>
+            <p class="descrption">{!v.product.Description}</p>
 
             <div class="cta">
                 <lightning:layoutItem>
-                    <p class="price">Price: $99.00</p>
+                    <p class="price">Price: ${!v.product.Price__c}</p>
                     <br/>
                     <c:AS_SizeRadioButton/>
                     <br/>
                     <button class="addToCart">Add to cart</button>
                 </lightning:layoutItem>
 
-                <div class="gallery">
-                    <span>
-                    <img class="smallPhoto" src="{!$Resource.samplePulloverPhoto}"/>
-                </span>
 
-                    <span>
-                    <img class="smallPhoto" src="{!$Resource.samplePulloverPhoto}"/>
-                </span>
+               <div class="gallery">
+                   <aura:iteration items="{!v.pictures}" var="pic">
+                       <span>
 
-                    <span>
-                    <img class="smallPhoto" src="{!$Resource.samplePulloverPhoto}"/>
-                </span>
+                           <button class="btn" data-myvalue="{!pic.photoId}" onclick="{!c.onSelect}">
+                               <img class="smallPhoto" src="{!$Label.c.AmigoPhotoLink + pic.photoId}"/>
+                           </button>
 
-                </div>
+                        </span>
+                   </aura:iteration>
+               </div>
+
+
+<!--                <div class="gallery">-->
+<!--                    <span>-->
+<!--                    <img class="smallPhoto" src="{!v.AmigoPhotoLink + v.pictures[1].photoId}"/>-->
+<!--                </span>-->
+
+<!--                    <span>-->
+<!--                    <img class="smallPhoto" src="{!v.AmigoPhotoLink + v.pictures[2].photoId}"/>-->
+<!--                </span>-->
+
+<!--                    <span>-->
+<!--                    <img class="smallPhoto" src="{!v.AmigoPhotoLink + v.pictures[3].photoId}"/>-->
+<!--                </span>-->
+
+<!--                </div>-->
 
 
             </div>

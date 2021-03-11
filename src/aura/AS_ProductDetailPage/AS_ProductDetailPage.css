@@ -1,6 +1,6 @@
-/**
- * Created by BRITENET on 02.03.2021.
- */
+.THIS {
+    margin-top: 30px;
+}
 .THIS .product{
          height: auto;
           width: 600px;
@@ -54,5 +54,12 @@
 .THIS .smallPhoto{
     height: auto;
     width: 180px;
-    padding-right: 40px;
+}
+
+.THIS .btn {
+    border: none;
+    background-color: transparent;
+    margin-right: 40px;
+    padding: 0;
+    outline:none;
 }

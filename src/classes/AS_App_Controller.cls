@@ -58,7 +58,6 @@ public with sharing class AS_App_Controller {
 
     }
 
-
     @AuraEnabled
     public static List<AS_ProductWrapper> searchProducts(String query, String division) {
 
@@ -179,20 +178,8 @@ public with sharing class AS_App_Controller {
         return wrapperList;
     }
 
-
-//    public static List<Product2> searchProductsByDivision(String division) {
-//
-//        List <Product2> apparelProducts = new List<Product2>();
-//
-//        String searchQuery = 'SELECT ID, Name, Price__c ' + 'FROM Product2 WHERE Division__c = ' + '\'' + division + '\'';
-//
-//        try {
-//            apparelProducts = Database.query(searchQuery);
-//        } catch (DmlException e) {
-//            System.debug('The following exception has occurred: ' + e.getMessage());
-//        }
-//        System.debug('--------------->>>> QUERY DIVISION >>> ' + apparelProducts);
-//        return apparelProducts;
-//    }
-
+    @AuraEnabled
+    public static List<AS_ProductPhotoWrapper> getProductPhotos(String productId) {
+        return AS_Product_Photo_Service.getProductPhotos(productId);
+    }
 }
