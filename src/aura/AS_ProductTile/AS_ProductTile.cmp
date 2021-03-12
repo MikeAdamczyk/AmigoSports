@@ -15,10 +15,26 @@
             <img src="{!v.product.photoId != null
                     ? v.AmigoPhotoLink + v.product.photoId
                     : $Resource.NoPhotoGrey}" width="400"/>
+
+            <aura:if isTrue="{!v.product.discount}">
+                <p class="saleSign">ON SALE</p>
+            </aura:if>
+
         </div>
 
         <p class="text">{!v.product.name}</p>
-        <p class="price">{!$Label.c.Price + ' €' + v.product.price}</p>
+
+        <aura:if isTrue="{!v.product.discount}">
+            <p class="salePrice" style="color: crimson;">
+                SALE -{!v.product.discount + '% &nbsp;'}
+                <span class="oldPrice">{!' €' + v.product.price}</span>
+                <span class="price" style="color: green;">{!' &nbsp; NEW ' + $Label.c.Price + ' €' + v.product.salePrice}</span>
+            </p>
+            <aura:set attribute="else">
+                <p class="price">{!$Label.c.Price + ' €' + v.product.price}</p>
+            </aura:set>
+        </aura:if>
+
 
     </lightning:button>
 

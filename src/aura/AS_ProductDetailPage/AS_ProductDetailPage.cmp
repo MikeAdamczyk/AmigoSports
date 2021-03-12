@@ -10,7 +10,7 @@
     <aura:handler name="init" value="{!this}" action="{!c.init}"/>
 
     <force:recordData recordId="{!v.recordId}"
-                      fields="Name, Description, Price__c, Fabric__c, MainPhotoId__c"
+                      fields="Name, Description, Price__c, Fabric__c, MainPhotoId__c, Discount_Percent__c, Sale_Price__c"
                       targetFields="{!v.product}"
                       targetError="{!v.recordLoadError}"
     />
@@ -37,7 +37,23 @@
 
             <div class="cta">
                 <lightning:layoutItem>
-                    <p class="price">{!$Label.c.Price + ' €' + v.product.Price__c}</p>
+
+
+                    <!--                    <p class="price">{!$Label.c.Price + ' €' + v.product.Price__c}</p>-->
+
+                    <aura:if isTrue="{!v.product.Discount_Percent__c}">
+                        <p class="salePrice" style="color: crimson; display: flex; margin-bottom: 5px;">
+                            <span class="saleBox"> SALE -{!v.product.Discount_Percent__c + '%'}  </span>
+                            <span class="oldPrice">{!' €' + v.product.Price__c}</span>
+                        </p>
+                        <p class="price"
+                           style="color: green;">{!'NEW ' + $Label.c.Price + ' €' + v.product.Sale_Price__c}</p>
+                        <aura:set attribute="else">
+                            <p class="price">{!$Label.c.Price + ' €' + v.product.Price__c}</p>
+                        </aura:set>
+                    </aura:if>
+
+
                     <br/>
                     <c:AS_SizeRadioButton/>
                     <br/>

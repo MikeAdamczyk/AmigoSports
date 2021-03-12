@@ -22,6 +22,20 @@
     font-weight: bold;
 }
 
+
+.THIS .oldPrice{
+    font-size: 1.2rem;
+    text-decoration: line-through
+}
+
+.THIS .saleBox{
+    background-color: crimson;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+
 .THIS .addToCart{
     font-size: 1.2rem;
     font-weight: bold;

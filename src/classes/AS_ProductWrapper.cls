@@ -7,6 +7,8 @@ public with sharing class AS_ProductWrapper {
     @AuraEnabled public String Id;
     @AuraEnabled public String name;
     @AuraEnabled public Decimal price;
+    @AuraEnabled public Decimal salePrice;
+    @AuraEnabled public Decimal discount;
     @AuraEnabled public Id photoId;
 
 }
