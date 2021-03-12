@@ -1,6 +1,6 @@
 <aura:component description="AS_WomenPageBanner"
-    implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
-    access="global">
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
 
     <div class="banner">
         <img class="banner" src="{!$Resource.WomenBanner}"/>

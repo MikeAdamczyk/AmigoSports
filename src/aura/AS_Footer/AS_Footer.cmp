@@ -14,23 +14,23 @@
             </lightning:layoutItem>
 
             <lightning:layoutItem padding="around-large" size="2" smallDeviceSize="12" mediumDeviceSize="2">
-                <p>Contact Us:</p>
+                <p>{!$Label.c.Contact_Us}</p>
                 <br/>
-                <p>tel. - SUPPORT-2345</p>
-                <p>mail - hola@amigo.com</p>
-                <p>mail - hola@amigo.com</p>
+                <p>{!$Label.c.Amigo_tel}</p>
+                <p>{!$Label.c.Amigo_email}</p>
+                <p>{!$Label.c.Amigo_address}</p>
 
             </lightning:layoutItem>
 
             <lightning:layoutItem padding="around-large" size="5" smallDeviceSize="12" mediumDeviceSize="5">
-                <p>You can return all items within 60 days from receiving parcel</p>
+                <p>{!$Label.c.Return_60_days}</p>
                 <br/>
                 <img class="moneyBack" src="{!$Resource.MoneyBack}"/>
             </lightning:layoutItem>
 
         </lightning:layout>
 
-        <footer>Amigo Sports 2021 © All Rights Reserved.</footer>
+        <footer>{!$Label.c.Amigo_Copyrights}</footer>
         <br/>
         <br/>
     </div>

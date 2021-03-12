@@ -1,7 +1,7 @@
 ({
     init: function (component, event, helper) {
 
-        // PHOTO GALLERY LOAD
+        // LOAD PHOTO GALLERY
         let action = component.get("c.getProductPhotos");
         action.setParams({productId: component.get("v.recordId")});
         action.setCallback(this, function (response) {
@@ -30,9 +30,9 @@
         $A.enqueueAction(action);
 
 
+        // SET MAIN PHOTO
         setTimeout(function(){
 
-                // MAIN PHOTO
               let photoIds = component.get("v.pictures");
               let mainPhotoId = component.get("v.product").MainPhotoId__c;
 
@@ -44,10 +44,15 @@
                   component.set('v.mainPhoto', null);
               }
 
-              console.log('mainPhotoId >>>> ' + mainPhotoId);
-
         }, 500);
-
-
     },
+
+
+    onSelect: function (component, event, helper){
+         var component_target = event.currentTarget;
+         var attribute = component_target.dataset.myvalue;
+         component.set("v.mainPhoto", attribute);
+    },
+
+
 })

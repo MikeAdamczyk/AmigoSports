@@ -27,23 +27,22 @@
 
 
         <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="8">
-            <p class="best">- B E S T S E L L E R -</p>
+            <p class="best">{!$Label.c.Bestseller}</p>
             <br/>
             <header class="text">{!v.product.Name}</header>
             <br/>
-            <p class="descrption">Details: {!v.product.Fabric__c}</p>
+            <p class="descrption">{!$Label.c.Fabric + '  ' + v.product.Fabric__c}</p>
             <br/>
             <p class="descrption">{!v.product.Description}</p>
 
             <div class="cta">
                 <lightning:layoutItem>
-                    <p class="price">Price: ${!v.product.Price__c}</p>
+                    <p class="price">{!$Label.c.Price + ' €' + v.product.Price__c}</p>
                     <br/>
                     <c:AS_SizeRadioButton/>
                     <br/>
-                    <button class="addToCart">Add to cart</button>
+                    <button class="addToCart">{!$Label.c.Add_to_cart}</button>
                 </lightning:layoutItem>
-
 
                 <div class="gallery">
                     <aura:iteration items="{!v.pictures}" var="pic">

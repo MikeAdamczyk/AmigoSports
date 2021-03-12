@@ -5,9 +5,9 @@
 
     <div onkeyup="{! c.handleKeyUp }">
         <lightning:input class="slds-form-element__label"
-                aura:id="enter-search"
-                name="enter-search"
-                type="search"
+                         aura:id="enter-search"
+                         name="enter-search"
+                         type="search"
         />
     </div>
 
