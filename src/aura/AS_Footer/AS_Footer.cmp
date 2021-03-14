@@ -2,6 +2,9 @@
                 implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
                 access="global">
 
+    <aura:attribute name="year" type="String"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
     <div class="footer">
         <lightning:layout multipleRows="true">
 
@@ -30,7 +33,7 @@
 
         </lightning:layout>
 
-        <footer>{!$Label.c.Amigo_Copyrights}</footer>
+        <footer>{!$Label.c.Amigo_Copyrights}{!v.year + '&nbsp;'}{!$Label.c.Amigo_Copyrights_2}</footer>
         <br/>
         <br/>
     </div>

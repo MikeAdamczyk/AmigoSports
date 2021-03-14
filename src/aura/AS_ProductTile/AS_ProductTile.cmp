@@ -17,7 +17,7 @@
                     : $Resource.NoPhotoGrey}" width="400"/>
 
             <aura:if isTrue="{!v.product.discount}">
-                <p class="saleSign">ON SALE</p>
+                <p class="saleSign">-{!v.product.discount}%</p>
             </aura:if>
 
         </div>
@@ -25,10 +25,10 @@
         <p class="text">{!v.product.name}</p>
 
         <aura:if isTrue="{!v.product.discount}">
-            <p class="salePrice" style="color: crimson;">
-                SALE -{!v.product.discount + '% &nbsp;'}
-                <span class="oldPrice">{!' €' + v.product.price}</span>
-                <span class="price" style="color: green;">{!' &nbsp; NEW ' + $Label.c.Price + ' €' + v.product.salePrice}</span>
+            <p>
+<!--                SALE -{!v.product.discount + '% &nbsp;'}-->
+                <span class="price" style="color: crimson;">{!'SALE ' + $Label.c.Price + ' €' + v.product.salePrice + ' &nbsp;'}</span>
+                <span style="text-decoration: line-through">{!' €' + v.product.price}</span>
             </p>
             <aura:set attribute="else">
                 <p class="price">{!$Label.c.Price + ' €' + v.product.price}</p>
