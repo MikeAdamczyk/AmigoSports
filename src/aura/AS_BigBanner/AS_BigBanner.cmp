@@ -1,0 +1,27 @@
+<aura:component description="AS_BigBanner"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <aura:attribute name="context" type="String" default="home"/>
+    <aura:handler event="c:AS_Query" action="{!c.AS_Query}"/>
+
+    <div aura:id="section" class="{!if(v.context == 'home','slds-show','slds-hide')}">
+
+        <lightning:carousel disableAutoRefresh="false" disableAutoScroll="false">
+            <lightning:carouselImage src="{!$Resource.BigBanner}"
+                                     alternativeText="First card accessible description."
+                                     href="https://www.salesforce.com">
+            </lightning:carouselImage>
+            <lightning:carouselImage src="{!$Resource.MondayDeal}"
+                                     alternativeText="Second card accessible description."
+                                     href="https://www.salesforce.com">
+            </lightning:carouselImage>
+            <lightning:carouselImage src="{!$Resource.NewCollection}"
+                                     alternativeText="Third card accessible description."
+                                     href="https://www.salesforce.com">
+            </lightning:carouselImage>
+        </lightning:carousel>
+
+    </div>
+
+</aura:component>

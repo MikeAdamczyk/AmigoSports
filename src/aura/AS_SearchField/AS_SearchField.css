@@ -1,0 +1,15 @@
+.THIS .slds-form-element__label .slds-no-flex{
+    display: none !important;
+    width: 50%;
+}
+
+.THIS .slds-input{
+    border: 1px solid lightgray;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    width: 300px;
+}
+
+
+
+

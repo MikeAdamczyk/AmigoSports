@@ -1,0 +1,18 @@
+<aura:component description="AS_SizeRadioButton">
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'M', 'value': 'M'},
+    {'label': 'L', 'value': 'L'},
+    {'label': 'XL', 'value': 'XL'},
+    {'label': 'XXL', 'value': 'XXL'},
+    {'label': '3XL', 'value': '3XL'}
+
+    ]"/>
+    <aura:attribute name="value" type="String" default=""/>
+
+    <lightning:radioGroup name="radioButtonGroupRequired"
+                          label="Choose your size:"
+                          options="{! v.options }"
+                          value="{! v.value }"
+                          type="button"
+                          required="true"/>
+</aura:component>

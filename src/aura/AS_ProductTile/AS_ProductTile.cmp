@@ -1,0 +1,41 @@
+<aura:component description="AS_ProductTile"
+                implements="forceCommunity:layout,
+                flexipage:availableForAllPageTypes,
+                forceCommunity:availableForAllPageTypes,
+                force:appHostable"
+                access="global">
+
+    <aura:attribute name="product" type="Object"/>
+    <aura:attribute name="AmigoPhotoLink" type="String"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <lightning:button class="tile slds-button_neutral slds-button--neutral" onclick="{!c.onSelect}">
+
+        <div>
+            <img src="{!v.product.photoId != null
+                    ? v.AmigoPhotoLink + v.product.photoId
+                    : $Resource.NoPhotoGrey}" width="400"/>
+
+            <aura:if isTrue="{!v.product.discount}">
+                <p class="saleSign">-{!v.product.discount}%</p>
+            </aura:if>
+
+        </div>
+
+        <p class="text">{!v.product.name}</p>
+
+        <aura:if isTrue="{!v.product.discount}">
+            <p>
+<!--                SALE -{!v.product.discount + '% &nbsp;'}-->
+                <span class="price" style="color: crimson;">{!'SALE ' + $Label.c.Price + ' €' + v.product.salePrice + ' &nbsp;'}</span>
+                <span style="text-decoration: line-through">{!' €' + v.product.price}</span>
+            </p>
+            <aura:set attribute="else">
+                <p class="price">{!$Label.c.Price + ' €' + v.product.price}</p>
+            </aura:set>
+        </aura:if>
+
+
+    </lightning:button>
+
+</aura:component>

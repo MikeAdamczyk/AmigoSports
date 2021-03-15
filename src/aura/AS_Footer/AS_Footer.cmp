@@ -1,6 +1,41 @@
 <aura:component description="AS_Footer"
-                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
 
-    <footer>Amigo Sports 2021 © All Rights Reserved.</footer>
+    <aura:attribute name="year" type="String"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <div class="footer">
+        <lightning:layout multipleRows="true">
+
+            <lightning:layoutItem padding="around-large" size="5" smallDeviceSize="12" mediumDeviceSize="5">
+                <p>We accept:</p>
+                <br/>
+                <div>
+                    <img class="creditCards" src="{!$Resource.CreditCards}"/>
+                </div>
+            </lightning:layoutItem>
+
+            <lightning:layoutItem padding="around-large" size="2" smallDeviceSize="12" mediumDeviceSize="2">
+                <p>{!$Label.c.Contact_Us}</p>
+                <br/>
+                <p>{!$Label.c.Amigo_tel}</p>
+                <p>{!$Label.c.Amigo_email}</p>
+                <p>{!$Label.c.Amigo_address}</p>
+
+            </lightning:layoutItem>
+
+            <lightning:layoutItem padding="around-large" size="5" smallDeviceSize="12" mediumDeviceSize="5">
+                <p>{!$Label.c.Return_60_days}</p>
+                <br/>
+                <img class="moneyBack" src="{!$Resource.MoneyBack}"/>
+            </lightning:layoutItem>
+
+        </lightning:layout>
+
+        <footer>{!$Label.c.Amigo_Copyrights}{!v.year + '&nbsp;'}{!$Label.c.Amigo_Copyrights_2}</footer>
+        <br/>
+        <br/>
+    </div>
 
 </aura:component>
