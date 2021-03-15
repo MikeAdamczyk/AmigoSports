@@ -695,10 +695,6 @@
                             <option name="name" value="ContentDocumentLinkTrigger" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
-                          <MetadataEntry>
-                            <option name="name" value="AS_Sale_Price_Trigger" />
-                            <option name="selected" value="true" />
-                          </MetadataEntry>
                         </list>
                       </option>
                       <option name="name" value="ApexTrigger" />

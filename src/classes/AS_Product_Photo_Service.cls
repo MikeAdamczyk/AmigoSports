@@ -13,7 +13,6 @@ public with sharing class AS_Product_Photo_Service {
                 SELECT ContentDocument.LatestPublishedVersionId
                 FROM ContentDocumentLink
                 WHERE LinkedEntityId = :productId
-                LIMIT 10
         ];
 
         if (photoLinks.size() > 0) {

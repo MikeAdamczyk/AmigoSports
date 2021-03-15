@@ -7,10 +7,11 @@
     <aura:attribute name="product" type="Object"/>
     <aura:attribute name="pictures" type="List"/>
     <aura:attribute name="mainPhoto" type="String"/>
+    <aura:attribute name="price" type="String"/>
     <aura:handler name="init" value="{!this}" action="{!c.init}"/>
 
     <force:recordData recordId="{!v.recordId}"
-                      fields="Name, Description, Price__c, Fabric__c, MainPhotoId__c, Discount_Percent__c, Sale_Price__c"
+                      fields="Name, Description, Fabric__c, MainPhotoId__c"
                       targetFields="{!v.product}"
                       targetError="{!v.recordLoadError}"
     />
@@ -51,7 +52,7 @@
                         <p class="price"
                            style="color: crimson;">{!'NEW ' + $Label.c.Price + ' €' + v.product.Sale_Price__c}</p>
                         <aura:set attribute="else">
-                            <p class="price">{!$Label.c.Price + ' €' + v.product.Price__c}</p>
+                            <p class="price">{!$Label.c.Price + ' €' + v.price}</p>
                         </aura:set>
                     </aura:if>
 
