@@ -1,8 +1,11 @@
+.THIS {
+    text-align: center;
+}
 
 .THIS .basketIcon{
     width: 40px;
 }
 
-.THIS .basket{
-    text-align: center;
+.THIS .basket .ui-widget{
+ text-align: center;
 }

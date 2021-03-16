@@ -27,7 +27,7 @@
         <aura:if isTrue="{!v.product.discount}">
             <p>
 <!--                SALE -{!v.product.discount + '% &nbsp;'}-->
-                <span class="price" style="color: crimson;">{!'SALE ' + $Label.c.Price + ' €' + v.product.salePrice + ' &nbsp;'}</span>
+                <span class="price" style="color: crimson;">{!Label.c.SALE + '&nbsp;' + $Label.c.Price + ' €' + v.product.salePrice + ' &nbsp;'}</span>
                 <span style="text-decoration: line-through">{!' €' + v.product.price}</span>
             </p>
             <aura:set attribute="else">
