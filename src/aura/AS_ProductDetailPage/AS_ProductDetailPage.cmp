@@ -58,9 +58,11 @@
 
 
                     <br/>
-                    <c:AS_SizeRadioButton/>
                     <br/>
-                    <button class="addToCart">{!$Label.c.Add_to_cart}</button>
+                    <br/>
+<!--                    <c:AS_SizeRadioButton/>-->
+<!--                    <br/>-->
+                    <button class="addToCart" onclick="{!c.addToBasket}">{!$Label.c.Add_to_cart}</button>
                 </lightning:layoutItem>
 
                 <div class="gallery">

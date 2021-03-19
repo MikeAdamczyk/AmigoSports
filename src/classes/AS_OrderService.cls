@@ -95,9 +95,7 @@ public without sharing class AS_OrderService {
     }
 
     @AuraEnabled
-    public static String addProductToBasket(String productId, String pricebookEntryId, String unitPrice) {
-
-        System.debug('WCHODZI DO addProductToBasket SERVICE');
+    public static String addProductToBasket(String productId, String unitPrice) {
 
         Boolean alreadyInBasket = false;
 
@@ -114,23 +112,20 @@ public without sharing class AS_OrderService {
         for (OrderItem item : items) {
             if (item.Product2Id.equals(productId)) {
                 alreadyInBasket = true;
-                return 'Product is already in basket. You can change his amount by click basket icon.';
+                return 'Product is already in basket';
             }
         }
-        System.debug('////////////////////////////');
-        System.debug('BEFORE ADD PRODUCT TO BASKET');
+
 
         if (!alreadyInBasket) {
             PricebookEntry myPricebookEntry = [select id, UnitPrice from PricebookEntry where Product2Id = :productId and Pricebook2.Name = 'Standard'];
             OrderItem myOrderItem = new OrderItem(Product2Id = productId, OrderId = basketOrder.Id, Quantity = 1, PricebookEntryId = myPricebookEntry.Id, UnitPrice = Decimal.valueOf(unitPrice));
             System.debug(myOrderItem);
             upsert myOrderItem;
-            return 'Product successfully added to basket. Click basket icon to change product amount.';
+            return 'OK';
         }
         return 'Something wrong, contact Admin';
     }
-
-
 
     private class OrderItemWrapper {
 

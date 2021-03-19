@@ -10,6 +10,12 @@ public with sharing class AS_App_Controller {
     }
 
     @AuraEnabled
+    public static String addProductToBasket(String productId, String unitPrice) {
+        System.debug('ENTER method addProductToBasket in APP CONTR. ');
+        return AS_OrderService.addProductToBasket(productId, unitPrice);
+    }
+
+    @AuraEnabled
     public static List<AS_ProductWrapper> getPromotedProducts() {
 
         List <Product2> apparelProducts = new List<Product2>();

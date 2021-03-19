@@ -1,35 +1,13 @@
 ({
-      handleEvent: function (component, event) {
-          this.countSum(component,event);
-
-          console.log('doInit STARTS...');
-          const action = component.get('c.getBasketItems');
-
-          action.setCallback(this, function (response) {
-              if (component.isValid() && response.getState() === 'SUCCESS') {
-                  component.set('v.basketProducts', response.getReturnValue());
-
-              } else {
-                  console.log('ERROR >>>>> ' + response.error);
-                  console.log('NO ITEMS FOUND ...');
-  //                let sendErrorToast = component.find('errorToastMaker');
-  //                sendErrorToast.handleErrors(response.getError());
-          }
-
-          });
-          $A.enqueueAction(action);
-          this.countSum(component, event);
-      },
-
       doInit : function(component, event, helper) {
-
-        console.log('doInit STARTS...');
         const action = component.get('c.getBasketItems');
 
         action.setCallback(this, function (response) {
             if (component.isValid() && response.getState() === 'SUCCESS') {
-                component.set('v.basketProducts', response.getReturnValue());
+                console.log('BASKET ITEMS >>>>> ' + response.getReturnValue())
 
+                component.set('v.basketProducts', response.getReturnValue());
+                component.set('v.example', response.getReturnValue()[0]);
             } else {
                 console.log('ERROR >>>>> ' + response.error);
                 console.log('NO ITEMS FOUND ...');
@@ -41,6 +19,10 @@
         $A.enqueueAction(action);
         this.countSum(component, event);
 
+      },
+
+      handleEvent: function (component, event) {
+          this.countSum(component,event);
       },
 
       countSum: function (component,event) {

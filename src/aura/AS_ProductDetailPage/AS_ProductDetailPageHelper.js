@@ -78,4 +78,49 @@
          var attribute = component_target.dataset.myvalue;
          component.set("v.mainPhoto", attribute);
     },
+
+
+    addToBasket: function (component, event, helper){
+
+          console.log('ENTER addToBasket...');
+
+
+          let productId = component.get("v.product").Id;
+          let unitPrice = component.get("v.price");
+
+          let action = component.get('c.addProductToBasket');
+
+          action.setParams({
+                productId: productId,
+                unitPrice: parseInt(unitPrice)
+          });
+
+          action.setCallback(this, function (response) {
+
+            console.log('RESPONSE >>>> ' + response.getState());
+            let state = response.getState();
+
+            if(state == "SUCCESS"){
+               console.log('RESPONSE >>>> ' + response.getReturnValue());
+            }
+
+            if (state === "ERROR") {
+                let errors = response.getError();
+//                    console.log('ERROR >>>>> ' + errors[0].pageErrors[0].message);
+                console.log('ERROR >>>>> ' + errors[0].message);
+//                    let sendErrorToast = component.find('errorToastMaker');
+//                    sendErrorToast.handleErrors(response.getError());
+            }
+           });
+
+           $A.enqueueAction(action);
+
+          let urlEvent = $A.get("e.force:navigateToURL");
+          urlEvent.setParams({
+              "url": "/basket",
+          });
+
+          urlEvent.fire();
+    },
+
 })
