@@ -3,7 +3,7 @@ public with sharing class AS_App_Controller {
     @AuraEnabled
     public static Decimal getProductPrice(Id productId) {
 
-        Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard Price Book'].Id;
+        Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard'].Id;
         Decimal productPrice = [SELECT UnitPrice FROM PricebookEntry WHERE Pricebook2Id = :standardPriceBookId AND Product2Id = :productId].UnitPrice;
 
         return productPrice;
@@ -29,7 +29,7 @@ public with sharing class AS_App_Controller {
                 productsIds.add(product2.Id);
             }
 
-            Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard Price Book'].Id;
+            Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard'].Id;
 
             List<PricebookEntry> pricebookEntries = new List<PricebookEntry>();
             pricebookEntries = [SELECT Id, Name, UnitPrice, Product2Id FROM PricebookEntry WHERE Pricebook2Id = :standardPriceBookId AND Product2Id IN :productsIds];
@@ -106,7 +106,7 @@ public with sharing class AS_App_Controller {
                     productsIds.add(product2.Id);
                 }
 
-                Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard Price Book'].Id;
+                Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard'].Id;
 
                 List<PricebookEntry> pricebookEntries = new List<PricebookEntry>();
                 pricebookEntries = [SELECT Id, Name, UnitPrice, Product2Id FROM PricebookEntry WHERE Pricebook2Id = :standardPriceBookId AND Product2Id IN :productsIds];
@@ -172,7 +172,7 @@ public with sharing class AS_App_Controller {
                     productsIds.add(product2.Id);
                 }
 
-                Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard Price Book'].Id;
+                Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard'].Id;
 
                 List<PricebookEntry> pricebookEntries = new List<PricebookEntry>();
                 pricebookEntries = [SELECT Id, Name, UnitPrice, Product2Id FROM PricebookEntry WHERE Pricebook2Id = :standardPriceBookId AND Product2Id IN :productsIds];
@@ -255,7 +255,7 @@ public with sharing class AS_App_Controller {
                 productsIds.add(product2.Id);
             }
 
-            Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard Price Book'].Id;
+            Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard'].Id;
 
             List<PricebookEntry> pricebookEntries = new List<PricebookEntry>();
             pricebookEntries = [SELECT Id, Name, UnitPrice, Product2Id FROM PricebookEntry WHERE Pricebook2Id = :standardPriceBookId AND Product2Id IN :productsIds];
