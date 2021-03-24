@@ -76,8 +76,7 @@
                 if (response.getState() === "ERROR") {
                     let errors = response.getError();
                     console.log('ERROR >>>>> ' + errors[0].message);
-//                        let sendErrorToast = component.find('errorToastMaker');
-//                        sendErrorToast.handleErrors(response.getError());
+
                 }
             });
             $A.enqueueAction(action);

@@ -5,14 +5,10 @@
         action.setCallback(this, function (response) {
             if (component.isValid() && response.getState() === 'SUCCESS') {
                 console.log('BASKET ITEMS >>>>> ' + response.getReturnValue())
-
                 component.set('v.basketProducts', response.getReturnValue());
-                component.set('v.example', response.getReturnValue()[0]);
             } else {
                 console.log('ERROR >>>>> ' + response.error);
                 console.log('NO ITEMS FOUND ...');
-//                let sendErrorToast = component.find('errorToastMaker');
-//                sendErrorToast.handleErrors(response.getError());
         }
 
         });
@@ -42,4 +38,37 @@
           });
           $A.enqueueAction(action);
       },
+
+      buy: function(component, event, helper) {
+
+         const action = component.get('c.closeOrder');
+
+         action.setCallback(this, function (response) {
+             if (component.isValid() && response.getState() === 'SUCCESS') {
+                 console.log('SUCCESS, ORDER HAS BEEN CLOSED!');
+                 let basket = component.find('basket');
+                 $A.util.toggleClass(basket, "hideElement");
+
+                 let thankYouNote = component.find('thankYouNote');
+                 $A.util.toggleClass(thankYouNote, "hideElement");
+
+//                 component.set('v.buyBtnPressed',true);
+             } else {
+                 let errors = response.getError();
+                 console.log('CLOSE ORDER - ERROR >>>>> ' + errors[0].pageErrors[0].message);
+                 //console.log('ERROR >>>>> ' + errors[0].message);
+             }
+         });
+            $A.enqueueAction(action);
+      },
+
+      backToHomePage: function(event){
+         let urlEvent = $A.get("e.force:navigateToURL");
+              urlEvent.setParams({
+                  "url": "/s",
+              });
+
+          urlEvent.fire();
+      }
+
 })

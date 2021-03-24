@@ -11,26 +11,57 @@
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:handler event="c:AS_RequestTotalAmountEvent" action="{!c.handleEvent}"/>
 
+    <lightning:layoutItem>
 
-    <!--    <p class="subheader"-->
-    <!--       style="font-weight: bold; margin-bottom: 40px; margin-top: 20px;">{!$Label.c.Your_Order}</p>-->
+        <aura:if isTrue="{!v.basketProducts.length == 0}">
 
-    <div class="basket">
-        <aura:iteration items="{!v.basketProducts}" var="item" end="">
-            <c:AS_BasketProductItem basketItem="{!item}"/>
-        </aura:iteration>
+            <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">{!$Label.c.Your_Basket + ' is empty.'}</p>
 
-        <div class="summary">
-            <div class="total">
-                <p>{!'TOTAL: €' + v.totalAmount}</p>
+            <aura:set attribute="else">
+
+                <div class="basket" aura:id="basket">
+                    <aura:iteration items="{!v.basketProducts}" var="item" end="">
+                        <c:AS_BasketProductItem basketItem="{!item}"/>
+                    </aura:iteration>
+
+                    <aura:if isTrue="{!v.totalAmount > 0}">
+
+                        <div class="summary">
+                            <div class="total">
+                                <p>{!'TOTAL: €' + v.totalAmount}</p>
+                            </div>
+                            <div class="buttons">
+                                <button class="buyNow" onclick="{!c.buy}">Buy Now</button>
+                            </div>
+                        </div>
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.totalAmount == 0}">
+                        <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">{!$Label.c.Your_Basket + ' is empty.'}</p>
+                    </aura:if>
+
+
+                </div>
+
+            </aura:set>
+        </aura:if>
+
+
+    </lightning:layoutItem>
+
+    <lightning:layoutItem>
+        <div class="thankYouNote hideElement" aura:id="thankYouNote">
+            <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">
+                Thank you for your purchase.
+            </p>
+
+            <p>You will receive your products soon.</p>
+            <div class="continue">
+                <button class="buyNow" onclick="{!c.backToHomePage}">Continue Shopping</button>
             </div>
-            <div class="buttons">
-                <button class="addToCart">Buy Now</button>
-            </div>
+
         </div>
-
-    </div>
-
+    </lightning:layoutItem>
 
 
 </aura:component>

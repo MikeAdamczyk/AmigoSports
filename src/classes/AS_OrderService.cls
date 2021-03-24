@@ -5,12 +5,17 @@ public without sharing class AS_OrderService {
         return AS_UserService.getLoggedUserContactId();
     }
 
+    public static pricebook2 getStandardPricebook() {
+        return [select id from pricebook2 where Name = 'Standard'];
+    }
+
     @AuraEnabled
     public static Order createNewOrder() {
         Id contactId = getContactId();
         date newDate = date.today();
+
         Order newOrder = new Order(BillToContactId = contactId, Status = 'Draft',
-                AccountId = '0010900000B1MnrAAF', EffectiveDate = newDate);
+                AccountId = '0010900000B1MnrAAF', EffectiveDate = newDate, Pricebook2Id = getStandardPricebook().Id);
 
         upsert newOrder;
         return newOrder;
@@ -32,8 +37,21 @@ public without sharing class AS_OrderService {
                     ORDER BY CreatedDate DESC
                     LIMIT 1
             ];
-        } catch (QueryException e) {
-            basketOrder = createNewOrder();
+        } catch (Exception e) {
+            System.debug('EXCEPTION --->>>> ' + e.getMessage());
+
+            createNewOrder();
+
+            basketOrder = [
+                    SELECT Id, Status, OrderNumber
+                    FROM Order
+                    WHERE BillToContactId = :contactId
+                    AND Status = 'Draft'
+                    ORDER BY CreatedDate DESC
+                    LIMIT 1
+            ];
+
+            System.debug('???????????????????????????? ---- basketOrder ---- ' + basketOrder.OrderNumber);
         }
 
         System.debug('BASKET OrderNumber =====>>>>> ' + basketOrder.OrderNumber);
@@ -100,8 +118,10 @@ public without sharing class AS_OrderService {
         Boolean alreadyInBasket = false;
 
         Order basketOrder = getBasketOrder();
+        System.debug('>>>>>>>>>>>>>>> basketOrder >>>>>> ' + basketOrder);
 
-        List<OrderItem> items = [
+
+        List<OrderItem> items  = [
                 select Id,
                         Product2Id,
                         Product2.Name
@@ -116,11 +136,11 @@ public without sharing class AS_OrderService {
             }
         }
 
-
         if (!alreadyInBasket) {
+            System.debug('NO PRODUCT IN BASKET !!!');
             PricebookEntry myPricebookEntry = [select id, UnitPrice from PricebookEntry where Product2Id = :productId and Pricebook2.Name = 'Standard'];
             OrderItem myOrderItem = new OrderItem(Product2Id = productId, OrderId = basketOrder.Id, Quantity = 1, PricebookEntryId = myPricebookEntry.Id, UnitPrice = Decimal.valueOf(unitPrice));
-            System.debug(myOrderItem);
+            System.debug('>>>>>>>>>>>>>>> myOrderItem >>>>>>>>>>>>> ' + myOrderItem);
             upsert myOrderItem;
             return 'OK';
         }
@@ -187,6 +207,18 @@ public without sharing class AS_OrderService {
         }
 
         return sum.setScale(2, RoundingMode.HALF_UP);
+    }
+
+    @AuraEnabled
+    public static void closeOrder() {
+
+        Order oldOrder = getBasketOrder();
+
+        System.debug('*************** --------- oldOrder >>> ' + oldOrder.OrderNumber);
+
+        oldOrder.Status = 'Activated';
+        upsert oldOrder;
+        createNewOrder();
     }
 
 }

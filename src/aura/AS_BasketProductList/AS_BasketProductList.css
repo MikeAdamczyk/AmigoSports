@@ -4,7 +4,7 @@
     margin-top: 20px;
 }
 
-.THIS .addToCart{
+.THIS .buyNow{
     font-size: 1.5rem;
     font-weight: bold;
     padding: 15px;
@@ -14,7 +14,7 @@
     transition: .3s ease-in-out;
 }
 
-.THIS .addToCart:hover{
+.THIS .buyNow:hover{
     background-color: #ffc83b;
 }
 
@@ -33,4 +33,12 @@
     background-color: whitesmoke;
     padding: 15px;
     font-size: 1.5rem;
+}
+
+.THIS .hideElement {
+    display: none;
+}
+
+.THIS .continue{
+    margin: 30px;
 }

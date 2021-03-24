@@ -1,9 +1,26 @@
 <aura:component description="AS_Basket"
-                implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:appHostable,force:hasRecordId"
+                controller="AS_OrderService"
+                implements="flexipage:availableForAllPageTypes,
+                forceCommunity:availableForAllPageTypes,force:appHostable,force:hasRecordId"
 >
-    <div class="ui-widget">
-        <a class="basket" style="text-align: center !important; pointer: cursor;" onclick="{!c.goToBasket}">
-            <img class="basketIcon" src="{!$Resource.ShopBasket}"/>
-        </a>
-    </div>
+
+    <aura:attribute name="basketProducts" type="Object[]"/>
+    <aura:attribute name="totalAmount" type="String"/>
+
+    <lightning:layout>
+        <div class="ui-widget">
+            <a class="basket" style="text-align: center !important; pointer: cursor;" onclick="{!c.goToBasket}"
+               onmouseenter="{!c.showModal}" onmouseleave="{!c.hideModal}">
+                <img class="basketIcon" src="{!$Resource.ShopBasket}"/>
+            </a>
+        </div>
+
+
+        <div class="basketPreview hideBasketPreview" aura:id="basket-modal">
+            <c:AS_BasketPreview basketProducts="{!v.basketProducts}" totalAmount="{!v.totalAmount}"/>
+        </div>
+
+    </lightning:layout>
+
+
 </aura:component>

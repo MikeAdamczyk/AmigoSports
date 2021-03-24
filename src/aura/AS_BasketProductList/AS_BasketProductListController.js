@@ -6,4 +6,12 @@
     handleEvent : function(component, event, helper) {
         helper.handleEvent(component, event);
     },
+
+    buy : function(component, event, helper) {
+        helper.buy(component, event);
+    },
+
+    backToHomePage: function(component, event, helper){
+        helper.backToHomePage(event);
+    }
 })
