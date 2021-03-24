@@ -58,6 +58,40 @@ public without sharing class AS_OrderService {
         return basketOrder;
     }
 
+
+    //Get CLOSED ORDERS
+    @AuraEnabled
+    public static List<Order> getClosedOrders() {
+
+        Id contactId = getContactId();
+        List<Order> basketOrders;
+
+        try {
+            basketOrders = [
+                    SELECT Id, Status, OrderNumber, ActivatedDate
+                    FROM Order
+                    WHERE BillToContactId = :contactId
+                    AND Status = 'Activated'
+                    ORDER BY CreatedDate DESC
+                    LIMIT 5
+            ];
+        } catch (Exception e) {
+            System.debug('EXCEPTION --->>>> ' + e.getMessage());
+        }
+
+        return basketOrders;
+    }
+
+
+
+
+
+
+
+
+
+
+
     @AuraEnabled
     public static List<OrderItemWrapper> getBasketItems() {
 
