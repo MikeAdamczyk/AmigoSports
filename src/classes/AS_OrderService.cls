@@ -68,7 +68,7 @@ public without sharing class AS_OrderService {
 
         try {
             basketOrders = [
-                    SELECT Id, Status, OrderNumber, ActivatedDate
+                    SELECT Id, Status, OrderNumber, ActivatedDate, TotalAmount
                     FROM Order
                     WHERE BillToContactId = :contactId
                     AND Status = 'Activated'
