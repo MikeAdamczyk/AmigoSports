@@ -82,15 +82,21 @@ public without sharing class AS_OrderService {
         return basketOrders;
     }
 
+    @AuraEnabled
+    public static List<OrderItem> getOrderItems(String orderId) {
 
+        List<OrderItem> items = new List<OrderItem>();
 
-
-
-
-
-
-
-
+        List<OrderItem> basketItems = [
+                select Id, Product2.Name,
+                        ListPrice,
+                        Quantity,
+                        TotalPrice
+                from OrderItem
+                where OrderId = :orderId
+        ];
+        return items;
+    }
 
     @AuraEnabled
     public static List<OrderItemWrapper> getBasketItems() {
@@ -155,7 +161,7 @@ public without sharing class AS_OrderService {
         System.debug('>>>>>>>>>>>>>>> basketOrder >>>>>> ' + basketOrder);
 
 
-        List<OrderItem> items  = [
+        List<OrderItem> items = [
                 select Id,
                         Product2Id,
                         Product2.Name
@@ -184,22 +190,37 @@ public without sharing class AS_OrderService {
     private class OrderItemWrapper {
 
         @auraEnabled
-        public String productName { get; set; }
+        public String productName {
+            get;
+            set;
+        }
 
         @auraEnabled
-        public String orderItemId { get; set; }
+        public String orderItemId {
+            get;
+            set;
+        }
 
         @auraEnabled
-        public String productId { get; set; }
+        public String productId {
+            get;
+            set;
+        }
 
         @auraEnabled
-        public Decimal quantity { get; set; }
+        public Decimal quantity {
+            get;
+            set;
+        }
 
         @auraEnabled
         public Decimal price { get; set; }
 
         @auraEnabled
-        public Decimal amount { get; set; }
+        public Decimal amount {
+            get;
+            set;
+        }
 
         public OrderItemWrapper(OrderItem item) {
             this.orderItemId = item.Id;
