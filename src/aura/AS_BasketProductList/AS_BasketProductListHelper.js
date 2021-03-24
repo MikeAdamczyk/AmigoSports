@@ -69,6 +69,15 @@
               });
 
           urlEvent.fire();
+      },
+
+      checkOrders: function(event){
+         let urlEvent = $A.get("e.force:navigateToURL");
+              urlEvent.setParams({
+                  "url": "/s/orders",
+              });
+
+          urlEvent.fire();
       }
 
 })

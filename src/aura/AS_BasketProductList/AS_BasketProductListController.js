@@ -13,5 +13,9 @@
 
     backToHomePage: function(component, event, helper){
         helper.backToHomePage(event);
+    },
+
+    checkOrders: function(component, event, helper){
+        helper.checkOrders(event);
     }
 })

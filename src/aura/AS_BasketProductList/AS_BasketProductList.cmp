@@ -57,7 +57,11 @@
 
             <p>You will receive your products soon.</p>
             <div class="continue">
-                <button class="buyNow" onclick="{!c.backToHomePage}">Continue Shopping</button>
+                <button class="buyNow" onclick="{!c.backToHomePage}">Continue shopping</button>
+            </div>
+
+            <div class="continue">
+                <button class="buyNow" onclick="{!c.checkOrders}">Check your orders</button>
             </div>
 
         </div>
