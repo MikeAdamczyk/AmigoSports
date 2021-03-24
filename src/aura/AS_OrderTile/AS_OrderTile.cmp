@@ -1,0 +1,32 @@
+<aura:component description="AS_OrderTile"
+                controller="AS_OrderService"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <aura:attribute name="order" type="Object"/>
+
+    <lightning:layoutItem class="lightning-layout-container">
+        <div class="container" aura:id="mainContainer">
+
+            <div class="number">{!v.order.OrderNumber}</div>
+            <div class="date">{!v.order.ActivatedDate}</div>
+            <div class="amount">Amount: 100zł</div>
+            <div class="preview"><button class="btn">Check your order</button></div>
+
+<!--            <div class="unitPrice">{!'€' + v.basketItem.price}</div>-->
+<!--            <div class="quantity">-->
+<!--                <lightning:button class="btn" onclick="{!c.decrease}">-</lightning:button>-->
+<!--                <input value="{!v.quantity}" onchange="{!c.changeNumber}"/>-->
+<!--                <lightning:button class="btn" onclick="{!c.increase}">+</lightning:button>-->
+<!--            </div>-->
+<!--            <div class="amount"><span class="text"></span>{!' €' + v.amount}</div>-->
+<!--            <div class="trash">-->
+<!--                <button class="trash-button" onclick="{!c.clickTrash}">-->
+<!--                    <lightning:icon class="icn" iconName="utility:delete"/>-->
+<!--                </button>-->
+<!--            </div>-->
+        </div>
+    </lightning:layoutItem>
+
+
+</aura:component>

@@ -1,6 +1,29 @@
-<aura:component description="AS_OrderList">
+<aura:component description="AS_OrderList"
+                controller="AS_OrderService"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
 
+    <aura:attribute name="orders" type="Object[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
+    <div class="mainContainer .slds-grid">
+
+        <div class="tableHeader">
+            <div class="number">Order number</div>
+            <div class="date">Date</div>
+            <div class="amount">Amount</div>
+            <div class="preview">Preview</div>
+        </div>
+
+        <lightning:layout multipleRows="true" horizontalAlign="center">
+            <aura:iteration items="{!v.orders}" var="order">
+                <lightning:layoutItem>
+                    <c:AS_OrderTile order="{!order}"/>
+                </lightning:layoutItem>
+            </aura:iteration>
+
+        </lightning:layout>
+    </div>
 
 
 </aura:component>

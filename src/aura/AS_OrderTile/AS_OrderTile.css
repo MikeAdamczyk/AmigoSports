@@ -1,0 +1,49 @@
+.THIS .lightning-layout-container {
+    width: 100%;
+    height: 100%;
+}
+
+.THIS .container {
+    align-items: baseline;
+    margin: 10px auto;
+    width: 80%;
+    height: auto;
+    border-bottom: .1rem solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.THIS .number {
+     height: 100%;
+     width: 25%;
+}
+
+.THIS .date {
+     height: 100%;
+     width: 25%;
+}
+
+.THIS .amount {
+     height: 100%;
+     width: 25%;
+}
+
+.THIS .preview {
+    height: 100%;
+    width: 25%;
+}
+
+.THIS .btn {
+    border: none;
+    padding: 5px 20px;
+    background-color: rgb(218 239 240);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.THIS .btn:hover {
+    background-color: rgb(144 193 190);
+    color: white;
+}
