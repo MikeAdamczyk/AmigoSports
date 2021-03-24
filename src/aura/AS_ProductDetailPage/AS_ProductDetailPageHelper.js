@@ -92,7 +92,7 @@
 
           action.setParams({
                 productId: productId,
-                unitPrice: parseInt(unitPrice)
+                unitPrice: unitPrice
           });
 
           action.setCallback(this, function (response) {
