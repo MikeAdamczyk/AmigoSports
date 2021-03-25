@@ -85,9 +85,7 @@ public without sharing class AS_OrderService {
     @AuraEnabled
     public static List<OrderItem> getOrderItems(String orderId) {
 
-        List<OrderItem> items = new List<OrderItem>();
-
-        List<OrderItem> basketItems = [
+        List<OrderItem> items = [
                 select Id, Product2.Name,
                         ListPrice,
                         Quantity,
@@ -95,6 +93,9 @@ public without sharing class AS_OrderService {
                 from OrderItem
                 where OrderId = :orderId
         ];
+
+        System.debug('********************* ITEMS ' + items);
+
         return items;
     }
 
