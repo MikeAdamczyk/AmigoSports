@@ -4,29 +4,45 @@
                 access="global">
 
     <aura:attribute name="order" type="Object"/>
+    <aura:attribute name="orderItems" type="Object[]"/>
+    <aura:attribute name="amount" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
 
     <lightning:layoutItem class="lightning-layout-container">
         <div class="container" aura:id="mainContainer">
-
             <div class="number">{!v.order.OrderNumber}</div>
-            <div class="date">{!v.order.ActivatedDate}</div>
-            <div class="amount">Amount: 100zł</div>
-            <div class="preview"><button class="btn">Check your order</button></div>
-
-<!--            <div class="unitPrice">{!'€' + v.basketItem.price}</div>-->
-<!--            <div class="quantity">-->
-<!--                <lightning:button class="btn" onclick="{!c.decrease}">-</lightning:button>-->
-<!--                <input value="{!v.quantity}" onchange="{!c.changeNumber}"/>-->
-<!--                <lightning:button class="btn" onclick="{!c.increase}">+</lightning:button>-->
-<!--            </div>-->
-<!--            <div class="amount"><span class="text"></span>{!' €' + v.amount}</div>-->
-<!--            <div class="trash">-->
-<!--                <button class="trash-button" onclick="{!c.clickTrash}">-->
-<!--                    <lightning:icon class="icn" iconName="utility:delete"/>-->
-<!--                </button>-->
-<!--            </div>-->
+            <div class="date">
+                <lightning:formattedDateTime value="{!v.order.ActivatedDate}" year="numeric" day="2-digit"
+                                             month="long"/>
+            </div>
+            <div class="amount">{!$Label.c.Euro + v.amount}</div>
+            <div class="preview">
+                <button class="btn" aura:id="button" onclick="{!c.check}">{!$Label.c.Show_details}</button>
+            </div>
         </div>
+
+        <div class="details hide" aura:id="orderItems">
+            <div class="itemListHeader">
+                <div class="number">{!$Label.c.Product_name}</div>
+                <div class="amount">{!$Label.c.Unit_price}</div>
+                <div class="date">{!$Label.c.Quantity}</div>
+                <div class="preview">{!$Label.c.Amount}</div>
+            </div>
+
+            <aura:iteration items="{!v.orderItems}" var="orderItem">
+                <div class="containerList">
+                    <div class="date">{!orderItem.Product2.Name} </div>
+                    <div class="amount">{!$Label.c.Euro + orderItem.ListPrice}</div>
+                    <div class="number">{!orderItem.Quantity}</div>
+                    <div class="preview">{!$Label.c.Euro + orderItem.TotalPrice}</div>
+                </div>
+            </aura:iteration>
+
+            <div class="itemListHeader">
+                <div class="empty"></div>
+                <div class="sum">{!$Label.c.Euro + v.amount}</div>
+            </div>
+        </div>
+
     </lightning:layoutItem>
-
-
 </aura:component>
