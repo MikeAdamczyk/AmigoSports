@@ -1,20 +1,16 @@
 ({
       doInit : function(component, event, helper) {
         const action = component.get('c.getBasketItems');
-
         action.setCallback(this, function (response) {
             if (component.isValid() && response.getState() === 'SUCCESS') {
-                console.log('BASKET ITEMS >>>>> ' + response.getReturnValue())
                 component.set('v.basketProducts', response.getReturnValue());
-            } else {
-                console.log('ERROR >>>>> ' + response.error);
-                console.log('NO ITEMS FOUND ...');
-        }
-
+            } else if (response.getState() === "ERROR") {
+                let errors = response.getError();
+                console.log('ERROR >>>>> ' + errors[0].message);
+            }
         });
         $A.enqueueAction(action);
         this.countSum(component, event);
-
       },
 
       handleEvent: function (component, event) {
@@ -28,38 +24,30 @@
               if (state === "SUCCESS") {
                   let totalAmount = response.getReturnValue();
                   component.set('v.totalAmount', totalAmount);
-                  if(priceSum <= 0){
-                      this.hideButton(component);
-                  }
-              }   else {
-                  let sendErrorToast = component.find('errorToastMaker');
-                  sendErrorToast.handleErrors(response.getError());
+              } else if (state === "ERROR") {
+                  let errors = response.getError();
+                  console.log('ERROR >>>>> ' + errors[0].message);
               }
           });
           $A.enqueueAction(action);
       },
 
       buy: function(component, event, helper) {
-
          const action = component.get('c.closeOrder');
-
          action.setCallback(this, function (response) {
              if (component.isValid() && response.getState() === 'SUCCESS') {
-                 console.log('SUCCESS, ORDER HAS BEEN CLOSED!');
                  let basket = component.find('basket');
                  $A.util.toggleClass(basket, "hideElement");
 
                  let thankYouNote = component.find('thankYouNote');
                  $A.util.toggleClass(thankYouNote, "hideElement");
 
-//                 component.set('v.buyBtnPressed',true);
-             } else {
+             } else if (response.getState() === "ERROR") {
                  let errors = response.getError();
                  console.log('CLOSE ORDER - ERROR >>>>> ' + errors[0].pageErrors[0].message);
-                 //console.log('ERROR >>>>> ' + errors[0].message);
              }
          });
-            $A.enqueueAction(action);
+         $A.enqueueAction(action);
       },
 
       backToHomePage: function(event){
@@ -79,5 +67,4 @@
 
           urlEvent.fire();
       }
-
 })

@@ -1,5 +1,4 @@
 ({
-
     goToBasket: function(component, event, helper){
         helper.goToBasket(event);
     },
@@ -13,6 +12,4 @@
         let modal = component.find('basket-modal');
         $A.util.toggleClass(modal, "hideBasketPreview");
     },
-
-
 })

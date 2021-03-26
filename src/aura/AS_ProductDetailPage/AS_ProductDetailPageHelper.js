@@ -12,14 +12,11 @@
 
             if (state === "SUCCESS") {
                 component.set('v.price', response.getReturnValue());
-            } else if (state === "INCOMPLETE") {
-                //todo do something
             } else if (state === "ERROR") {
                 let errors = response.getError();
                 if (errors) {
                     if (errors[0] && errors[0].message) {
-                        console.log("Error message: " +
-                            errors[0].message);
+                        console.log("Error message: " + errors[0].message);
                     }
                 } else {
                     console.log("Unknown error");
@@ -28,7 +25,6 @@
         });
 
         $A.enqueueAction(action0);
-
 
         // LOAD PHOTO GALLERY
         let action = component.get("c.getProductPhotos");
@@ -39,14 +35,11 @@
 
             if (state === "SUCCESS") {
                 component.set('v.pictures', response.getReturnValue());
-            } else if (state === "INCOMPLETE") {
-                //todo do something
             } else if (state === "ERROR") {
                 let errors = response.getError();
                 if (errors) {
                     if (errors[0] && errors[0].message) {
-                        console.log("Error message: " +
-                            errors[0].message);
+                        console.log("Error message: " + errors[0].message);
                     }
                 } else {
                     console.log("Unknown error");

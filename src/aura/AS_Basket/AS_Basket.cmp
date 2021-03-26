@@ -15,12 +15,9 @@
             </a>
         </div>
 
-
         <div class="basketPreview hideBasketPreview" aura:id="basket-modal">
             <c:AS_BasketPreview basketProducts="{!v.basketProducts}" totalAmount="{!v.totalAmount}"/>
         </div>
 
     </lightning:layout>
-
-
 </aura:component>

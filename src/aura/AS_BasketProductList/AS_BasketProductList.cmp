@@ -12,13 +12,15 @@
     <aura:handler event="c:AS_RequestTotalAmountEvent" action="{!c.handleEvent}"/>
 
     <lightning:layoutItem>
-
         <aura:if isTrue="{!v.basketProducts.length == 0}">
 
-            <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">{!$Label.c.Your_Basket + ' is empty.'}</p>
+            <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">{!$Label.c.Your_Basket}</p>
+
+            <div class="continue">
+                <button class="buyNow" onclick="{!c.checkOrders}">{!$Label.c.Check_your_orders}</button>
+            </div>
 
             <aura:set attribute="else">
-
                 <div class="basket" aura:id="basket">
                     <aura:iteration items="{!v.basketProducts}" var="item" end="">
                         <c:AS_BasketProductItem basketItem="{!item}"/>
@@ -28,44 +30,40 @@
 
                         <div class="summary">
                             <div class="total">
-                                <p>{!'TOTAL: €' + v.totalAmount}</p>
+                                <p>{!$Label.c.Total_Euro + v.totalAmount}</p>
                             </div>
                             <div class="buttons">
-                                <button class="buyNow" onclick="{!c.buy}">Buy Now</button>
+                                <button class="buyNow" onclick="{!c.buy}">{!$Label.c.Buy_Now}</button>
                             </div>
                         </div>
                     </aura:if>
 
                     <aura:if isTrue="{!v.totalAmount == 0}">
-                        <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">{!$Label.c.Your_Basket + ' is empty.'}</p>
+                        <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">{!$Label.c.Your_Basket}</p>
+                        <div class="continue">
+                            <button class="buyNow" onclick="{!c.checkOrders}">{!$Label.c.Check_your_orders}</button>
+                        </div>
                     </aura:if>
 
-
                 </div>
-
             </aura:set>
         </aura:if>
-
-
     </lightning:layoutItem>
 
     <lightning:layoutItem>
         <div class="thankYouNote hideElement" aura:id="thankYouNote">
             <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">
-                Thank you for your purchase.
+                    {!$Label.c.Purchase_Thanks}
             </p>
+            <p>{!$Label.c.Products_Receive}</p>
 
-            <p>You will receive your products soon.</p>
             <div class="continue">
-                <button class="buyNow" onclick="{!c.backToHomePage}">Continue shopping</button>
+                <button class="buyNow" onclick="{!c.backToHomePage}">{!$Label.c.Continue_shopping}</button>
             </div>
 
             <div class="continue">
-                <button class="buyNow" onclick="{!c.checkOrders}">Check your orders</button>
+                <button class="buyNow" onclick="{!c.checkOrders}">{!$Label.c.Check_your_orders}</button>
             </div>
-
         </div>
     </lightning:layoutItem>
-
-
 </aura:component>

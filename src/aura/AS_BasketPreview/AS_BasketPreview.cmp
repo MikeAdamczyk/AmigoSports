@@ -5,7 +5,6 @@
 
     <aura:attribute name="basketProducts" type="Object[]"/>
     <aura:attribute name="totalAmount" type="String"/>
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
     <p class="subheader"
        style="text-align: center; font-weight: 900; margin-bottom: 15px;
@@ -14,10 +13,10 @@
                 padding: 10px 0;">
 
         <aura:if isTrue="{!v.basketProducts.length == 0}">
-            {!$Label.c.Your_Basket + ' is empty.'}
+        {!$Label.c.Your_Basket}
 
             <aura:set attribute="else">
-                TOTAL: {!'€' + v.totalAmount}
+                TOTAL: {!$Label.c.Euro + v.totalAmount}
             </aura:set>
         </aura:if>
 
@@ -28,6 +27,4 @@
             <c:AS_BasketPreviewItem basketItem="{!item}"/>
         </aura:iteration>
     </div>
-
-
 </aura:component>

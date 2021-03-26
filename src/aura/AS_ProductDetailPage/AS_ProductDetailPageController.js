@@ -10,5 +10,4 @@
     addToBasket: function (component, event, helper){
         helper.addToBasket(component, event, helper);
     },
-
 })

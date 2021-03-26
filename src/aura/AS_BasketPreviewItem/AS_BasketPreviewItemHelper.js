@@ -1,6 +1,5 @@
 ({
       doInit : function(component, event, helper) {
-            console.log('basket item init...')
             let AmigoPhotoLink = $A.get('$Label.c.AmigoPhotoLink');
             component.set('v.AmigoPhotoLink', AmigoPhotoLink);
 
@@ -10,5 +9,4 @@
             component.set('v.quantity', quantity);
             component.set('v.amount', amount.toFixed(2));
       },
-
 })

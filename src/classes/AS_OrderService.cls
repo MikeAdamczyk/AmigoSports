@@ -6,7 +6,7 @@ public without sharing class AS_OrderService {
     }
 
     public static pricebook2 getStandardPricebook() {
-        return [select id from pricebook2 where Name = 'Standard'];
+        return [SELECT id FROM pricebook2 WHERE Name = 'Standard'];
     }
 
     @AuraEnabled
@@ -51,13 +51,10 @@ public without sharing class AS_OrderService {
                     LIMIT 1
             ];
 
-            System.debug('???????????????????????????? ---- basketOrder ---- ' + basketOrder.OrderNumber);
         }
 
-        System.debug('BASKET OrderNumber =====>>>>> ' + basketOrder.OrderNumber);
         return basketOrder;
     }
-
 
     //Get CLOSED ORDERS
     @AuraEnabled
@@ -93,8 +90,6 @@ public without sharing class AS_OrderService {
                 from OrderItem
                 where OrderId = :orderId
         ];
-
-        System.debug('********************* ITEMS ' + items);
 
         return items;
     }
@@ -267,14 +262,9 @@ public without sharing class AS_OrderService {
 
     @AuraEnabled
     public static void closeOrder() {
-
         Order oldOrder = getBasketOrder();
-
-        System.debug('*************** --------- oldOrder >>> ' + oldOrder.OrderNumber);
-
         oldOrder.Status = 'Activated';
         upsert oldOrder;
         createNewOrder();
     }
-
 }
