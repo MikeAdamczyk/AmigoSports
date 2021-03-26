@@ -12,4 +12,8 @@
         let modal = component.find('basket-modal');
         $A.util.toggleClass(modal, "hideBasketPreview");
     },
+
+    checkOrders: function(component, event, helper){
+        helper.checkOrders(event);
+    }
 })

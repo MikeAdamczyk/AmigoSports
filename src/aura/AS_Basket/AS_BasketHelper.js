@@ -45,4 +45,12 @@
          let modal = component.find('basket-modal');
          $A.util.toggleClass(modal, "hideBasketPreview");
      },
+
+     checkOrders: function(event){
+          let urlEvent = $A.get("e.force:navigateToURL");
+               urlEvent.setParams({
+                   "url": "/s/orders",
+               });
+           urlEvent.fire();
+     }
 })

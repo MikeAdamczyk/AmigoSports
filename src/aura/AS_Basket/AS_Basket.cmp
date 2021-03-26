@@ -13,6 +13,7 @@
                onmouseenter="{!c.showModal}" onmouseleave="{!c.hideModal}">
                 <img class="basketIcon" src="{!$Resource.ShopBasket}"/>
             </a>
+            <a onclick="{!c.checkOrders}" style="padding-left: 30px; font-weight: 900;">My Orders</a>
         </div>
 
         <div class="basketPreview hideBasketPreview" aura:id="basket-modal">
