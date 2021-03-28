@@ -77,7 +77,6 @@
 
           console.log('ENTER addToBasket...');
 
-
           let productId = component.get("v.product").Id;
           let unitPrice = component.get("v.price");
 
@@ -99,14 +98,29 @@
 
             if (state === "ERROR") {
                 let errors = response.getError();
-//                    console.log('ERROR >>>>> ' + errors[0].pageErrors[0].message);
-                console.log('ERROR >>>>> ' + errors[0].message);
-//                    let sendErrorToast = component.find('errorToastMaker');
-//                    sendErrorToast.handleErrors(response.getError());
+                console.log('ERROR aaa >>>>> ' + errors[0].message);
+
+//                    var toastEvent = $A.get("e.force:showToast");
+//                        toastEvent.setParams({
+//                            title : 'Error',
+//                            message: 'Message: ' + errors[0].message + '. Please contact your admin.',
+//                            duration:' 5000',
+//                            key: 'info_alt',
+//                            type: 'error',
+//                            mode: 'sticky'
+//                        });
+//                    toastEvent.fire();
+
+                    let sendErrorToast = component.find('errorToast');
+                    sendErrorToast.handleErrors(response.getError());
             }
            });
 
            $A.enqueueAction(action);
+
+
+        // REDIRECT TO BASKET
+        setTimeout(function(){
 
           let urlEvent = $A.get("e.force:navigateToURL");
           urlEvent.setParams({
@@ -114,6 +128,13 @@
           });
 
           urlEvent.fire();
+
+        }, 500);
+
+
+
+
+
     },
 
 })

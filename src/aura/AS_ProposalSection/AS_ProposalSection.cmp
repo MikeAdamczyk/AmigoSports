@@ -6,9 +6,10 @@
     <aura:attribute name="backgroundImageURLrun" type="String" default=""/>
     <aura:attribute name="backgroundImageURLcrossfit" type="String" default=""/>
     <aura:attribute name="backgroundImageURLbike" type="String" default=""/>
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="apparel" type="Object[]"/>
     <aura:attribute name="context" type="String" default="home"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:handler event="c:AS_Query" action="{!c.AS_Query}"/>
 
     <div class="{!if(v.context == 'search','slds-show','slds-hide')}">
@@ -64,7 +65,6 @@
             </div>
 
         </lightning:layout>
-
     </div>
-
+    <c:AS_SendErrorToast aura:id="errorToast"/>
 </aura:component>

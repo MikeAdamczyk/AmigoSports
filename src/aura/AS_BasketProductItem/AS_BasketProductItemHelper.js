@@ -46,10 +46,11 @@
                 quantity: quantity
             });
             action.setCallback(this, function (response) {
-                let state = response.getState();
-                if (state === "ERROR") {
+                if (response.getState() === "ERROR") {
                     let errors = response.getError();
                     console.log('ERROR >>>>> ' + errors[0].message);
+                    let sendErrorToast = component.find('errorToast');
+                    sendErrorToast.handleErrors(response.getError());
                 }
             });
             $A.enqueueAction(action);
@@ -66,6 +67,8 @@
                 if (response.getState() === "ERROR") {
                     let errors = response.getError();
                     console.log('ERROR >>>>> ' + errors[0].message);
+                    let sendErrorToast = component.find('errorToast');
+                    sendErrorToast.handleErrors(response.getError());
                 }
             });
             $A.enqueueAction(action);

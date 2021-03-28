@@ -13,10 +13,13 @@
 
          action.setCallback(this, function (response) {
              if (component.isValid() && response.getState() === 'SUCCESS') {
-                component.set('v.basketProducts', response.getReturnValue());
-
-             } else {
-                 console.log('ERROR >>>>> ' + response.error);
+                 component.set('v.basketProducts', response.getReturnValue());
+             }
+             if (response.getState() === 'ERROR') {
+                 let errors = response.getError();
+                 console.log('ERROR >>>>> ' + errors[0].message);
+                 let sendErrorToast = component.find('errorToast');
+                 sendErrorToast.handleErrors(response.getError());
              }
          });
          $A.enqueueAction(action);
@@ -36,6 +39,8 @@
               if (state === "ERROR") {
                    let errors = response.getError();
                    console.log('ERROR >>>>> ' + errors[0].message);
+                   let sendErrorToast = component.find('errorToast');
+                   sendErrorToast.handleErrors(response.getError());
               }
           });
           $A.enqueueAction(action1);
@@ -47,10 +52,10 @@
      },
 
      checkOrders: function(event){
-          let urlEvent = $A.get("e.force:navigateToURL");
-               urlEvent.setParams({
-                   "url": "/s/orders",
-               });
-           urlEvent.fire();
+        let urlEvent = $A.get("e.force:navigateToURL");
+           urlEvent.setParams({
+               "url": "/s/orders",
+           });
+        urlEvent.fire();
      }
 })

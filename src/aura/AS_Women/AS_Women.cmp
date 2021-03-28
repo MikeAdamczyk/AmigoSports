@@ -11,5 +11,5 @@
     <p class="subheader" style="font-weight: bold; margin-bottom: 40px; margin-top: 20px;">{!$Label.c.Tab_Women}</p>
 
     <c:AS_ProductsList apparel="{!v.apparel}"/>
-
+    <c:AS_SendErrorToast aura:id="errorToast"/>
 </aura:component>

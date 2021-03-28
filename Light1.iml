@@ -937,10 +937,6 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
-                            <option name="name" value="AS_BasketPage" />
-                            <option name="selected" value="true" />
-                          </MetadataEntry>
-                          <MetadataEntry>
                             <option name="name" value="AS_BasketPageBanner" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -966,6 +962,10 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="AS_Spinner" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_SendErrorToast" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>

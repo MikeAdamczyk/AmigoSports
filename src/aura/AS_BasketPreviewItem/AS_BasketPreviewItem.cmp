@@ -3,17 +3,14 @@
                 implements="flexipage:availableForAllPageTypes,
                 forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:appHostable"
 >
-
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-
     <aura:attribute name="basketItem" type="Object"/>
     <aura:attribute name="product" type="Object"/>
     <aura:attribute name="AmigoPhotoLink" type="String"/>
     <aura:attribute name="recordLoadError" type="String"/>
-
     <aura:attribute name="quantity" type="String"/>
     <aura:attribute name="amount" type="String"/>
 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:registerEvent name="totalAmountEvent" type="c:AS_RequestTotalAmountEvent"/>
 
     <force:recordData aura:id="recordLoader"

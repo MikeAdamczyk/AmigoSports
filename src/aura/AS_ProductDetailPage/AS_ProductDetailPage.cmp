@@ -68,4 +68,5 @@
             </div>
         </lightning:layoutItem>
     </lightning:layout>
+    <c:AS_SendErrorToast aura:id="errorToast"/>
 </aura:component>

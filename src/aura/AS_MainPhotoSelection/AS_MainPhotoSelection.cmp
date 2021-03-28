@@ -15,23 +15,18 @@
     />
 
     <lightning:layout multipleRows="false">
-
         <lightning:card class="slds-card" title="Choose Main Photo">
             <div class="gallery">
                 <aura:iteration items="{!v.pictures}" var="pic">
                        <span>
-
                            <button class="btn" data-myvalue="{!pic.photoId}" onclick="{!c.onSelect}">
                                <img class="smallPhoto" src="{!$Label.c.AmigoPhotoLink + pic.photoId}"/>
                                <p class="{!if(v.mainPhoto == pic.photoId,'slds-show','slds-hide')}">Main Photo</p>
                            </button>
-
                         </span>
                 </aura:iteration>
             </div>
         </lightning:card>
-
     </lightning:layout>
-
-
+    <c:AS_SendErrorToast aura:id="errorToast"/>
 </aura:component>

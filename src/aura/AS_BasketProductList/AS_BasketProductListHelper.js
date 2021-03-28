@@ -7,6 +7,8 @@
             } else if (response.getState() === "ERROR") {
                 let errors = response.getError();
                 console.log('ERROR >>>>> ' + errors[0].message);
+                let sendErrorToast = component.find('errorToast');
+                sendErrorToast.handleErrors(response.getError());
             }
         });
         $A.enqueueAction(action);
@@ -27,6 +29,8 @@
               } else if (state === "ERROR") {
                   let errors = response.getError();
                   console.log('ERROR >>>>> ' + errors[0].message);
+                  let sendErrorToast = component.find('errorToast');
+                  sendErrorToast.handleErrors(response.getError());
               }
           });
           $A.enqueueAction(action);
@@ -44,7 +48,9 @@
 
              } else if (response.getState() === "ERROR") {
                  let errors = response.getError();
-                 console.log('CLOSE ORDER - ERROR >>>>> ' + errors[0].pageErrors[0].message);
+                 console.log('CLOSE ORDER - ERROR >>>>> ' + errors[0].message);
+                 let sendErrorToast = component.find('errorToast');
+                 sendErrorToast.handleErrors(response.getError());
              }
          });
          $A.enqueueAction(action);
@@ -55,7 +61,6 @@
               urlEvent.setParams({
                   "url": "/s",
               });
-
           urlEvent.fire();
       },
 
@@ -64,7 +69,6 @@
               urlEvent.setParams({
                   "url": "/s/orders",
               });
-
           urlEvent.fire();
       }
 })
