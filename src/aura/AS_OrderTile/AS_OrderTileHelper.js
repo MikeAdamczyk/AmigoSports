@@ -39,4 +39,33 @@
         }
         else elem.innerHTML = "Show details";
     },
+
+     redirect: function(component, event, helper){
+         console.log('ENTER to redirect...');
+         var component_target = event.currentTarget;
+         var attribute = component_target.dataset.myvalue;
+         console.log('attribute >>>> ' + attribute);
+
+         let url = '/product/' + attribute;
+
+         let urlEvent = $A.get("e.force:navigateToURL");
+         urlEvent.setParams({
+             "url": url,
+         });
+
+         urlEvent.fire();
+     },
+
+     createCase: function (component, event) {
+
+         let orderNumber = component.get('v.order').OrderNumber;
+         console.log('orderNumber >>> ' + orderNumber);
+
+         let caseSubject = component.get('v.caseSubject');
+         console.log('caseSubject >>> ' + caseSubject);
+
+         let caseMessage = component.get('v.caseMessage');
+         console.log('caseMessage >>> ' + caseMessage);
+
+     },
 })

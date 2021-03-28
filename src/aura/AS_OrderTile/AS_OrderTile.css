@@ -109,5 +109,44 @@
 
 .THIS .empty{
      height: 100%;
-     width: 75%;
+     width: 50%;
+}
+
+.THIS .productLink{
+    color: grey;
+}
+
+.THIS .complaintBtn{
+    border: none;
+    padding: 0 10px;
+    background-color: transparent;
+    transition: .3s ease-in-out;
+    outline: none;
+    color: lightgray;
+    font-weight: 400;
+}
+
+.THIS .complaintBtn:hover{
+    color: grey;
+}
+
+.THIS .card{
+    padding: 20px;
+}
+
+.THIS .complaint {
+     height: 100%;
+     width: 25%;
+     border-top: 1px solid lightgray;
+     padding-top: 10px;
+}
+
+.THIS .slds-modal__container{
+    max-width: 60rem;
+    width: 60rem;
+    height: 70%;
+}
+
+.THIS .slds-rich-text-area__content {
+    text-align: start;
 }
