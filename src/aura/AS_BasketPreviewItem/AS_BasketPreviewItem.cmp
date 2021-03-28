@@ -28,7 +28,7 @@
                         : $Resource.NoPhotoGrey}" width="80"/>
             </div>
             <div class="name"><span style="font-weight: 700">{!v.quantity + ' x &nbsp;'}</span>{!v.product.Name}</div>
-            <div class="amount"><span class="text">Amount: &nbsp;</span><span style="font-weight: 700">{!$Label.c.Euro + v.amount}</span></div>
+            <div class="amount"><span class="text">Amount: &nbsp;</span><span style="font-weight: 700">{!$Locale.currencyCode + ' ' + v.amount}</span></div>
         </div>
     </lightning:layout>
 </aura:component>

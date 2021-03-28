@@ -26,16 +26,14 @@
 
         <aura:if isTrue="{!v.product.discount}">
             <p>
-<!--                SALE -{!v.product.discount + '% &nbsp;'}-->
-                <span class="price" style="color: crimson;">{!Label.c.SALE + '&nbsp;' + $Label.c.Price + ' €' + v.product.salePrice + ' &nbsp;'}</span>
+                <!--                SALE -{!v.product.discount + '% &nbsp;'}-->
+                <span class="price"
+                      style="color: crimson;">{!Label.c.SALE + '&nbsp;' + $Label.c.Price + ' €' + v.product.salePrice + ' &nbsp;'}</span>
                 <span style="text-decoration: line-through">{!' €' + v.product.price}</span>
             </p>
             <aura:set attribute="else">
-                <p class="price">{!$Label.c.Price + ' €' + v.product.price}</p>
+                <p class="price">{!$Label.c.Price + ' ' + $Locale.currencyCode + ' ' + v.product.price}</p>
             </aura:set>
         </aura:if>
-
-
     </lightning:button>
-
 </aura:component>

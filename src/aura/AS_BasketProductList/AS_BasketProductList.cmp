@@ -30,7 +30,7 @@
 
                         <div class="summary">
                             <div class="total">
-                                <p>{!$Label.c.Total_Euro + v.totalAmount}</p>
+                                <p>{!$Label.c.Total + ' ' + $Locale.currencyCode + ' ' + v.totalAmount}</p>
                             </div>
                             <div class="buttons">
                                 <button class="buyNow" onclick="{!c.buy}">{!$Label.c.Buy_Now}</button>

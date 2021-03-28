@@ -17,15 +17,15 @@
 .THIS .photo {
      height: 100%;
      width: 10%;
-     margin-right: 5px;
+     margin-right: 10px;
 }
 
 .THIS .name {
      height: 100%;
-     width: 60%;
+     width: 55%;
 }
 
 .THIS .amount {
      height: 100%;
-     width: 30%;
+     width: 35%;
 }

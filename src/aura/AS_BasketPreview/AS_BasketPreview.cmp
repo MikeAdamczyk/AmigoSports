@@ -16,7 +16,7 @@
         {!$Label.c.Your_Basket}
 
             <aura:set attribute="else">
-                TOTAL: {!$Label.c.Euro + v.totalAmount}
+                {!$Label.c.Total + ' ' + $Locale.currencyCode + ' ' + v.totalAmount}
             </aura:set>
         </aura:if>
 

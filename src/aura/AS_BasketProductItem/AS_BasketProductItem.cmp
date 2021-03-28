@@ -29,13 +29,13 @@
                         : $Resource.NoPhotoGrey}" width="80"/>
             </div>
             <div class="name">{!v.product.Name}</div>
-            <div class="unitPrice">{!$Label.c.Euro + v.basketItem.price}</div>
+            <div class="unitPrice">{!$Locale.currencyCode + ' ' + v.basketItem.price}</div>
             <div class="quantity">
                 <lightning:button class="btn" onclick="{!c.decrease}">-</lightning:button>
                 <input value="{!v.quantity}" onchange="{!c.changeNumber}"/>
                 <lightning:button class="btn" onclick="{!c.increase}">+</lightning:button>
             </div>
-            <div class="amount"><span class="text"></span>{!' ' + $Label.c.Euro + v.amount}</div>
+            <div class="amount"><span class="text"></span>{!' ' + $Locale.currencyCode + ' ' + v.amount}</div>
             <div class="trash">
                 <button class="trash-button" onclick="{!c.clickTrash}">
                     <lightning:icon class="icn" iconName="utility:delete"/>
