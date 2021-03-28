@@ -15,7 +15,7 @@
                 <lightning:formattedDateTime value="{!v.order.ActivatedDate}" year="numeric" day="2-digit"
                                              month="long"/>
             </div>
-            <div class="amount">{!$Label.c.Euro + v.amount}</div>
+            <div class="amount">{!$Locale.currencyCode + ' ' + v.amount}</div>
             <div class="preview">
                 <button class="btn" aura:id="button" onclick="{!c.check}">{!$Label.c.Show_details}</button>
             </div>
@@ -32,15 +32,15 @@
             <aura:iteration items="{!v.orderItems}" var="orderItem">
                 <div class="containerList">
                     <div class="date">{!orderItem.Product2.Name} </div>
-                    <div class="amount">{!$Label.c.Euro + orderItem.ListPrice}</div>
+                    <div class="amount">{!$Locale.currencyCode + ' ' + orderItem.ListPrice}</div>
                     <div class="number">{!orderItem.Quantity}</div>
-                    <div class="preview">{!$Label.c.Euro + orderItem.TotalPrice}</div>
+                    <div class="preview">{!$Locale.currencyCode + ' ' + orderItem.TotalPrice}</div>
                 </div>
             </aura:iteration>
 
             <div class="itemListHeader">
                 <div class="empty"></div>
-                <div class="sum">{!$Label.c.Euro + v.amount}</div>
+                <div class="sum">{!$Locale.currencyCode + ' ' + v.amount}</div>
             </div>
         </div>
 
