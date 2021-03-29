@@ -89,6 +89,9 @@
                         mode: 'sticky'
                     });
                 toastEvent.fire();
+
+                component.set('v.caseSubject', '');
+                component.set('v.caseMessage', '');
              }
 
              if (response.getState() === "ERROR") {

@@ -46,7 +46,7 @@
 
             <div class="itemListHeader">
                 <div class="complaint">
-                    <button class="complaintBtn" aura:id="button" onclick="{!c.makeComplaint}">Make a complaint</button>
+                    <button class="complaintBtn" onclick="{!c.makeComplaint}">Make a complaint</button>
                 </div>
                 <div class="empty"></div>
                 <div class="sum">{!$Locale.currencyCode + ' ' + v.amount}</div>
@@ -65,10 +65,12 @@
                     <lightning:layout multipleRows="true">
                         <div class="popup-inputs">
                             <lightning:input disabled="true" value="{!v.order.OrderNumber}" label="Order Number"/>
-                            <lightning:input required="true" value="{!v.caseSubject}" label="Subject"/>
                             <br/>
-                            <p>Complaint content</p>
-                            <lightning:inputRichText value="{!v.caseMessage}" placeholder="Type your complaint here..."/>
+                            <lightning:input required="true" value="{!v.caseSubject}" label="Subject"
+                                             placeholder="Type subject here..."/>
+                            <br/>
+                            <lightning:textarea required="true" label="Complaint content" value="{!v.caseMessage}"
+                                                placeholder="Type your complaint here..."/>
                         </div>
                     </lightning:layout>
                     <footer class="slds-modal__footer">

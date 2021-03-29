@@ -94,8 +94,7 @@
 }
 
 .THIS .details {
-    margin-bottom: 150px;
-    margin: 10px auto 150px;
+    margin: 10px auto 50px;
     background-color: whitesmoke;
     width: 80%;
 }
@@ -147,6 +146,32 @@
     height: 70%;
 }
 
-.THIS .slds-rich-text-area__content {
-    text-align: start;
+.THIS .slds-modal__footer {
+    text-align: center;
+    border-top-style: none;
+    box-shadow: none;
+    margin-top: 20px;
+}
+
+.THIS .slds-textarea {
+     min-height:100px;
+     border: 1px solid lightgray;
+}
+
+.THIS .slds-textarea:focus::placeholder {
+    color: transparent;
+}
+
+.THIS .slds-input {
+    border: 1px solid lightgray;
+}
+
+.THIS .slds-input:focus::placeholder {
+    color: transparent;
+}
+
+.THIS .slds-modal__header {
+    border-bottom-style: none;
+    padding-top: 0;
+    padding-bottom: 30px;
 }
