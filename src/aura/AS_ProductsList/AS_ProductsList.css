@@ -1,0 +1,10 @@
+.THIS{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.THIS .mainContainer{
+   justify-content: center;
+   max-width: 1368px;
+   margin: 0 auto;
+}

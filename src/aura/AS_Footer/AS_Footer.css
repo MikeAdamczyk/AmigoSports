@@ -1,0 +1,21 @@
+/**
+ * Created by BRITENET on 27.02.2021.
+ */
+ .THIS{
+    margin-top: 40px;
+    text-align: center;
+    color: lightgray;
+    font-size: 0.9rem;
+    background-color: rgb(51,51,51);
+ }
+
+ .THIS .moneyBack{
+    height: 70px;
+    width: auto;
+ }
+
+ .THIS .creditCards{
+     height: 50px;
+     width: auto;
+ }
+

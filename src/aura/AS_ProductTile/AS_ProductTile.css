@@ -1,0 +1,46 @@
+.THIS {
+     font-size: 1rem;
+     color: grey;
+     display:block;
+     margin: 20px;
+     border-color: transparent;
+ }
+
+.THIS:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.THIS:focus {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.THIS .tile{
+    padding: 10px;
+    margin: 20px;
+}
+
+.THIS .price{
+    font-weight: bold;
+}
+
+.THIS .oldPrice{
+    text-decoration: line-through
+}
+
+.THIS .saleSign{
+    position: absolute;
+    top: 0;
+    background-color: crimson;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+<aura:component description="AS_Women" controller="AS_App_Controller"
+                implements="forceCommunity:layout,
+                flexipage:availableForAllPageTypes,
+                forceCommunity:availableForAllPageTypes,
+                force:appHostable"
+                access="global">
+
+    <aura:attribute name="apparel" type="Object[]"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <p class="subheader" style="font-weight: bold; margin-bottom: 40px; margin-top: 20px;">{!$Label.c.Tab_Women}</p>
+
+    <c:AS_ProductsList apparel="{!v.apparel}"/>
+    <c:AS_SendErrorToast aura:id="errorToast"/>
+</aura:component>

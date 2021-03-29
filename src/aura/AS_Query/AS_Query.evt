@@ -1,0 +1,7 @@
+<aura:event type="APPLICATION" description="AS_Query">
+
+    <aura:attribute name="query" type="String"/>
+    <aura:attribute name="display" type="String"/>
+    <aura:attribute name="context" type="String"/>
+
+</aura:event>

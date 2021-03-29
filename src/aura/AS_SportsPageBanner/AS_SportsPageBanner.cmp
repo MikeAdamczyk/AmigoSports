@@ -1,0 +1,9 @@
+<aura:component description="AS_SportsPageBanner"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <div class="banner">
+        <img class="banner" src="{!$Resource.SportBanner}"/>
+    </div>
+
+</aura:component>

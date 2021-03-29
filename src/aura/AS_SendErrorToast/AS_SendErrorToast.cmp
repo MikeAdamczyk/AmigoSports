@@ -1,0 +1,6 @@
+<aura:component description="AS_SendErrorToast">
+
+    <aura:method name="handleErrors" action="{!c.handleErrors}" access="public">
+        <aura:attribute name="errors" type="Object"/>
+    </aura:method>
+</aura:component>

@@ -29,6 +29,7 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="AS_PostToChatter" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="AccountController" />
@@ -344,39 +345,50 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyAndQuestionController" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyAndQuestionController_Test" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyEmail" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyForceUtil" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyManagerController" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyManagerController_Test" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveySitesUtil" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveySitesUtil_Test" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyTestingUtil" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyTestingUtil_Test" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="ViewShareSurveyComponentController" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="ViewShareSurveyComponentController_Test" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="ViewSurveyController" />
@@ -384,15 +396,19 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="ViewSurveyControllerWithoutSharing" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="ViewSurveyController_Test" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="ViewSurveyResultsComponentCntrlTest" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="ViewSurveyResultsComponentController" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="calculatorServices" />
@@ -408,6 +424,38 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="sobjectPartnerSoapSforceCom" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="GoogleSSO" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_App_Controller" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_ProductWrapper" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_Utils" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_Product_Photo_Service" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_ProductPhotoWrapper" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_OrderService" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_UserService" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -545,9 +593,11 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="GSurveys" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Getting_Started_With_Survey_Force" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="IdeasHome" />
@@ -587,12 +637,15 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyManagerPage" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyPage" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="TakeSurvey" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Unauthorized" />
@@ -608,6 +661,10 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="AS_ThankYouNote" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_WebToLead" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
@@ -640,6 +697,10 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Zenek_zlyTrigger" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ContentDocumentLinkTrigger" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
@@ -701,9 +762,11 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="Case" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Lead" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -809,6 +872,102 @@
                             <option name="name" value="myEverythingComponent" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_Footer" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_MainTiles" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_ProductTile" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_ProductsList" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_MenPageBanner" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_WomenPageBanner" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_Query" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_Division" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_Men" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_Women" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_Kids" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_KidsPageBanner" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_SportsPageBanner" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_SalePageBanner" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_MainPhotoSelection" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_SALE" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_BasketPageBanner" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_BasketProductList" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_BasketProductItem" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_RequestTotalAmountEvent" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_BasketPreview" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_BasketPreviewItem" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_Spinner" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_SendErrorToast" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
                         </list>
                       </option>
                       <option name="name" value="AuraDefinitionBundle" />
@@ -826,9 +985,11 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="Case" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Lead" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -956,6 +1117,7 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="AmigoSports" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="FootballApp" />
@@ -965,9 +1127,11 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey_Force" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey_Force_Lightning" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="standard__AllTabSet" />
@@ -1028,6 +1192,10 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="standard__Sites" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AmigoSports_Service_Console" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -2405,15 +2573,23 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyQuestionResponse__c-en_US" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyTaker__c-en_US" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey_Question__c-en_US" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey__c-en_US" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Knowledge__kav-en_US" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -2453,6 +2629,7 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Getting_Started_With_Survey_Force" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Import_Player" />
@@ -2480,12 +2657,15 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyTaker__c" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey_Question__c" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey__c" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="standard-Account" />
@@ -2742,6 +2922,10 @@
                           <MetadataEntry>
                             <option name="name" value="standard-report" />
                           </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Knowledge__kav" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
                         </list>
                       </option>
                       <option name="name" value="CustomTab" />
@@ -2752,6 +2936,14 @@
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Sports_and_health_advices" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
                       <option name="name" value="DataCategoryGroup" />
                       <option name="wildcard" value="false" />
                     </MetadataType>
@@ -2826,6 +3018,14 @@
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="EmailToCase" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
                       <option name="name" value="EmailServicesFunction" />
                       <option name="wildcard" value="false" />
                     </MetadataType>
@@ -2859,10 +3059,12 @@
                           <MetadataEntry>
                             <option name="name" value="unfiled$public/InvitationEmail" />
                             <option name="parentFolder" value="unfiled$public" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="unfiled$public/Lead_Survey" />
                             <option name="parentFolder" value="unfiled$public" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="unfiled$public/MarketingProductInquiryResponse" />
@@ -2871,6 +3073,7 @@
                           <MetadataEntry>
                             <option name="name" value="unfiled$public/New_Lead_Survey_1613775183523" />
                             <option name="parentFolder" value="unfiled$public" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="unfiled$public/RejectionEmail" />
@@ -2938,10 +3141,26 @@
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Chat_Agents" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
                       <option name="name" value="EmbeddedServiceConfig" />
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Chat_Agents" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
                       <option name="name" value="EmbeddedServiceFlowConfig" />
                       <option name="wildcard" value="false" />
                     </MetadataType>
@@ -2969,6 +3188,7 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="Case" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -2992,6 +3212,7 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="AmigoSports_UtilityBar" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="LightningSalesConsole_UtilityBar" />
@@ -3005,6 +3226,18 @@
                           <MetadataEntry>
                             <option name="name" value="Movies_Browser_UtilityBar" />
                           </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Knowledge_Record_Page" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Knowledge_Record_Page1" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Knowledge_Record_Page2" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
                         </list>
                       </option>
                       <option name="name" value="FlexiPage" />
@@ -3015,6 +3248,7 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="Amigo_Retail" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -3030,6 +3264,7 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="Amigo_Retail" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -4026,6 +4261,7 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Lead" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Player__c" />
@@ -4052,6 +4288,14 @@
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="cbAmigoSports" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
                       <option name="name" value="NetworkBranding" />
                       <option name="wildcard" value="false" />
                     </MetadataType>
@@ -4075,6 +4319,7 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="Retail_Path" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -4093,12 +4338,27 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey_Force_Admin" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey_Force_Guest" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey_Force_SuperAdmin" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Knowledge_LSF_Permission_Set" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Live_Agent_Setup_Flow" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Read_Converted_Lead" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -4293,6 +4553,26 @@
                       <option name="wildcard" value="false" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Amigo_Chat" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Claim" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Multiskill" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Tech_Support" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
                       <option name="name" value="Queue" />
                       <option name="wildcard" value="false" />
                     </MetadataType>
@@ -4301,9 +4581,11 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="Case.LogACall" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Case.NewChildCase" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="CollaborationGroup.NewGroupMember" />
@@ -4386,6 +4668,10 @@
                           <MetadataEntry>
                             <option name="name" value="Task.UpdateStatus_1" />
                           </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case.SendEmail" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
                         </list>
                       </option>
                       <option name="name" value="QuickAction" />
@@ -4462,6 +4748,7 @@
                           <MetadataEntry>
                             <option name="name" value="Survey_Force_Reports/Survey_with_Questions_and_Responses" />
                             <option name="parentFolder" value="Survey_Force_Reports" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="folder" value="true" />
@@ -4481,12 +4768,22 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="Survey_w_Questions_and_Answers" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Surveys_with_Survey_Questions_with_Survey_Question_Responses" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="screen_flows_prebuilt_crt" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Service_Contracts_with_Contract_Line_Items" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Service_Contracts_with_Entitlements" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -5073,9 +5370,11 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="QuickText" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="QuickTextUsage" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="RecordMergeHistory" />
@@ -5112,9 +5411,11 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyTaker__c" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey__c" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="TodayGoal" />
@@ -5447,6 +5748,7 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Case" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="ClubRemote__c" />
@@ -5474,6 +5776,7 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Lead" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Log__c" />
@@ -5525,18 +5828,23 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyQuestionResponse__c" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="SurveyTaker__c" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey_Question__c" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Survey__c" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Task" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -5607,12 +5915,17 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Lead" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Movie__c" />
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="Player__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case" />
+                            <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
                       </option>
@@ -5700,6 +6013,136 @@
                     <MetadataType>
                       <option name="name" value="WorkflowTask" />
                       <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Chat_Agents" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="EmbeddedServiceLiveAgent" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Chat_Agents" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="LiveChatButton" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="live_agent_setup_flow" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="LiveChatDeployment" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="AmigoSports" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="ManagedTopics" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Resolution Time" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="MilestoneType" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="AmigoSports" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="Network" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Chat_Agents" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="PresenceUserConfig" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Amigo_Chat" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Amigo_Omni" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="QueueRoutingConfig" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Amigo_Channel" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="sfdc_liveagent" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="ServiceChannel" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Available_Chat" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Busy" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="On_Break" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Web_Email" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="ServicePresenceStatus" />
                     </MetadataType>
                   </set>
                 </option>

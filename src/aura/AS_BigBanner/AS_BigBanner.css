@@ -1,0 +1,11 @@
+.THIS .slds-carousel__autoplay{
+    left: 5px;
+}
+
+.THIS .slds-carousel__content{
+    display: none;
+}
+
+.THIS .slds-carousel__indicator-action{
+    border: 1px solid lightgrey;
+}

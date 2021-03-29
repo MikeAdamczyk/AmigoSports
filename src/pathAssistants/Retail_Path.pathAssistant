@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Retail Path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Phone</fieldNames>
+        <fieldNames>Email</fieldNames>
+        <info>&lt;p&gt;Please set up a &lt;b&gt;meeting&lt;/b&gt; with this Lead &lt;b&gt;within max 1 day&lt;/b&gt;.&lt;/p&gt;</info>
+        <picklistValueName>Meeting</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Name</fieldNames>
+        <fieldNames>Phone</fieldNames>
+        <info>&lt;p&gt;Please &lt;b&gt;check&lt;/b&gt; this Lead&lt;b&gt; in KRS&lt;/b&gt;.&lt;/p&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Sales</recordTypeName>
+</PathAssistant>

@@ -1,0 +1,32 @@
+<aura:component description="AS_MainPhotoSelection" controller="AS_App_Controller"
+                implements="forceCommunity:layout,
+                flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId"
+                access="global">
+
+    <aura:attribute name="product" type="Object"/>
+    <aura:attribute name="pictures" type="List"/>
+    <aura:attribute name="mainPhoto" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    <force:recordData recordId="{!v.recordId}"
+                      fields="Name, Description, Price__c, Fabric__c, MainPhotoId__c"
+                      targetFields="{!v.product}"
+                      targetError="{!v.recordLoadError}"
+    />
+
+    <lightning:layout multipleRows="false">
+        <lightning:card class="slds-card" title="Choose Main Photo">
+            <div class="gallery">
+                <aura:iteration items="{!v.pictures}" var="pic">
+                       <span>
+                           <button class="btn" data-myvalue="{!pic.photoId}" onclick="{!c.onSelect}">
+                               <img class="smallPhoto" src="{!$Label.c.AmigoPhotoLink + pic.photoId}"/>
+                               <p class="{!if(v.mainPhoto == pic.photoId,'slds-show','slds-hide')}">Main Photo</p>
+                           </button>
+                        </span>
+                </aura:iteration>
+            </div>
+        </lightning:card>
+    </lightning:layout>
+    <c:AS_SendErrorToast aura:id="errorToast"/>
+</aura:component>

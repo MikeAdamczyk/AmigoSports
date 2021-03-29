@@ -1,0 +1,72 @@
+<aura:component description="AS_ProductDetailPage"
+                controller="AS_App_Controller"
+                implements="forceCommunity:layout,
+                flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId"
+                access="global">
+
+    <aura:attribute name="product" type="Object"/>
+    <aura:attribute name="pictures" type="List"/>
+    <aura:attribute name="mainPhoto" type="String"/>
+    <aura:attribute name="price" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    <force:recordData recordId="{!v.recordId}"
+                      fields="Name, Description, Fabric__c, MainPhotoId__c"
+                      targetFields="{!v.product}"
+                      targetError="{!v.recordLoadError}"
+    />
+
+    <lightning:layout multipleRows="true">
+
+        <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="4">
+            <div>
+                <img class="product" src="{!v.mainPhoto != null
+                        ? $Label.c.AmigoPhotoLink + v.mainPhoto
+                        : $Resource.NoPhotoGrey}"/>
+            </div>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem padding="around-large" size="6" smallDeviceSize="12" mediumDeviceSize="8">
+            <p class="best">{!$Label.c.Bestseller}</p>
+            <br/>
+            <header class="text">{!v.product.Name}</header>
+            <br/>
+            <p class="descrption">{!$Label.c.Fabric + '  ' + v.product.Fabric__c}</p>
+            <br/>
+            <p class="descrption">{!v.product.Description}</p>
+
+            <div class="cta">
+                <lightning:layoutItem>
+                    <aura:if isTrue="{!v.product.Discount_Percent__c}">
+                        <p class="salePrice" style="color: crimson; margin-bottom: 5px;">
+                            <span class="saleBox"> SALE -{!v.product.Discount_Percent__c + '%'}  </span>
+                            <span style="text-decoration: line-through; font-size: 1.2rem; color: grey;">
+                                    {!' ' +  $Locale.currencyCode + ' ' + v.product.Price__c}
+                            </span>
+                        </p>
+                        <p class="price"
+                           style="color: crimson;">{!'NEW ' + $Label.c.Price + ' ' + $Locale.currencyCode + ' ' + v.product.Sale_Price__c}</p>
+                        <aura:set attribute="else">
+                            <p class="price">{!$Label.c.Price + ' ' + $Locale.currencyCode + ' ' + v.price}</p>
+                        </aura:set>
+                    </aura:if>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <button class="addToCart" onclick="{!c.addToBasket}">{!$Label.c.Add_to_cart}</button>
+                </lightning:layoutItem>
+
+                <div class="gallery">
+                    <aura:iteration items="{!v.pictures}" var="pic">
+                       <span>
+                           <button class="btn" data-myvalue="{!pic.photoId}" onclick="{!c.onSelect}">
+                               <img class="smallPhoto" src="{!$Label.c.AmigoPhotoLink + pic.photoId}"/>
+                           </button>
+                        </span>
+                    </aura:iteration>
+                </div>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <c:AS_SendErrorToast aura:id="errorToast"/>
+</aura:component>

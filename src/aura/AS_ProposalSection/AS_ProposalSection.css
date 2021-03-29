@@ -1,0 +1,107 @@
+.THIS .slds-show{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.THIS .main-container{
+      width: 100%;
+      height: 100%;
+}
+
+.THIS .header{
+    text-align: center;
+}
+
+
+.THIS .container {
+     display: flex;
+     justify-content: space-evenly;
+     width: 100%;
+}
+
+.THIS .run {
+      background-size: cover;
+      height: 320px;
+      width: 400px;
+      text-align: center;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      		opacity: 1;
+        	-webkit-transition: .3s ease-in-out;
+        	transition: .3s ease-in-out;
+}
+
+.THIS .run:hover {
+	opacity: .75;
+}
+
+.THIS .crossfit {
+     background-size: cover;
+     height: 320px;
+     width: 400px;
+     text-align: center;
+     display: flex;
+     align-items: flex-end;
+     justify-content: center;
+     opacity: 1;
+     -webkit-transition: .3s ease-in-out;
+     transition: .3s ease-in-out;
+}
+
+.THIS .crossfit:hover {
+	opacity: .75;
+}
+
+.THIS .bike {
+      background-size: cover;
+      height: 320px;
+      width: 400px;
+      text-align: center;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      opacity: 1;
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+}
+
+.THIS .bike:hover {
+	opacity: .75;
+}
+
+
+.THIS .btn {
+      background-color: #fff;
+      color: black;
+      font-weight: bold;
+      font-size: 1.5rem;
+      opacity: 0.75;
+      padding: 20px;
+      border: none;
+      width:100%;
+}
+
+.THIS .proposals{
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 30px;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    letter-spacing: 10px;
+}
+
+.THIS .popular{
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 30px;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+}
