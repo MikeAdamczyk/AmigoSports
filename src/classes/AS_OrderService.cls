@@ -267,4 +267,21 @@ public without sharing class AS_OrderService {
         upsert oldOrder;
         createNewOrder();
     }
+
+    @AuraEnabled
+    public static void addNewCase(String orderNumber, String caseSubject, String caseMessage) {
+
+        Case newCase = new Case();
+        Order orderCase = [SELECT Id, OrderNumber FROM Order WHERE OrderNumber =: orderNumber];
+
+        newCase.Order__c = orderCase.Id;
+        newCase.Subject = caseSubject ;
+        newCase.Description = caseMessage;
+        newCase.ContactId = getContactId();
+        try {
+            insert newCase;
+        } catch (Exception e) {
+            System.debug('The problem has occurred during inserting Case :' + e + '\n' + e.getStackTraceString());
+        }
+    }
 }
