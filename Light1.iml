@@ -937,6 +937,17 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
+
+                            <option name="name" value="AS_OrderList" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_OrdersPageBanner" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AS_OrderTile" />
+
                             <option name="name" value="AS_BasketPageBanner" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -966,6 +977,7 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="AS_SendErrorToast" />
+
                             <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>

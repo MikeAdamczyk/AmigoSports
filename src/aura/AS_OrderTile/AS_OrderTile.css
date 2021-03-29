@@ -1,0 +1,152 @@
+.THIS .lightning-layout-container {
+    width: 100%;
+    height: 100%;
+}
+
+.THIS .container {
+    align-items: baseline;
+    margin: 10px auto;
+    width: 80%;
+    height: auto;
+    border-bottom: .1rem solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 1.2rem;
+}
+
+.THIS .containerList {
+    align-items: baseline;
+    margin: 10px auto;
+    height: auto;
+    color: grey;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.THIS .hide {
+    display: none;
+}
+
+
+.THIS .product {
+    height: 100%;
+                   width: 50%;
+}
+
+.THIS .number {
+     height: 100%;
+     width: 25%;
+}
+
+.THIS .date {
+     height: 100%;
+     width: 25%;
+}
+
+.THIS .amount {
+     height: 100%;
+     width: 25%;
+}
+
+.THIS .preview {
+    height: 100%;
+    width: 25%;
+}
+
+.THIS .btn {
+    border: none;
+    padding: 5px 20px;
+    background-color: rgb(218 239 240);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    outline: none;
+}
+
+.THIS .btn:hover {
+    background-color: rgb(144 193 190);
+    color: white;
+}
+
+.THIS .itemListHeader {
+    align-items: baseline;
+    margin: 10px auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.THIS .slds-grid {
+    display: block;
+}
+
+.THIS .color {
+    color: rgb(0 117 165);
+    font-weight: bold;
+    background-color: whitesmoke;
+}
+
+.THIS .details {
+    margin-bottom: 150px;
+    margin: 10px auto 150px;
+    background-color: whitesmoke;
+    width: 80%;
+}
+
+.THIS .sum{
+     height: 100%;
+     width: 25%;
+     border-top: 1px solid lightgray;
+     padding-top: 10px;
+}
+
+.THIS .empty{
+     height: 100%;
+     width: 50%;
+}
+
+.THIS .productLink{
+    color: grey;
+}
+
+.THIS .complaintBtn{
+    border: none;
+    padding: 0 10px;
+    background-color: transparent;
+    transition: .3s ease-in-out;
+    outline: none;
+    color: lightgray;
+    font-weight: 400;
+}
+
+.THIS .complaintBtn:hover{
+    color: grey;
+}
+
+.THIS .card{
+    padding: 20px;
+}
+
+.THIS .complaint {
+     height: 100%;
+     width: 25%;
+     border-top: 1px solid lightgray;
+     padding-top: 10px;
+}
+
+.THIS .slds-modal__container{
+    max-width: 60rem;
+    width: 60rem;
+    height: 70%;
+}
+
+.THIS .slds-rich-text-area__content {
+    text-align: start;
+}

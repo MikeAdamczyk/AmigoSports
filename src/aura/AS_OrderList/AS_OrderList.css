@@ -1,0 +1,45 @@
+.THIS{
+    text-align: center;
+}
+
+.THIS .mainContainer{
+   justify-content: center;
+   max-width: 1368px;
+   margin: 0 auto;
+}
+
+.THIS .slds-grid {
+    display: block;
+}
+
+.THIS .tableHeader {
+    align-items: baseline;
+    margin: 10px auto;
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.THIS .number {
+     height: 100%;
+     width: 25%;
+}
+
+.THIS .date {
+     height: 100%;
+     width: 25%;
+}
+
+.THIS .amount {
+     height: 100%;
+     width: 25%;
+}
+
+.THIS .preview {
+    height: 100%;
+    width: 25%;
+}

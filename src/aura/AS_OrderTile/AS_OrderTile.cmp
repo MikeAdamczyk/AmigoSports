@@ -1,0 +1,85 @@
+<aura:component description="AS_OrderTile"
+                controller="AS_OrderService"
+                implements="forceCommunity:layout,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <aura:attribute name="order" type="Object"/>
+    <aura:attribute name="orderItems" type="Object[]"/>
+    <aura:attribute name="amount" type="String"/>
+    <aura:attribute name="showComplaintModal" type="Boolean"/>
+    <aura:attribute name="caseSubject" type="String"/>
+    <aura:attribute name="caseMessage" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    <lightning:layoutItem class="lightning-layout-container">
+        <div class="container" aura:id="mainContainer">
+            <div class="number">{!v.order.OrderNumber}</div>
+            <div class="date">
+                <lightning:formattedDateTime value="{!v.order.ActivatedDate}" year="numeric" day="2-digit"
+                                             month="long"/>
+            </div>
+            <div class="amount">{!$Locale.currencyCode + ' ' + v.amount}</div>
+            <div class="preview">
+                <button class="btn" aura:id="button" onclick="{!c.check}">{!$Label.c.Show_details}</button>
+            </div>
+        </div>
+
+        <div class="details hide" aura:id="orderItems">
+            <div class="itemListHeader">
+                <div class="number">{!$Label.c.Product_name}</div>
+                <div class="amount">{!$Label.c.Unit_price}</div>
+                <div class="date">{!$Label.c.Quantity}</div>
+                <div class="preview">{!$Label.c.Amount}</div>
+            </div>
+
+            <aura:iteration items="{!v.orderItems}" var="orderItem">
+                <div class="containerList">
+                    <div class="date">
+                        <a class="productLink" onclick="{!c.redirect}"
+                           data-myvalue="{!orderItem.Product2.Id}">{!orderItem.Product2.Name} </a>
+                    </div>
+                    <div class="amount">{!$Locale.currencyCode + ' ' + orderItem.ListPrice}</div>
+                    <div class="number">{!orderItem.Quantity}</div>
+                    <div class="preview">{!$Locale.currencyCode + ' ' + orderItem.TotalPrice}</div>
+                </div>
+            </aura:iteration>
+
+            <div class="itemListHeader">
+                <div class="complaint">
+                    <button class="complaintBtn" aura:id="button" onclick="{!c.makeComplaint}">Make a complaint</button>
+                </div>
+                <div class="empty"></div>
+                <div class="sum">{!$Locale.currencyCode + ' ' + v.amount}</div>
+            </div>
+        </div>
+    </lightning:layoutItem>
+
+    <aura:if isTrue="{!v.showComplaintModal}">
+
+        <div class="slds-modal slds-fade-in-open newCase-container">
+            <div class="slds-modal__container">
+                <lightning:card class="card">
+                    <header class="slds-modal__header">
+                        <h1 class="slds-text-heading--medium">New complaint</h1>
+                    </header>
+                    <lightning:layout multipleRows="true">
+                        <div class="popup-inputs">
+                            <lightning:input disabled="true" value="{!v.order.OrderNumber}" label="Order Number"/>
+                            <lightning:input required="true" value="{!v.caseSubject}" label="Subject"/>
+                            <br/>
+                            <p>Complaint content</p>
+                            <lightning:inputRichText value="{!v.caseMessage}" placeholder="Type your complaint here..."/>
+                        </div>
+                    </lightning:layout>
+                    <footer class="slds-modal__footer">
+                        <lightning:button name='No' label='No' onclick='{!c.closeModal}'/>
+                        <lightning:button variant="brand" name='Send' label='Yes' onclick='{!c.createCase}'/>
+                    </footer>
+                </lightning:card>
+            </div>
+        </div>
+
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+
+</aura:component>
