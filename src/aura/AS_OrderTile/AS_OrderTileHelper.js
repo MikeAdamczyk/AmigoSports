@@ -67,5 +67,47 @@
          let caseMessage = component.get('v.caseMessage');
          console.log('caseMessage >>> ' + caseMessage);
 
+         const action = component.get('c.addNewCase');
+
+         action.setParams({
+             orderNumber: orderNumber,
+             caseSubject: caseSubject,
+             caseMessage: caseMessage
+         });
+         action.setCallback(this, function(response) {
+
+             if (response.getState() === 'SUCCESS') {
+                console.log('New Case CREATED !!!');
+
+                var toastEvent = $A.get("e.force:showToast");
+                    toastEvent.setParams({
+                        title : 'Success',
+                        message: 'New Case has been created. We will contact with you very soon. Thank you.',
+                        duration:' 5000',
+                        key: 'info_alt',
+                        type: 'success',
+                        mode: 'sticky'
+                    });
+                toastEvent.fire();
+             }
+
+             if (response.getState() === "ERROR") {
+
+                 let errors = response.getError();
+                 console.log('ERROR >>>>> ' + errors[0].pageErrors[0].message);
+
+                 var toastEvent = $A.get("e.force:showToast");
+                     toastEvent.setParams({
+                         title : 'Error',
+                         message: 'Message: ' + errors[0].pageErrors[0].message + '. Please contact your admin.',
+                         duration:' 5000',
+                         key: 'info_alt',
+                         type: 'error',
+                         mode: 'sticky'
+                     });
+                 toastEvent.fire();
+             }
+         });
+         $A.enqueueAction(action);
      },
 })
