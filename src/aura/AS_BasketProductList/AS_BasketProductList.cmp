@@ -1,0 +1,70 @@
+<aura:component description="AS_BasketProductList"
+                controller="AS_OrderService"
+                implements="forceCommunity:layout,
+                flexipage:availableForAllPageTypes,
+                forceCommunity:availableForAllPageTypes,
+                force:appHostable"
+                access="global">
+
+    <aura:attribute name="basketProducts" type="Object[]"/>
+    <aura:attribute name="totalAmount" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:AS_RequestTotalAmountEvent" action="{!c.handleEvent}"/>
+
+    <lightning:layoutItem>
+        <aura:if isTrue="{!v.basketProducts.length == 0}">
+
+            <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">{!$Label.c.Your_Basket}</p>
+
+            <div class="continue">
+                <button class="buyNow" onclick="{!c.checkOrders}">{!$Label.c.Check_your_orders}</button>
+            </div>
+
+            <aura:set attribute="else">
+                <div class="basket" aura:id="basket">
+                    <aura:iteration items="{!v.basketProducts}" var="item" end="">
+                        <c:AS_BasketProductItem basketItem="{!item}"/>
+                    </aura:iteration>
+
+                    <aura:if isTrue="{!v.totalAmount > 0}">
+
+                        <div class="summary">
+                            <div class="total">
+                                <p>{!$Label.c.Total + ' ' + $Locale.currencyCode + ' ' + v.totalAmount}</p>
+                            </div>
+                            <div class="buttons">
+                                <button class="buyNow" onclick="{!c.buy}">{!$Label.c.Buy_Now}</button>
+                            </div>
+                        </div>
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.totalAmount == 0}">
+                        <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">{!$Label.c.Your_Basket}</p>
+                        <div class="continue">
+                            <button class="buyNow" onclick="{!c.checkOrders}">{!$Label.c.Check_your_orders}</button>
+                        </div>
+                    </aura:if>
+
+                </div>
+            </aura:set>
+        </aura:if>
+    </lightning:layoutItem>
+
+    <lightning:layoutItem>
+        <div class="thankYouNote hideElement" aura:id="thankYouNote">
+            <p style="margin-top: 50px; font-weight: bold; font-size: 1.5rem;">
+                    {!$Label.c.Purchase_Thanks}
+            </p>
+            <p>{!$Label.c.Products_Receive}</p>
+
+            <div class="continue">
+                <button class="buyNow" onclick="{!c.backToHomePage}">{!$Label.c.Continue_shopping}</button>
+            </div>
+
+            <div class="continue">
+                <button class="buyNow" onclick="{!c.checkOrders}">{!$Label.c.Check_your_orders}</button>
+            </div>
+        </div>
+    </lightning:layoutItem>
+    <c:AS_SendErrorToast aura:id="errorToast"/>
+</aura:component>

@@ -11,8 +11,11 @@
 
             if (component.isValid() && response.getState() === 'SUCCESS') {
                 component.set("v.apparel", response.getReturnValue());
-            } else {
-                console.log('ERROR >>>>> ' + response.error);
+            }
+
+            if (response.getState() === 'ERROR') {
+                let sendErrorToast = component.find('errorToast');
+                sendErrorToast.handleErrors(response.getError());
             }
          });
 

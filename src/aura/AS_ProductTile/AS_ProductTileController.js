@@ -5,5 +5,5 @@
 
         onSelect: function(component, event, helper) {
             helper.onSelect(component);
-        }
+        },
 })

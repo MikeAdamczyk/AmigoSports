@@ -12,15 +12,8 @@
                 } else if (state === "INCOMPLETE") {
                     //todo do something
                 } else if (state === "ERROR") {
-                    let errors = response.getError();
-                    if (errors) {
-                        if (errors[0] && errors[0].message) {
-                            console.log("Error message: " +
-                                errors[0].message);
-                        }
-                    } else {
-                        console.log("Unknown error");
-                    }
+                    let sendErrorToast = component.find('errorToast');
+                    sendErrorToast.handleErrors(response.getError());
                 }
             });
 
@@ -55,19 +48,11 @@
                  } else if (state === "INCOMPLETE") {
                      //todo do something
                  } else if (state === "ERROR") {
-                     let errors = response.getError();
-                     if (errors) {
-                         if (errors[0] && errors[0].message) {
-                             console.log("Error message: " +
-                                 errors[0].message);
-                         }
-                     } else {
-                         console.log("Unknown error");
-                     }
+                      let sendErrorToast = component.find('errorToast');
+                      sendErrorToast.handleErrors(response.getError());
                  }
              });
 
              $A.enqueueAction(action);
         },
-
 })
