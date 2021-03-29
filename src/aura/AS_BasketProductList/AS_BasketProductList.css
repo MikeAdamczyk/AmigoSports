@@ -1,0 +1,44 @@
+.THIS{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.THIS .buyNow{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #ffd83b;
+    border: none;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.THIS .buyNow:hover{
+    background-color: #ffc83b;
+}
+
+.THIS .summary{
+    display: flex;
+    justify-content: flex-end;
+    width: 88%;
+    margin: 10px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.THIS .total{
+    font-weight: bold;
+    color: rgb(0 117 165);
+    background-color: whitesmoke;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+.THIS .hideElement {
+    display: none;
+}
+
+.THIS .continue{
+    margin: 30px;
+}

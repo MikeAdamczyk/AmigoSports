@@ -1,0 +1,30 @@
+<aura:component description="AS_BasketPreview"
+                controller="AS_OrderService"
+                implements="flexipage:availableForAllPageTypes,
+                forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:appHostable">
+
+    <aura:attribute name="basketProducts" type="Object[]"/>
+    <aura:attribute name="totalAmount" type="String"/>
+
+    <p class="subheader"
+       style="text-align: center; font-weight: 900; margin-bottom: 15px;
+                margin-top: 15px; font-size: 1.1rem; color: rgb(0 117 165);
+                background-color: whitesmoke;
+                padding: 10px 0;">
+
+        <aura:if isTrue="{!v.basketProducts.length == 0}">
+        {!$Label.c.Your_Basket}
+
+            <aura:set attribute="else">
+                {!$Label.c.Total + ' ' + $Locale.currencyCode + ' ' + v.totalAmount}
+            </aura:set>
+        </aura:if>
+
+    </p>
+
+    <div class="basket" style="margin-bottom: 10px;">
+        <aura:iteration items="{!v.basketProducts}" var="item" end="">
+            <c:AS_BasketPreviewItem basketItem="{!item}"/>
+        </aura:iteration>
+    </div>
+</aura:component>

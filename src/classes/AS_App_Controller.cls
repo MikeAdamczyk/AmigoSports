@@ -3,10 +3,15 @@ public with sharing class AS_App_Controller {
     @AuraEnabled
     public static Decimal getProductPrice(Id productId) {
 
-        Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard Price Book'].Id;
+        Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard'].Id;
         Decimal productPrice = [SELECT UnitPrice FROM PricebookEntry WHERE Pricebook2Id = :standardPriceBookId AND Product2Id = :productId].UnitPrice;
 
         return productPrice;
+    }
+
+    @AuraEnabled
+    public static String addProductToBasket(String productId, String unitPrice) {
+        return AS_OrderService.addProductToBasket(productId, unitPrice);
     }
 
     @AuraEnabled
@@ -15,7 +20,6 @@ public with sharing class AS_App_Controller {
         List <Product2> apparelProducts = new List<Product2>();
         List<AS_ProductWrapper> wrapperList = new List<AS_ProductWrapper>();
         List<Id> productsIds = new List<Id>();
-
 
         try {
             apparelProducts = [
@@ -29,7 +33,7 @@ public with sharing class AS_App_Controller {
                 productsIds.add(product2.Id);
             }
 
-            Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard Price Book'].Id;
+            Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard'].Id;
 
             List<PricebookEntry> pricebookEntries = new List<PricebookEntry>();
             pricebookEntries = [SELECT Id, Name, UnitPrice, Product2Id FROM PricebookEntry WHERE Pricebook2Id = :standardPriceBookId AND Product2Id IN :productsIds];
@@ -106,7 +110,7 @@ public with sharing class AS_App_Controller {
                     productsIds.add(product2.Id);
                 }
 
-                Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard Price Book'].Id;
+                Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard'].Id;
 
                 List<PricebookEntry> pricebookEntries = new List<PricebookEntry>();
                 pricebookEntries = [SELECT Id, Name, UnitPrice, Product2Id FROM PricebookEntry WHERE Pricebook2Id = :standardPriceBookId AND Product2Id IN :productsIds];
@@ -172,7 +176,7 @@ public with sharing class AS_App_Controller {
                     productsIds.add(product2.Id);
                 }
 
-                Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard Price Book'].Id;
+                Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard'].Id;
 
                 List<PricebookEntry> pricebookEntries = new List<PricebookEntry>();
                 pricebookEntries = [SELECT Id, Name, UnitPrice, Product2Id FROM PricebookEntry WHERE Pricebook2Id = :standardPriceBookId AND Product2Id IN :productsIds];
@@ -242,6 +246,7 @@ public with sharing class AS_App_Controller {
     public static List<AS_ProductWrapper> getDiscountedProducts() {
         List <Product2> apparelProducts = new List<Product2>();
         List<AS_ProductWrapper> wrapperList = new List<AS_ProductWrapper>();
+        List<Id> productsIds = new List<Id>();
 
         try {
             apparelProducts = [
@@ -250,12 +255,37 @@ public with sharing class AS_App_Controller {
                     WHERE Discount_Percent__c != null
             ];
 
+            for (Product2 product2 : apparelProducts) {
+                productsIds.add(product2.Id);
+            }
+
+            Id standardPriceBookId = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Standard'].Id;
+
+            List<PricebookEntry> pricebookEntries = new List<PricebookEntry>();
+            pricebookEntries = [SELECT Id, Name, UnitPrice, Product2Id FROM PricebookEntry WHERE Pricebook2Id = :standardPriceBookId AND Product2Id IN :productsIds];
+
+            Map<Id, Decimal> productsPricesMap = new Map<Id, Decimal>();
+
+            for (PricebookEntry entry : pricebookEntries) {
+                productsPricesMap.put(entry.Product2Id, entry.UnitPrice);
+            }
+
+
             for (Product2 prod : apparelProducts) {
+
+                Decimal productPrice;
+
+                if (productsPricesMap.ContainsKey(prod.Id)) {
+                    productPrice = productsPricesMap.get(prod.Id);
+                }
 
                 AS_ProductWrapper wrapper = new AS_ProductWrapper();
                 wrapper.Id = prod.Id;
                 wrapper.name = prod.Name;
-//                wrapper.price = prod.Price__c;
+
+                if (productPrice != null) {
+                    wrapper.price = productPrice;
+                }
 
 //                if (prod.Discount_Percent__c != null && prod.Discount_Percent__c > 0) {
 //                    wrapper.discount = prod.Discount_Percent__c;

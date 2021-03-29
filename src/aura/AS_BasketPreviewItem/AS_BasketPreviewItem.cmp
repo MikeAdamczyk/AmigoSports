@@ -1,0 +1,34 @@
+<aura:component description="AS_BasketPreviewItem"
+                controller="AS_OrderService"
+                implements="flexipage:availableForAllPageTypes,
+                forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:appHostable"
+>
+    <aura:attribute name="basketItem" type="Object"/>
+    <aura:attribute name="product" type="Object"/>
+    <aura:attribute name="AmigoPhotoLink" type="String"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    <aura:attribute name="quantity" type="String"/>
+    <aura:attribute name="amount" type="String"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="totalAmountEvent" type="c:AS_RequestTotalAmountEvent"/>
+
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.basketItem.productId}"
+                      fields="Id,Name,MainPhotoId__c"
+                      targetFields="{!v.product}"
+                      targetError="{!v.recordLoadError}"
+    />
+
+    <lightning:layout class="lightning-layout-container">
+        <div class="previewItem">
+            <div class="photo">
+                <img src="{!v.product.MainPhotoId__c != null
+                        ? v.AmigoPhotoLink + v.product.MainPhotoId__c
+                        : $Resource.NoPhotoGrey}" width="80"/>
+            </div>
+            <div class="name"><span style="font-weight: 700">{!v.quantity + ' x &nbsp;'}</span>{!v.product.Name}</div>
+            <div class="amount"><span class="text">Amount: &nbsp;</span><span style="font-weight: 700">{!$Locale.currencyCode + ' ' + v.amount}</span></div>
+        </div>
+    </lightning:layout>
+</aura:component>

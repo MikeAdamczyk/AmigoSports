@@ -21,8 +21,6 @@ public with sharing class AS_Product_Photo_Service {
             }
         }
 
-        System.debug('>>>>>>>> PRODUCT PHOTOS LIST >>>>>>> ' + wrapperList);
-
         return wrapperList;
     }
 
